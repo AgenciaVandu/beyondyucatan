@@ -1,0 +1,129 @@
+$fuentes : (
+    "austin-roman" : 'Austin-Roman',
+    "austin-italic" : 'Austin-RomanItalic',
+    "suis-regular" :  'SuisseIntl-Regular',
+    "suis-bold" :  'SuisseIntl-Bold'
+
+);
+
+
+@use 'navbar';
+@use 'fonts';
+@use 'colores';
+@use 'formulario';
+
+h1, h2, h3, h4, h5 {
+   font-family: map-get($fuentes, "austin-roman" );
+} 
+* {
+   font-family: map-get($fuentes , "suis-regular" );
+}
+
+.titular_index {
+   .titular_2 {
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      h1 {
+         padding-bottom: .6em;
+      }
+   }
+}
+
+.quienes-somos {
+   background: #FBF8F7;
+   min-height: 600px;
+   .contenido {
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3.8em;
+      h2 {
+         margin-bottom: .7em;
+      }
+      p {
+         font-size: 1.1em;
+         margin-bottom: 1.3em;
+      }
+   }
+}
+
+.experiencias {
+  
+   min-height: 600px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+   .img_contenido {
+      max-width: 550px;
+      height: 720px;
+      object-fit: cover;
+   }
+   .contenido {
+      padding: 4em 3.8em;
+      h2 {
+         margin-bottom: .7em;
+      }
+      p {
+         font-size: 1.1em;
+         margin-bottom: 1.3em;
+      }
+   }
+   .cta {
+      min-height: 70px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-bottom: 2em;
+      .iconos {
+         width: 50%;
+         ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+            li {
+               
+               img {
+                  height: 40px;
+               }
+            }
+         }
+      }
+      .costo {
+         width: 50%;
+         height: 40px;
+         p, span {
+            text-align: right;
+            font-family: map-get($fuentes , "suis-bold" );
+            height: 10px;
+         }
+         hr {
+            border: solid 1px colores.$naranja;
+         }
+      }
+     
+   }
+}
+
+.cta-experiencia {
+   min-height: 450px;
+   background-image: url(/public/img/webp/2.webp);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+
+   .titular{
+      padding-bottom: 5em;
+   }
+}

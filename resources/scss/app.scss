@@ -1,0 +1,65 @@
+$naranja : #BC5837;
+@import 'bootstrap/scss/bootstrap';
+
+
+.header_index {
+    .fondo {
+     min-height: 600px;
+     background-image: url(/public/img/webp/3.webp);
+     background-size: cover;
+     background-repeat: no-repeat;
+     width: 100%;
+
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+    }
+ 
+    .titular {
+        color: #fff;
+        text-align: center;
+        h1 {
+          font-size: 4em;
+        }
+       }
+ 
+    .categorias {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     .categorias_espacio {
+      max-width: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+     }
+      
+      a {
+        text-align: center;
+
+      }
+    }
+ 
+ }
+@mixin boton ($ncolor, $hcolor, $bradius, $txtcolor, $ancho ) {
+  background-color: transparent;
+  color: $ncolor;
+  border: 1px solid $ncolor;
+  border-radius: $bradius;
+  width: $ancho;
+  &:hover {
+    background-color: $hcolor;
+    border: 1px solid $hcolor;
+    color: $txtcolor;
+  }
+}
+.btn-primary {
+  @include boton($naranja, $naranja, auto, #fff, 280px );
+}
+.btn-secondary {
+  @include boton(#fff, $naranja, 10px, #fff, 180px );
+}
