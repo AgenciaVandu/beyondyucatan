@@ -2,7 +2,7 @@
 @vite(['resources/scss/app.scss', 'resources/scss/index.scss', 'resources/js/app.js' ])
 @endpush
 <x-layouts.guest title="Diseña tu experiencia en tu paso por Yucatán">
-    <x-header>
+    <x-header >
         <x-slot name="tituloheader">
             ¡Esto se trata de ti! <br>
         </x-slot>

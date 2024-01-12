@@ -1,4 +1,5 @@
-<header class="header_index">
+<header class="header_index" style="background-image: url(./img/experiencias.png); background-repeat: no-repeat; background-size: cover;
+     width: 100%;">
         <div class="fondo">
             <div class="container">
                 <div class="titular">
