@@ -1,0 +1,12 @@
+$fuentes : (
+    "austin-roman" : 'Austin-Roman',
+    "austin-italic" : 'Austin-RomanItalic',
+    "suis-regular" :  'SuisseIntl-Regular',
+    "suis-bold" :  'SuisseIntl-Bold'
+
+);
+
+@use 'navbar';
+@use 'fonts';
+@use 'colores';
+@use 'cards';
