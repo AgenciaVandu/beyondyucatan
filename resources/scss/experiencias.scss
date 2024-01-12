@@ -10,6 +10,7 @@ $fuentes : (
 @use 'fonts';
 @use 'colores';
 @use 'cards';
+@use 'cta';
 
 h1, h2, h3, h4, h5 {
    font-family: map-get($fuentes, "austin-roman" );
@@ -26,11 +27,3 @@ h1, h2, h3, h4, h5 {
    gap: 20px;
 }
 
-.cta-medida {
-   background-image: url(/public/img/webp/textura.webp);
-   min-height: 300px;
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   align-items: center;
-}

@@ -37,12 +37,7 @@
             </div>
         </div>
     </section>
-    <div class="cta-medida">
-        <div class="container">
-            <div class="text-center">
-                <h1>¿Quieres una experiencia a la medida?</h1>
-                <a href="" class="btn btn-primary">Solicitar una experiencia</a>
-            </div>
-        </div>
-    </div>
+    <section class="llamada">
+        <x-cta />
+    </section>
 </x-layouts.guest>

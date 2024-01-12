@@ -1,0 +1,69 @@
+$fuentes : (
+    "austin-roman" : 'Austin-Roman',
+    "austin-italic" : 'Austin-RomanItalic',
+    "suis-regular" :  'SuisseIntl-Regular',
+    "suis-bold" :  'SuisseIntl-Bold'
+
+);
+@use 'fonts';
+@use 'colores';
+.experiencias {
+  
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    .img_contenido {
+       max-width: 550px;
+       height: 720px;
+       object-fit: cover;
+    }
+    .contenido {
+       padding: 4em 3.8em;
+       h2 {
+          margin-bottom: .7em;
+       }
+       p {
+          font-size: 1.1em;
+          margin-bottom: 1.3em;
+       }
+    }
+    .cta {
+       min-height: 70px;
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       padding-bottom: 2em;
+       .iconos {
+          width: 50%;
+          ul {
+             list-style: none;
+             display: flex;
+             flex-direction: row;
+             gap: 10px;
+             margin: 0;
+             padding: 0;
+             li {
+                
+                img {
+                   height: 40px;
+                }
+             }
+          }
+       }
+       .costo {
+          width: 50%;
+          height: 40px;
+          p, span {
+             text-align: right;
+             font-family: map-get($fuentes , "suis-bold" );
+             height: 10px;
+          }
+          hr {
+             border: solid 1px colores.$naranja;
+          }
+       }
+      
+    }
+ }
