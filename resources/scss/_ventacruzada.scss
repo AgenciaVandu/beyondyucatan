@@ -1,11 +1,15 @@
 .intereses {
     overflow: hidden;
     min-height: 500px;
-   margin: 3em 0;
+   margin: 4em 0;
 }
 .opciones {
     display: flex;
     flex-direction: row;
+    a {
+        text-decoration: none;
+        
+    }
 }
 .opcion {
     box-sizing: border-box;
@@ -15,14 +19,26 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-right: 1em;
             .contenido {
                 width: 300px;
                 height: 500px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
                 img {
                     
                     object-fit: cover;
                     position: absolute;
                     z-index: -2;
+                   
+                    
+                }
+                .interior {
+                    text-align: center;
+                    color: #fff;
+                    
                 }
                 
             }

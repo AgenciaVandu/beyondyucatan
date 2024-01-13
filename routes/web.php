@@ -18,3 +18,5 @@ Route::get('/', function () {
 })->name('home');
 Route::view('/experiencias', 'viajes.experiencias')->name('experiencias');
 Route::view('/bucketlist', 'viajes.bucketlist')->name('bucketlist');
+Route::view('/post', 'viajes.experiencia')->name('post'); // Experiencia individual
+Route::view('/solicitar-aventura', 'formularios.solicitaraventura')->name('solicitud'); // Solicitar aventura

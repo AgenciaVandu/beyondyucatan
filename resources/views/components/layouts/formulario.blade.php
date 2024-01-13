@@ -1,9 +1,10 @@
 <div class="container">
-    <div class="titular">
-        <h1>{{$formtitle}}</h1>
-        <p>{{$slot}}</p>
-        <div>
-            {{$forms}}
-        </div>
+    <div class="titular_form">
+        <h1>{{$formtitle ?? ''}}</h1>
+        <p>{{$slot ?? ''}}</p>
+    </div>
+    <p class="denominacion">{{$denominacion ?? ''}}</p>
+    <div class="formu">
+        {{$forms ?? ''}}
     </div>
 </div>

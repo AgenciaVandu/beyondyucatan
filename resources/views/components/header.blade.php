@@ -3,10 +3,10 @@
         <div class="fondo">
             <div class="container">
                 <div class="titular">
-                    <h1>{{$tituloheader}}</h1>
-                    <p>{{$descripcion}}</p>
+                    <h1>{{$tituloheader ?? ''}}</h1>
+                    <p>{{$descripcion ?? ''}}</p>
                 </div>
-               {{$categorias}}
+               {{$categorias ?? ''}}
             </div>
         </div>
     </header>

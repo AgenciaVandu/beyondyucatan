@@ -6,12 +6,6 @@
         <x-slot name="tituloheader">
             ¡Comienza tu aventura!
         </x-slot>
-        <x-slot name="descripcion">
-
-        </x-slot>
-        <x-slot name="categorias">
-
-        </x-slot>
     </x-header>
     <section class="experiencias">
         <div class="opciones">

@@ -1,14 +1,15 @@
 <section class="intereses">
     <div class="container-fluid">
-        <div class="text-center">
+        <div class="text-center pb-5">
             <h1>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
         </div>
     </div>
     <div class="opciones">
-            <div href="" class="opcion">
-                <div class="contenido">
-                    <img src="{{asset('/img/destacada.png')}}" alt="experiencia interesante">
-                    <h5>Tour Lorem ipsum</h5>
+        <a href="#" class="opcion">
+            <div class="contenido">
+                <img src="{{asset('/img/destacada.png')}}" alt="experiencia interesante">
+                <div class="interior">
+                    <h3>Tour Lorem ipsum</h3>
                     <div class="boton">
                         <button class="btn-secondary">
                             Ver
@@ -16,10 +17,12 @@
                     </div>
                 </div>
             </div>
-            <div href="" class="opcion">
-                <div class="contenido">
-                    <img src="{{asset('/img/destacada.png')}}" alt="experiencia interesante">
-                    <h5>Tour Lorem ipsum</h5>
+        </a>
+        <a href="#" class="opcion">
+            <div class="contenido">
+                <img src="{{asset('/img/destacada.png')}}" alt="experiencia interesante">
+                <div class="interior">
+                    <h3>Tour Lorem ipsum</h3>
                     <div class="boton">
                         <button class="btn-secondary">
                             Ver
@@ -27,6 +30,7 @@
                     </div>
                 </div>
             </div>
-            
-        </div> 
+        </a>
+
+    </div>
 </section>

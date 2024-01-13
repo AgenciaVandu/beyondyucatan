@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="boton">
-                        <a href="" class="btn btn-primary">Descubrir la experiencia para mi</a>
+                        <a href="" class="btn btn-primary">{{$botoncta}}</a>
                     </div>
                 </div>
             </div>
