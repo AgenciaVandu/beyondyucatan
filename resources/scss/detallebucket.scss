@@ -9,6 +9,7 @@ $fuentes : (
 @use 'navbar';
 @use 'fonts';
 @use 'colores';
+@use 'ventacruzada';
 @use 'cta';
 @use 'footer';
 
@@ -18,8 +19,73 @@ h1, h2, h3, h4, h5 {
 * {
    font-family: map-get($fuentes , "suis-regular" );
 }
-
-.bucketlist {
+.intro {
+    padding: 3em 5em;
+    .cta {
+        min-height: 70px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-bottom: 2em;
+        .iconos {
+           width: 100%;
+           ul {
+              list-style: none;
+              display: flex;
+              flex-direction: row;
+              gap: 10px;
+              margin: 0;
+              padding: 0;
+              li {
+                 min-height: 40px;
+                 display: flex;
+                 flex-direction: row;
+                 align-items: center;
+                 justify-content: center;
+                 img {
+                    height: 30px;
+                 }
+                
+              }
+            }
+        }
+        .costo {
+            width: 100%;
+            height: 40px;
+            margin-top: 1em;
+           
+            p, span {
+               text-align: right;
+               font-family: map-get($fuentes , "suis-bold" );
+               height: 10px;
+            } @media (max-width:550px) {
+             p, span {
+                 text-align: left;
+                 height: 20px;
+              }
+         }
+         hr {
+             border: solid 1px colores.$naranja;
+             width: 230px;
+             float: right;
+          }@media (max-width:550px) {
+            hr {
+               float: left;
+               width: 100%;
+            } 
+        }
+         }
+       
+     } @media (max-width:550px) {
+        .cta {
+           display: block;
+        } 
+    }
+    .boton {
+        text-align: center;
+    }
+}
+.dias {
     padding: 4em 0;
     .imagen {
         img {
@@ -56,30 +122,11 @@ h1, h2, h3, h4, h5 {
                      align-items: center;
                      justify-content: center;
                      img {
-                        height: 30px;
+                        height: 45px;
                      }
                     
                   }
                 }
-            }
-            .costo {
-               width: 100%;
-               height: 40px;
-               margin-top: 1em;
-              
-               p, span {
-                  text-align: right;
-                  font-family: map-get($fuentes , "suis-bold" );
-                  height: 10px;
-               } @media (max-width:550px) {
-                p, span {
-                    text-align: left;
-                    height: 20px;
-                 }
-            }
-            hr {
-                border: solid 1px colores.$naranja;
-             }
             }
            
          } @media (max-width:550px) {

@@ -1,0 +1,25 @@
+$fuentes : (
+    "austin-roman" : 'Austin-Roman',
+    "austin-italic" : 'Austin-RomanItalic',
+    "suis-regular" :  'SuisseIntl-Regular',
+    "suis-bold" :  'SuisseIntl-Bold'
+
+);
+
+@use 'navbar';
+@use 'fonts';
+@use 'colores';
+@use 'ventacruzada';
+@use 'cta';
+
+h1, h2, h3, h4, h5 {
+   font-family: map-get($fuentes, "austin-roman" );
+} 
+* {
+   font-family: map-get($fuentes , "suis-regular" );
+}
+
+.footer {
+    height: 400px;
+    background-color: colores.$gris;
+}

@@ -38,11 +38,13 @@
             </div>
         </div>
     </section>
+
     <x-destacadas.experiencia>
         <x-slot name="botoncta">
             Quiero esta experiencia
         </x-slot>
     </x-destacadas.experiencia>
+    
     <div class="cta-experiencia">
         <div class="container">
             <div class="titular">

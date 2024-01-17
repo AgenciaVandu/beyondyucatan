@@ -9,10 +9,8 @@ $fuentes : (
 @use 'navbar';
 @use 'fonts';
 @use 'colores';
-@use 'formulario';
 @use 'cta';
 @use 'footer';
-
 
 h1, h2, h3, h4, h5 {
    font-family: map-get($fuentes, "austin-roman" );
@@ -21,6 +19,27 @@ h1, h2, h3, h4, h5 {
    font-family: map-get($fuentes , "suis-regular" );
 }
 
-.titular {
-   padding: 5em 0 5em 0;
+.artesano {
+   .img_artesano {
+      padding: 1.5em;
+   }
+   padding: 3.5em 0;
+   h2 {
+      color:colores.$naranja;
+   }
+   p {
+      width: 90%;
+
+   }
+   ul {
+      min-height: 50px;
+      padding: 0;
+      li {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         gap: 20px;
+         list-style: none;
+      }
+   }
 }

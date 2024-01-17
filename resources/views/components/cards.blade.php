@@ -27,6 +27,6 @@
         </div>
     </div>
     <div class="boton text-center">
-        <a href="" class="btn btn-info">Ver experiencia</a>
+        <a href="{{ route ('bucketlist-detalle')}}" class="btn btn-info">Ver experiencia</a>
     </div>
 </div>

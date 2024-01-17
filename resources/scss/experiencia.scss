@@ -12,6 +12,7 @@ $fuentes : (
 @use 'destacadas';
 @use 'cta';
 @use 'ventacruzada';
+@use 'footer';
 
 h1, h2, h3, h4, h5 {
    font-family: map-get($fuentes, "austin-roman" );

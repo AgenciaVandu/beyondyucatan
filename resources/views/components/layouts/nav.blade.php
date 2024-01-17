@@ -18,7 +18,7 @@
           <a href="{{ route('bucketlist') }}" class="nav-link">Bucketlist</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">artesanos</a>
+          <a href="{{ route('artesanos')}}" class="nav-link">artesanos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link contactanos" aria-current="page" href="#">

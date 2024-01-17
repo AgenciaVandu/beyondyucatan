@@ -45,7 +45,7 @@
                             </div>
                         </div>
                         <div class="boton">
-                            <a href="" class="btn btn-primary">Quiero vivir esta experiencia</a>
+                            <a href="{{route('bucketlist-detalle')}}" class="btn btn-primary">Quiero vivir esta experiencia</a>
                         </div>
                     </div>
 
@@ -88,7 +88,7 @@
                             </div>
                         </div>
                         <div class="boton">
-                            <a href="" class="btn btn-primary">Quiero vivir esta experiencia</a>
+                            <a href="{{route('bucketlist-detalle')}}" class="btn btn-primary">Quiero vivir esta experiencia</a>
                         </div>
                     </div>
 
