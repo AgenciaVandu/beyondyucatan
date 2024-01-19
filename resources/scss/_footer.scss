@@ -19,7 +19,44 @@ h1, h2, h3, h4, h5 {
    font-family: map-get($fuentes , "suis-regular" );
 }
 
+@mixin ancla ($fcolor, $fsize, $fhcolor, $lspacing) {
+    color: $fcolor;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: $fsize;
+    letter-spacing: $lspacing;
+    &:hover {
+      color: $fhcolor;
+    }
+  }
+
+
 .footer {
     height: 400px;
     background-color: colores.$gris;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    
+    .navtab {
+        li {
+            list-style: none;
+            padding-bottom: 1em;
+            a {
+                @include ancla(#fff, 15px, colores.$naranja, normal)
+            }
+        } 
+    }
+    .contactform {
+        li {
+            list-style: none;
+            padding-bottom: 2em;
+            a {
+                @include ancla(#fff, 1em, colores.$naranja, 5px)
+            }
+        } 
+    }
+
 }
