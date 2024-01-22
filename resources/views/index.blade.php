@@ -29,7 +29,7 @@
                     <h2>Quienes somos</h2>
                     <p>Tu camino por Yucatán. Una experiencia local, honesta, emocionante y única. Somos más que guías locales, más que rutas y transporte, más que agencia de viaje. Mucho Más. <br><br> Somos creadores de experiencias, hacedores de sueños, especialistas obsesionados por generar momentos extraordinarios, momentos inolvidables, momentos únicos. <br><br> Somos secretos, memorias, historias, comida, caminos escondidos… somos una experiencia honesta y local para quien quiere algo real.</p>
                     <div class="boton">
-                        <a href="" class="btn btn-primary">Descubrir la experiencia para mi</a>
+                        <a href="{{ route('experiencias') }}" class="btn btn-primary">Descubrir una experiencia para mi</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 img_contenido">

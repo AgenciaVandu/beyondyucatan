@@ -23,3 +23,4 @@ Route::view('/solicitar-aventura', 'formularios.solicitaraventura')->name('solic
 Route::view('/los-pasos-del-jaguar', 'viajes.detallebucket')->name('bucketlist-detalle'); // detalle de bucketlist
 Route::view('/artesanos', 'viajes.artesanos')->name('artesanos'); // index de artesanos
 Route::view('/contactar-a-un-asesor', 'contacto')->name('contacto'); // index de artesanos
+Route::view('/cotizar-experiencia', 'formularios.cotizar')->name('cotizador'); // index de artesanos
