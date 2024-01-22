@@ -32,7 +32,7 @@
                         <a href="" class="btn btn-primary">Descubrir la experiencia para mi</a>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 p-0">
+                <div class="col-lg-6 col-md-6 col-sm-12 img_contenido">
                     <img src="{{asset('/img/webp/1.webp')}}" class="img-fluid" alt="">
                 </div>
             </div>

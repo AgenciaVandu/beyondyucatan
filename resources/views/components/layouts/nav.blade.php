@@ -21,7 +21,7 @@
           <a href="{{ route('artesanos')}}" class="nav-link">artesanos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link contactanos" aria-current="page" href="#">
+          <a class="nav-link contactanos" aria-current="page" href="{{route ('contacto')}}">
             <span class="ml-2">
                 <img src="{{asset('/img/chat.svg')}}" width="22" alt="Icono chatea con nosotros">
             </span>contactanos</a>

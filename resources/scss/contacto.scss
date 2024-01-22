@@ -6,12 +6,14 @@ $fuentes : (
 
 );
 
+
 @use 'navbar';
 @use 'fonts';
 @use 'colores';
-@use 'cards';
-@use 'cta';
+@use 'formulario';
 @use 'footer';
+
+
 
 h1, h2, h3, h4, h5 {
    font-family: map-get($fuentes, "austin-roman" );
@@ -19,12 +21,3 @@ h1, h2, h3, h4, h5 {
 * {
    font-family: map-get($fuentes , "suis-regular" );
 }
-.experiencias {
-   padding: 4em;
-}
-.opciones {
-   display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-   gap: 20px;
-}
-

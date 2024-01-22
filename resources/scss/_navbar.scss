@@ -1,3 +1,5 @@
+@use 'colores';
+
 .navbar {
     min-height: 80px;
    .navbar-toggler {
@@ -24,6 +26,12 @@
         justify-content: center;
         span {
             margin-right: .5em;
+        }
+        &:hover {
+          background-color: colores.$naranja;   
+          border: 1px solid colores.$naranja;
+          border-radius: 10px;
+          transform: 500ms ease-in;
         }
     }
 }

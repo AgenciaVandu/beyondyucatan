@@ -1,6 +1,6 @@
 <div class="card">
     <img src="{{asset('/img/yaxuna.png')}}" alt="Imagen de tour">
-    <div class="contenido">
+    <div class="contenido1">
         <h3>Tour lorem ipsum</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero placeat nostrum maxime dolorum fugiat amet aliquam dolore similique obcaecati voluptates!</p>
     </div>
