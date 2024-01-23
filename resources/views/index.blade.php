@@ -31,7 +31,7 @@
                 <div class="categoria text-center">
                     <a href="" class="btn btn-secondary">Viaje de grupo</a>
                 </div>
-                
+
             </div>
         </x-slot>
     </x-header>
@@ -39,12 +39,12 @@
     <section class="titular_index">
         <div class="titular_2 text-center">
             <h1>¡Tu aventura comienza hoy!</h1>
-            <figure>
+            <a href="#quienes-somos" class="arrow">
                 <img src="{{asset('/img/arrow.svg')}}" width="30" alt="Flecha">
-            </figure>
+            </a>
         </div>
     </section>
-    <section class="quienes-somos">
+    <section id="quienes-somos" class="quienes-somos">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 contenido">
