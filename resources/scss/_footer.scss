@@ -83,6 +83,11 @@ h1, h2, h3, h4, h5 {
                 border-radius: 1px;
                 background: transparent;
                 color: #fff;
+                &:focus {
+                    border-radius: 20px;
+                    border: 1px colores.$naranja solid;
+                    transition: 1s ease-in-out ;
+                }
             }
         }
         .btn-secondary {
