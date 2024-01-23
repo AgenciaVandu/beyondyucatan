@@ -9,8 +9,23 @@
         <x-slot name="descripcion">
             Diseña tu experiencia en tu paso por Yucatán
         </x-slot>
+        div class="categorias">
+
         <x-slot name="categorias">
-            <x-categorias />
+            <div class="categorias">
+                <div class="categoria text-center">
+                    <a href="" class="btn btn-secondary">Viaje de grupo</a>
+                </div>
+                <div class="categoria text-center">
+                    <a href="" class="btn btn-secondary">Viaje de grupo</a>
+                </div>
+                <div class="categoria text-center">
+                    <a href="" class="btn btn-secondary">Viaje de grupo</a>
+                </div>
+                <div class="categoria text-center">
+                    <a href="" class="btn btn-secondary">Viaje de grupo</a>
+                </div>
+            </div>
         </x-slot>
     </x-header>
 
@@ -44,7 +59,7 @@
             Quiero esta experiencia
         </x-slot>
     </x-destacadas.experiencia>
-    
+
     <div class="cta-experiencia">
         <div class="container">
             <div class="titular">

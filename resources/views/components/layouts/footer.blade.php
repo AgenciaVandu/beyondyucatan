@@ -1,4 +1,7 @@
 <footer class="footer">
+    <div class="iconobeyond">
+        <img src="{{asset('/img/iconobeyond.svg')}}" width="35" alt="Icono beyond yucatan">
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6 col-12">

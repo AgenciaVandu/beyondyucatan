@@ -1,4 +1,8 @@
 $naranja : #BC5837;
+$form-check-input-checked-bg-color: $naranja;
+$form-check-input-checked-border-color: $naranja;
+$form-range-thumb-bg: $naranja;
+$form-range-thumb-active-bg: tint-color($naranja, 70%);
 @import 'bootstrap/scss/bootstrap';
 
 
@@ -22,25 +26,7 @@ $naranja : #BC5837;
         }
        }
  
-    .categorias {
-     display: flex;
-     flex-direction: row;
-     justify-content: center;
-     align-items: center;
-     width: 100%;
-     .categorias_espacio {
-      max-width: 700px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-     }
-      
-      a {
-        text-align: center;
-
-      }
-    }
+   
  
  }
 @mixin boton ($ncolor, $hcolor, $bradius, $txtcolor, $ancho ) {

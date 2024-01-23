@@ -1,7 +1,7 @@
 @push('scss')
 @vite(['resources/scss/app.scss', 'resources/scss/cotizador.scss', 'resources/js/app.js' ])
 @endpush
-<x-layouts.guest>
+<x-layouts.guest title="Cotiza tu experiencia">
     <x-header>
         <x-slot name="tituloheader">
             Diseñamos experiencias para ti
@@ -65,7 +65,143 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="row checks">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <p>Estás interesado en:</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="arquitectura">
+                                <label class="form-check-label" for="arquitectura">
+                                    Arquitectura
+                                </label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="comunidadesMayas">
+                                <label class="form-check-label" for="comunidadesMayas">
+                                    Comunidades Mayas
+                                </label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="zonasArqueologicas">
+                                <label class="form-check-label" for="zonasArqueologicas">
+                                    Zonas arqueológicas
+                                </label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="gastronomia">
+                                <label class="form-check-label" for="gastronomia">
+                                    Gastronomía
+                                </label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="naturaleza">
+                                <label class="form-check-label" for="naturaleza">
+                                    Naturaleza
+                                </label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="aventura">
+                                <label class="form-check-label" for="aventura">
+                                    Aventura
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <p>¿Con qué te podemos ayudar?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="cenotes">
+                                <label class="form-check-label" for="cenotes">
+                                    Cenotes
+                                </label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="Avistamiento">
+                                <label class="form-check-label" for="Avistamiento">
+                                    Avistamiento de aves
+                                </label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="playas">
+                                <label class="form-check-label" for="playas">
+                                    Playas
+                                </label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="bienrelax">
+                                <label class="form-check-label" for="bienrelax">
+                                    Bienestar y relajación
+                                </label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="celebraciones">
+                                <label class="form-check-label" for="celebraciones">
+                                    Celebración especial
+                                    (cumpleaños, aniversario)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row checks mt-3">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <p>¿En qué idioma te gustaría?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="espanol">
+                                <label class="form-check-label" for="espanol">
+                                    Español
+                                </label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="ingles">
+                                <label class="form-check-label" for="ingles">
+                                    Inglés
+                                </label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="frances">
+                                <label class="form-check-label" for="frances">
+                                    Frances
+                                </label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="italiano">
+                                <label class="form-check-label" for="italiano">
+                                    Italiano
+                                </label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="ruso">
+                                <label class="form-check-label" for="ruso">
+                                    Ruso
+                                </label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id=otro">
+                                <label class="form-check-label" for="otro">
+                                    Otro
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <p>Selecciona la categoría del hotel en el que te gustaría hospedarte</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="desayunos">
+                                <label class="form-check-label" for="desayunos">
+                                    Desayunos incluidos
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="text" class="form-control" id="budget" placeholder="Presupuesto">
+                    </div>
+                    <div class="form-group mt-3">
+                        <textarea type="text" class="form-control" id="in" placeholder="Comentarios adicionales o requerimientos especiales" rows="3"></textarea>
+                    </div>
+                    <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary">Enviar Información</button>
+                </div>
                 </form>
+                
             </div>
         </div>
     </section>

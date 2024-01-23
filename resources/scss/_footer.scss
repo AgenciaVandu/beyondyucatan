@@ -46,8 +46,12 @@ h1, h2, h3, h4, h5 {
             list-style: none;
             padding-bottom: 1em;
             a {
-                @include ancla(#fff, 13px, colores.$naranja, normal)
-            }
+                @include ancla(#fff, 1em, colores.$naranja, normal);
+                &:hover {
+                    transition: 200ms ease-in;
+                    
+                }
+            } 
         } 
     }
     .contactform {
@@ -55,7 +59,10 @@ h1, h2, h3, h4, h5 {
             list-style: none;
             padding-bottom: 2em;
             a {
-                @include ancla(#fff, 13px, colores.$naranja, 5px)
+                @include ancla(#fff, 12px, colores.$naranja, 5px);
+                &:hover {
+                    transition: 200ms ease-in;
+                }
             }
         } 
     }
@@ -119,4 +126,9 @@ h1, h2, h3, h4, h5 {
             text-decoration: none;
         }
     }
+}
+.iconobeyond {
+    position: absolute;
+    top: 20px;
+    left: 40px;
 }
