@@ -11,7 +11,6 @@
         <div class="container">
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut optio consequuntur pariatur. Repellat illum, beatae eos suscipit maiores porro qui amet odit architecto repudiandae, recusandae reiciendis! Doloribus exercitationem incidunt sit, maiores quod sequi mollitia obcaecati quam optio dignissimos perspiciatis possimus. Corrupti, officiis. Temporibus commodi reprehenderit fugiat, dolor eos iure quos? <br><br>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio ad ex, maiores architecto error dolorum aspernatur ipsum atque expedita sapiente aliquid vero illo et reprehenderit perspiciatis aliquam eaque nostrum.</p>
-
             <div class="cta">
                 <div class="iconos">
                     <ul>

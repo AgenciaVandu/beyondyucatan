@@ -2,7 +2,9 @@
     overflow: hidden;
     min-height: 500px;
    margin: 4em 0;
+   position: relative;
 }
+
 .opciones {
     display: flex;
     flex-direction: row;
@@ -11,6 +13,7 @@
         
     }
 }
+
 .opcion {
     box-sizing: border-box;
     margin-top: 2em;
