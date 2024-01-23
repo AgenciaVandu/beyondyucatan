@@ -18,12 +18,12 @@
                     <div class="row g-3">
                         <div class="col-lg-3 col-md-6 col-6">
                             <div class="form-group">
-                                <input type="date" class="form-control" id="in">
+                                <input type="text" class="form-control w-100" placeholder="Fecha de llegada" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-6">
                             <div class="form-group">
-                                <input type="date" class="form-control" id="out">
+                                <input type="text" class="form-control w-100" placeholder="Fecha de salida" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-6">
@@ -198,10 +198,10 @@
                         <textarea type="text" class="form-control" id="in" placeholder="Comentarios adicionales o requerimientos especiales" rows="3"></textarea>
                     </div>
                     <div class="text-center mt-4">
-                    <button type="submit" class="btn btn-primary">Enviar Información</button>
-                </div>
+                        <button type="submit" class="btn btn-primary">Enviar Información</button>
+                    </div>
                 </form>
-                
+
             </div>
         </div>
     </section>

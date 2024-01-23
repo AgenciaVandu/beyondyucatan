@@ -25,6 +25,13 @@
                 <div class="categoria text-center">
                     <a href="" class="btn btn-secondary">Viaje de grupo</a>
                 </div>
+                <div class="categoria text-center">
+                    <a href="" class="btn btn-secondary">Viaje de grupo</a>
+                </div>
+                <div class="categoria text-center">
+                    <a href="" class="btn btn-secondary">Viaje de grupo</a>
+                </div>
+                
             </div>
         </x-slot>
     </x-header>

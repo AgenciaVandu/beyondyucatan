@@ -36,8 +36,8 @@ h1, h2, h3, h4, h5 {
    }
 }
 
-
 .categorias {
+   padding: 0 20em;
    display: grid;
    justify-items: center;
    align-items: center;
@@ -45,6 +45,22 @@ h1, h2, h3, h4, h5 {
    align-content: center;
    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
    gap: 10px;
+} @media (max-width:1399px) {
+   .categorias {
+      padding: 0 15em;
+   }
+}@media (max-width:1280px) {
+   .categorias {
+      padding: 0 15em;
+   }
+} @media (max-width:1199px) {
+   .categorias {
+      padding: 0 8em;
+   }
+} @media (max-width:991px) {
+   .categorias {
+      padding: 0 0;
+   }
 }
 
     
