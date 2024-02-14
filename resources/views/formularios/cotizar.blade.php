@@ -192,7 +192,7 @@
                         </div>
                     </div>
                     <div class="form-group mt-3">
-                        <input type="text" class="form-control" id="budget" placeholder="Presupuesto">
+                        <input type="text" class="form-control" id="budget" placeholder="Presupuesto total">
                     </div>
                     <div class="form-group mt-3">
                         <textarea type="text" class="form-control" id="in" placeholder="Comentarios adicionales o requerimientos especiales" rows="3"></textarea>
