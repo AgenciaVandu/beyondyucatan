@@ -14,4 +14,9 @@ class ExperienciaController extends Controller
 
         return view ('viajes.experiencias', ['experiencias' => $experiencias]);
     }
+
+    public function show (Experience $experiencia) {
+
+        return view('viajes.experiencia', ['experiencia' => $experiencia]);
+    }
 }

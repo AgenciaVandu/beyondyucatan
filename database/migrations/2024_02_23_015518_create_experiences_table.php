@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('experiences', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
-            $table->longText('description');
+            $table->longText('lightdescription');
+            $table->longText('longdescription');
             $table->string('icons');
             $table->string('categories');
             $table->string('image');
+            $table->string('price');
             $table->timestamps();
         });
     }

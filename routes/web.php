@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 Route::get('/experiencias', [ExperienciaController::class, 'index'])->name('experiencias'); // Experiencias grupo
-Route::view('/post', 'viajes.experiencia')->name('post'); // Experiencia individual
+Route::get('/experiencias/{experiencia}', [ExperienciaController::class, 'show'])->name('experiencia'); // Experiencia individual
 
 Route::view('/bucketlist', 'viajes.bucketlist')->name('bucketlist'); // Experiencias especiales
 Route::view('/los-pasos-del-jaguar', 'viajes.detallebucket')->name('bucketlist-detalle'); // detalle de bucketlist

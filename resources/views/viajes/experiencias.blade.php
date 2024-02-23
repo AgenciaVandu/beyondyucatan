@@ -16,7 +16,13 @@
                     {{ $experiencia -> titulo }}
                     </x-slot>
                     <x-slot name="descripcionExperiencia">
-                    {{ $experiencia -> description}}
+                    {{ $experiencia -> lightdescription}}
+                    </x-slot>
+                    <x-slot name="precio">
+                    {{$experiencia -> price}}
+                    </x-slot>
+                    <x-slot name="btnExperiencia">
+                    <a href="/experiencias/{{$experiencia->id}}" class="btn btn-info">Ver experiencia</a>
                     </x-slot>
 
                 </x-cards>

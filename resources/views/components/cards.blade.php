@@ -21,12 +21,12 @@
         <div class="costo">
             <p>
                 <span>Desde:</span>
-                $ <span>2,000</span> mxn
+                $ <span>{{$precio ?? 'N/A'}}</span> mxn
             </p>
             <hr>
         </div>
     </div>
     <div class="boton text-center">
-        <a href="{{ route ('post')}}" class="btn btn-info">Ver experiencia</a>
+       {{$btnExperiencia}}
     </div>
 </div>
