@@ -5,9 +5,6 @@ $form-range-thumb-bg: $naranja;
 $form-range-thumb-active-bg: tint-color($naranja, 70%);
 @import 'bootstrap/scss/bootstrap';
 
-
-
-
 .header_index {
     .fondo {
      min-height: 600px;
@@ -50,3 +47,4 @@ $form-range-thumb-active-bg: tint-color($naranja, 70%);
 .btn-info {
   @include boton($naranja, $naranja, 10px, #fff, 180px )
 }
+

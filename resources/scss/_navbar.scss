@@ -4,9 +4,7 @@
     min-height: 80px;
    .navbar-toggler {
     .navbar-toggler-icon {
-        background-color: #fff;
-        padding: 1em 1em;
-        border-radius: 4px;
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(103deg) brightness(105%) contrast(105%);
     }
    }
     .navbar-nav {
@@ -37,6 +35,10 @@
 }
 .bg-beyond {
     background-color: transparent;
+} @media (max-width: 991px) {
+    .bg-beyond {
+        background-color:#000;
+    }
 }
 
 .dark {

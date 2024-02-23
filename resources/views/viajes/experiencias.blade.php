@@ -9,26 +9,20 @@
     </x-header>
     <section class="experiencias">
         <div class="opciones">
-            <div class="opcion">
+           @foreach ($experiencias as $experiencia)
+           <div class="opcion">
                 <x-cards>
+                    <x-slot name="tituloExperiencia">
+                    {{ $experiencia -> titulo }}
+                    </x-slot>
+                    <x-slot name="descripcionExperiencia">
+                    {{ $experiencia -> description}}
+                    </x-slot>
 
                 </x-cards>
             </div>
-            <div class="opcion">
-                <x-cards>
-
-                </x-cards>
-            </div>
-            <div class="opcion">
-                <x-cards>
-
-                </x-cards>
-            </div>
-            <div class="opcion">
-                <x-cards>
-
-                </x-cards>
-            </div>
+           @endforeach
+            
         </div>
     </section>
     <section class="llamada">
