@@ -19,4 +19,5 @@ class ExperienciaController extends Controller
 
         return view('viajes.experiencia', ['experiencia' => $experiencia]);
     }
+    
 }

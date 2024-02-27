@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('icons');
             $table->string('categories');
             $table->string('image');
+            $table->string('imagedestacada');
             $table->string('price');
             $table->timestamps();
         });

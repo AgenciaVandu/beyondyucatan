@@ -1,5 +1,7 @@
 <?php
+
 use App\Http\Controllers\ExperienciaController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,19 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+
+Route::get('/', [PageController::class, 'index'])->name('home');
 Route::get('/experiencias', [ExperienciaController::class, 'index'])->name('experiencias'); // Experiencias grupo
 Route::get('/experiencias/{experiencia}', [ExperienciaController::class, 'show'])->name('experiencia'); // Experiencia individual
 
 Route::view('/bucketlist', 'viajes.bucketlist')->name('bucketlist'); // Experiencias especiales
 Route::view('/los-pasos-del-jaguar', 'viajes.detallebucket')->name('bucketlist-detalle'); // detalle de bucketlist
 
-Route::view('/cotizar-experiencia-en-grupo', 'formularios.cotizar-grupo')->name('cotizador-grupo'); 
-Route::view('/solicitar-aventura', 'formularios.solicitaraventura')->name('solicitud'); // Solicitar aventura
+Route::get('/cotizar-experiencia-en-grupo', [PageController::class, 'cotizadorgroup'] )->name('cotizador-grupo'); 
+Route::get('/solicitar-aventura', [PageController::class, 'solicitud'])->name('solicitud'); // Solicitar aventura
 
-Route::view('/artesanos', 'viajes.artesanos')->name('artesanos'); // index de artesanos
-Route::view('/contactar-a-un-asesor', 'contacto')->name('contacto'); // Vista Contacto
+Route::get('/artesanos', [PageController::class, 'artesanos'])->name('artesanos'); // index de artesanos
+Route::get('/contactar-a-un-asesor', [PageController::class, 'contact'])->name('contacto'); // Vista Contacto
 
-Route::view('/cotizar-experiencia-personalizada', 'formularios.cotizar')->name('cotizador'); // Vista cotizador
+Route::get('/cotizar-experiencia-personalizada', [PageController::class, 'cotizador'])->name('cotizador'); // Vista cotizador

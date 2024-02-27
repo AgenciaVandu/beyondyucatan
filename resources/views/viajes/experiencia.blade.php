@@ -4,24 +4,33 @@
 <x-layouts.guest :title="$experiencia -> titulo">
     <x-header>
         <x-slot name="tituloheader">
-        {{ $experiencia -> titulo }}
+            {{ $experiencia -> titulo }}
         </x-slot>
     </x-header>
     <section class="titular">
         <div class="container">
-            <p>{{ $experiencia -> longdescription}}</p>
+            <p>{{ $experiencia -> longdescription }}</p>
         </div>
     </section>
     <section>
-        <x-destacadas.experiencia>
-            <x-slot name="botoncta">
-                Quiero esta experiencia
-            </x-slot>
-        </x-destacadas.experiencia>
+    <x-destacadas.experiencia>
+        <x-slot name="titulocuerpo">
+            {{ $experiencia -> titulo }}
+        </x-slot>
+        <x-slot name="descripcionLarga">
+            {{ $experiencia -> longdescription}}
+        </x-slot>
+        <x-slot name="precio">
+            {{$experiencia -> price}}
+        </x-slot>
+        <x-slot name="botoncta">
+            Quiero esta experiencia
+        </x-slot>
+    </x-destacadas.experiencia>
     </section>
-    <x-destacadas.ventacruzada/>
+    <x-destacadas.ventacruzada />
     <section class="llamada">
         <x-cta />
     </section>
-   
+
 </x-layouts.guest>
