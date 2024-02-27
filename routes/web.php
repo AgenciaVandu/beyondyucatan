@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\BucketlistController;
 use App\Http\Controllers\ExperienciaController;
 use App\Http\Controllers\PageController;
+use App\Models\Bucketlist;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,8 +22,8 @@ Route::get('/', [PageController::class, 'index'])->name('home');
 Route::get('/experiencias', [ExperienciaController::class, 'index'])->name('experiencias'); // Experiencias grupo
 Route::get('/experiencias/{experiencia}', [ExperienciaController::class, 'show'])->name('experiencia'); // Experiencia individual
 
-Route::view('/bucketlist', 'viajes.bucketlist')->name('bucketlist'); // Experiencias especiales
-Route::view('/los-pasos-del-jaguar', 'viajes.detallebucket')->name('bucketlist-detalle'); // detalle de bucketlist
+Route::get('/bucketlist', [BucketlistController::class, 'index'])->name('bucketlist'); // Experiencias especiales
+Route::get('/bucketlist/{bucket}', [BucketlistController::class, 'show'])->name('bucketlist-detalle'); // detalle de bucketlist
 
 Route::get('/cotizar-experiencia-en-grupo', [PageController::class, 'cotizadorgroup'] )->name('cotizador-grupo'); 
 Route::get('/solicitar-aventura', [PageController::class, 'solicitud'])->name('solicitud'); // Solicitar aventura

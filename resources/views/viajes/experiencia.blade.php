@@ -9,7 +9,7 @@
     </x-header>
     <section class="titular">
         <div class="container">
-            <p>{{ $experiencia -> longdescription }}</p>
+            <p>{{ $experiencia -> lightdescription }}</p>
         </div>
     </section>
     <section>

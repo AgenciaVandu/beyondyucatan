@@ -16,6 +16,7 @@ class PageController extends Controller
    }
 
    public function artesanos(){
+
     return view('viajes.artesanos');
    }
 
@@ -34,10 +35,12 @@ class PageController extends Controller
    }
 
    public function solicitud() {
+    
     return view ('formularios.solicitaraventura');
    }
 
    public function cotizadorgroup() {
+
     return view('formularios.cotizar-grupo');
    }
 }
