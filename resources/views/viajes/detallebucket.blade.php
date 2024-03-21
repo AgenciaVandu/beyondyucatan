@@ -35,7 +35,7 @@
                     </p>
                     <hr>
                 </div>
-            </div>
+            </div>  
             <div class="boton">
                 <a href="{{route('cotizador')}}" class="btn btn-primary">Quiero vivir esta experiencia</a>
             </div>

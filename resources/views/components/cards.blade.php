@@ -1,5 +1,7 @@
 <div class="card">
-    <img src="{{asset('/img/yaxuna.png')}}" alt="Imagen de tour">
+    <a href="">
+        {{$imagenExperiencia ?? 'no disponible'}}
+    </a>
     <div class="contenido1">
         <h3>{{$tituloExperiencia ?? 'Título no disponible'}}</h3>
         <p>{{$descripcionExperiencia ?? 'Descripción no disponible'}}</p>

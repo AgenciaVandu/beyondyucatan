@@ -9,26 +9,29 @@
     </x-header>
     <section class="experiencias">
         <div class="opciones">
-           @foreach ($experiencias as $experiencia)
-           <div class="opcion">
+            @foreach ($experiencias as $experiencia)
+            <div class="opcion">
                 <x-cards>
+                    <x-slot name="imagenExperiencia">
+                        <img src="{{asset('/img/yaxuna.png')}}" class="img-fluid" alt="Imagen de tour">
+                    </x-slot>
                     <x-slot name="tituloExperiencia">
-                    {{ $experiencia -> titulo }}
+                        {{ $experiencia -> titulo }}
                     </x-slot>
                     <x-slot name="descripcionExperiencia">
-                    {{ $experiencia -> lightdescription}}
+                        {{ $experiencia -> lightdescription}}
                     </x-slot>
                     <x-slot name="precio">
-                    {{$experiencia -> price}}
+                        {{$experiencia -> price}}
                     </x-slot>
                     <x-slot name="btnExperiencia">
-                    <a href="/experiencias/{{$experiencia->id}}" class="btn btn-info">Ver experiencia</a>
+                        <a href="/experiencias/{{$experiencia->id}}" class="btn btn-info">Ver experiencia</a>
                     </x-slot>
 
                 </x-cards>
             </div>
-           @endforeach
-            
+            @endforeach
+
         </div>
     </section>
     <section class="llamada">
