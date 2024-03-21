@@ -1,9 +1,7 @@
 import './bootstrap';
 
-import * as bootstrap from 'bootstrap';
+import Alpine from 'alpinejs';
 
-window.addEventListener("scroll", function(){
-    var nav = document.querySelector("nav");
-    nav.classList.toggle("dark", window.scrollY > 0, {passive: true} );
-    
-})
+window.Alpine = Alpine;
+
+Alpine.start();
