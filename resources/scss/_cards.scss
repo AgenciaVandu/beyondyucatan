@@ -16,6 +16,14 @@ box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.116);
 max-width: 400px;
 .contenido1 {
     padding: 1em 0;
+    p {
+      max-width: 300px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp:4;
+     
+    }
 }
 .cta {
     min-height: 70px;

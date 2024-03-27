@@ -10,7 +10,6 @@
             Diseña tu experiencia en tu paso por Yucatán
         </x-slot>
         <div class="categorias">
-
             <x-slot name="categorias">
                 <div class="categorias">
                     <div class="categoria text-center">
@@ -34,7 +33,12 @@
 
                 </div>
             </x-slot>
+        </div>
     </x-header>
+
+    
+    <x-buscador/>
+
 
     <section class="titular_index">
         <div class="titular_2 text-center">
