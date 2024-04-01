@@ -1,8 +1,10 @@
 <div class="card">
-    <img src="{{asset('/img/yaxuna.png')}}" alt="Imagen de tour">
+    <a href="">
+        {{$imagenExperiencia ?? 'no disponible'}}
+    </a>
     <div class="contenido1">
-        <h3>Tour lorem ipsum</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero placeat nostrum maxime dolorum fugiat amet aliquam dolore similique obcaecati voluptates!</p>
+        <h3>{{$tituloExperiencia ?? 'Título no disponible'}}</h3>
+        <p>{{$descripcionExperiencia ?? 'Descripción no disponible'}}</p>
     </div>
     <div class="cta">
         <div class="iconos">
@@ -21,12 +23,12 @@
         <div class="costo">
             <p>
                 <span>Desde:</span>
-                $ <span>2,000</span> mxn
+                $ <span>{{$precio ?? 'N/A'}}</span> mxn
             </p>
             <hr>
         </div>
     </div>
     <div class="boton text-center">
-        <a href="{{ route ('post')}}" class="btn btn-info">Ver experiencia</a>
+       {{$btnExperiencia}}
     </div>
 </div>

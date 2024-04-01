@@ -1,7 +1,7 @@
 @push('scss')
 @vite(['resources/scss/app.scss', 'resources/scss/contacto.scss', 'resources/js/app.js' ])
 @endpush
-<x-layouts.guest>
+<x-layouts.guest title="¡Descubre hasta donde puedes llegar!">
     <x-header>
         <x-slot name="tituloheader">
         ¡Descubre hasta donde puedes llegar!

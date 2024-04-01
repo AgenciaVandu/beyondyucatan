@@ -9,32 +9,36 @@
         <x-slot name="descripcion">
             Diseña tu experiencia en tu paso por Yucatán
         </x-slot>
-        div class="categorias">
+        <div class="categorias">
+            <x-slot name="categorias">
+                <div class="categorias">
+                    <div class="categoria text-center">
+                        <a href="" class="btn btn-secondary">Viaje de grupo</a>
+                    </div>
+                    <div class="categoria text-center">
+                        <a href="" class="btn btn-secondary">Viaje de grupo</a>
+                    </div>
+                    <div class="categoria text-center">
+                        <a href="" class="btn btn-secondary">Viaje de grupo</a>
+                    </div>
+                    <div class="categoria text-center">
+                        <a href="" class="btn btn-secondary">Viaje de grupo</a>
+                    </div>
+                    <div class="categoria text-center">
+                        <a href="" class="btn btn-secondary">Viaje de grupo</a>
+                    </div>
+                    <div class="categoria text-center">
+                        <a href="" class="btn btn-secondary">Viaje de grupo</a>
+                    </div>
 
-        <x-slot name="categorias">
-            <div class="categorias">
-                <div class="categoria text-center">
-                    <a href="" class="btn btn-secondary">Viaje de grupo</a>
                 </div>
-                <div class="categoria text-center">
-                    <a href="" class="btn btn-secondary">Viaje de grupo</a>
-                </div>
-                <div class="categoria text-center">
-                    <a href="" class="btn btn-secondary">Viaje de grupo</a>
-                </div>
-                <div class="categoria text-center">
-                    <a href="" class="btn btn-secondary">Viaje de grupo</a>
-                </div>
-                <div class="categoria text-center">
-                    <a href="" class="btn btn-secondary">Viaje de grupo</a>
-                </div>
-                <div class="categoria text-center">
-                    <a href="" class="btn btn-secondary">Viaje de grupo</a>
-                </div>
-
-            </div>
-        </x-slot>
+            </x-slot>
+        </div>
     </x-header>
+
+    
+    <x-buscador/>
+
 
     <section class="titular_index">
         <div class="titular_2 text-center">
@@ -61,11 +65,22 @@
         </div>
     </section>
 
+    @foreach($experiencias as $experiencia)
     <x-destacadas.experiencia>
+        <x-slot name="titulocuerpo">
+            {{ $experiencia -> titulo }}
+        </x-slot>
+        <x-slot name="descripcionLarga">
+            {{ $experiencia -> longdescription}}
+        </x-slot>
+        <x-slot name="precio">
+            {{$experiencia -> price}}
+        </x-slot>
         <x-slot name="botoncta">
             Quiero esta experiencia
         </x-slot>
     </x-destacadas.experiencia>
+    @endforeach
 
     <div class="cta-experiencia">
         <div class="container">

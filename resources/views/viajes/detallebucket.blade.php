@@ -4,13 +4,12 @@
 <x-layouts.guest title="Comienza tu aventura en Yucatán">
     <x-header>
         <x-slot name="tituloheader">
-            Los Pasos Del Jaguar
+            {{$bucket -> title}}
         </x-slot>
     </x-header>
     <section class="intro">
         <div class="container">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut optio consequuntur pariatur. Repellat illum, beatae eos suscipit maiores porro qui amet odit architecto repudiandae, recusandae reiciendis! Doloribus exercitationem incidunt sit, maiores quod sequi mollitia obcaecati quam optio dignissimos perspiciatis possimus. Corrupti, officiis. Temporibus commodi reprehenderit fugiat, dolor eos iure quos? <br><br>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio ad ex, maiores architecto error dolorum aspernatur ipsum atque expedita sapiente aliquid vero illo et reprehenderit perspiciatis aliquam eaque nostrum.</p>
+            <p>{{$bucket -> description}}</p>
             <div class="cta">
                 <div class="iconos">
                     <ul>
@@ -18,13 +17,13 @@
                             <span class="me-2">
                                 <img src="{{asset('img/icon.png')}}" alt="icono experiencia">
                             </span>
-                            <p class="m-auto">5 Días</p>
+                            <p class="m-auto">{{  $bucket -> days }} Días</p>
                         </li>
                         <li>
                             <span class="me-2">
                                 <img src="{{asset('img/icon.png')}}" alt="icono experiencia">
                             </span>
-                            <p class="m-auto">5 Días</p>
+                            <p class="m-auto">{{ $bucket -> typetour}}</p>
                         </li>
 
                     </ul>
@@ -32,11 +31,11 @@
                 <div class="costo">
                     <p>
                         <span>Desde:</span>
-                        $ <span>2,000</span> MXN P/P
+                        $ <span>{{ $bucket -> price}}</span> MXN P/P
                     </p>
                     <hr>
                 </div>
-            </div>
+            </div>  
             <div class="boton">
                 <a href="{{route('cotizador')}}" class="btn btn-primary">Quiero vivir esta experiencia</a>
             </div>
