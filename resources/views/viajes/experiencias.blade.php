@@ -13,7 +13,7 @@
             <div class="opcion">
                 <x-cards>
                     <x-slot name="imagenExperiencia">
-                        <img src="{{asset('/img/yaxuna.png')}}" class="img-fluid" alt="Imagen de tour">
+                        <img src="{{asset($experiencia->image)}}" class="img-fluid" alt="Imagen de tour">
                     </x-slot>
                     <x-slot name="tituloExperiencia">
                         {{ $experiencia -> titulo }}

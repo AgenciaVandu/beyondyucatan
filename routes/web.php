@@ -32,15 +32,24 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-
+// Controladores de pagina frontal
 Route::get('/experiencias', [ExperienciaController::class, 'index'])->name('experiencias'); // Experiencias grupo
 Route::get('/experiencias/{experiencia}', [ExperienciaController::class, 'show'])->name('experiencia'); // Experiencia individual
 
 Route::get('/bucketlist', [BucketlistController::class, 'index'])->name('bucketlist'); // Experiencias especiales
 Route::get('/bucketlist/{bucket}', [BucketlistController::class, 'show'])->name('bucketlist-detalle'); // detalle de bucketlist
 
-Route::get('/cotizar-experiencia-en-grupo', [PageController::class, 'cotizadorgroup'] )->name('cotizador-grupo'); 
+Route::get('/cotizar-experiencia-en-grupo', [PageController::class, 'cotizadorgroup'] )->name('cotizador-grupo');
 Route::get('/solicitar-aventura', [PageController::class, 'solicitud'])->name('cotizador'); // Solicitar aventura
 
 Route::get('/artesanos', [PageController::class, 'artesanos'])->name('artesanos'); // index de artesanos
 Route::get('/contactar-a-un-asesor', [PageController::class, 'contact'])->name('contacto'); // Vista Contacto
+
+//Controladores para administrar el contenido
+Route::get('/admin/experiencies',[ExperienciaController::class, 'listExperiences'])->name('admin.experiences.index');
+Route::get('/admin/experiencies/create',[ExperienciaController::class, 'create'])->name('admin.experiences.create'); //
+Route::post('/admin/experiencies',[ExperienciaController::class,'store'])->name('admin.experiences.store'); //
+Route::get('/admin/experiencies/{experiencia}/edit',[ExperienciaController::class, 'edit'])->name('admin.experiences.edit'); //
+Route::patch('/admin/experiencies/{experiencia}',[ExperienciaController::class, 'update'])->name('admin.experiences.update'); //
+Route::delete('/admin/experiencies/{experiencia}',[ExperienciaController::class, 'destroy'])->name('admin.experiences.destroy'); //
+
