@@ -12,11 +12,11 @@
                     <div class="px-4 sm:px-6 lg:px-8">
                         <div class="sm:flex sm:items-center">
                             <div class="sm:flex-auto">
-                                <h1 class="text-base font-semibold leading-6 text-gray-900">Experiencias</h1>
-                                <p class="mt-2 text-sm text-gray-700">Lista de experiencias agregadas a la pagina.</p>
+                                <h1 class="text-base font-semibold leading-6 text-gray-900">Buecketlist</h1>
+                                <p class="mt-2 text-sm text-gray-700">Lista de Buecketlist agregadas a la pagina.</p>
                             </div>
                             <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-                                <a type="button" href="{{ route('admin.experiences.create') }}"
+                                <a type="button" href="{{ route('admin.bucketlists.create') }}"
                                     class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Agrega
                                     nuevo</a>
                             </div>
@@ -33,42 +33,46 @@
                                                 <th scope="col"
                                                     class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
                                                     Descripcion</th>
+                                                <th scope="col"
+                                                    class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                                    Dias</th>
                                                 <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0">
                                                     <span class="sr-only">Edit</span>
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-200">
-                                            @foreach ($experiences as $experience)
+                                            @foreach ($buckets as $bucket)
                                                 <tr>
                                                     <td
                                                         class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                                                        {{ $experience->titulo }}</td>
+                                                        {{ $bucket->title }}</td>
                                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                                        {{ $experience->lightdescription }}</td>
+                                                        {{ $bucket->description }}</td>
+                                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                        {{ $bucket->days }}</td>
                                                     <td
                                                         class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                                                        <a href="{{ route('admin.experiences.edit', $experience) }}"
+                                                        <a href="{{ route('admin.bucketlists.edit', $bucket) }}"
                                                             class="text-indigo-600 hover:text-indigo-900">Edit<span
                                                                 class="sr-only"></span></a>
 
-                                                        {{-- Form para eliminar experience --}}
-                                                        <form action="{{ route('admin.experiences.destroy', $experience) }}" method="POST">
+                                                        {{-- Form para eliminar bucket --}}
+                                                        <form action="{{ route('admin.bucketlists.destroy', $bucket) }}"
+                                                            method="POST">
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button type="submit" class="text-red-600 hover:text-red-900 ml-4">Delete<span class="sr-only"></span></button>
+                                                            <button type="submit"
+                                                                class="text-red-600 hover:text-red-900 ml-4">Delete<span
+                                                                    class="sr-only"></span></button>
                                                         </form>
-
-                                                        {{-- <a href="{{ route('admin.experiences.destroy', $experience) }}"
-                                                            class="text-red-600 hover:text-red-900 ml-4">Delete<span
-                                                                class="sr-only"></span></a> --}}
                                                     </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
                                     <div>
-                                        {{ $experiences->links() }}
+                                        {{ $buckets->links() }}
                                     </div>
                                 </div>
                             </div>

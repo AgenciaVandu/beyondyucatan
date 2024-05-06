@@ -49,7 +49,18 @@ Route::get('/contactar-a-un-asesor', [PageController::class, 'contact'])->name('
 Route::get('/admin/experiencies',[ExperienciaController::class, 'listExperiences'])->name('admin.experiences.index');
 Route::get('/admin/experiencies/create',[ExperienciaController::class, 'create'])->name('admin.experiences.create'); //
 Route::post('/admin/experiencies',[ExperienciaController::class,'store'])->name('admin.experiences.store'); //
-Route::get('/admin/experiencies/{experiencia}/edit',[ExperienciaController::class, 'edit'])->name('admin.experiences.edit'); //
-Route::patch('/admin/experiencies/{experiencia}',[ExperienciaController::class, 'update'])->name('admin.experiences.update'); //
-Route::delete('/admin/experiencies/{experiencia}',[ExperienciaController::class, 'destroy'])->name('admin.experiences.destroy'); //
+Route::get('/admin/experiencies/{experience}/edit',[ExperienciaController::class, 'edit'])->name('admin.experiences.edit'); //
+Route::put('/admin/experiencies/{experience}/update',[ExperienciaController::class, 'update'])->name('admin.experiences.update'); //
+Route::delete('/admin/experiencies/{experience}',[ExperienciaController::class, 'destroy'])->name('admin.experiences.destroy'); //
+
+//Creame Rutas para CRUD de buketlists
+Route::get('/admin/bucketlists',[BucketlistController::class, 'listBucketlists'])->name('admin.bucketlists.index');
+Route::get('/admin/bucketlists/create',[BucketlistController::class, 'create'])->name('admin.bucketlists.create'); //
+Route::post('/admin/bucketlists',[BucketlistController::class,'store'])->name('admin.bucketlists.store'); //
+Route::get('/admin/bucketlists/{bucket}/edit',[BucketlistController::class, 'edit'])->name('admin.bucketlists.edit'); //
+Route::put('/admin/bucketlists/{bucket}/update',[BucketlistController::class, 'update'])->name('admin.bucketlists.update'); //
+Route::delete('/admin/bucketlists/{bucket}',[BucketlistController::class, 'destroy'])->name('admin.bucketlists.destroy'); //
+
+
+
 

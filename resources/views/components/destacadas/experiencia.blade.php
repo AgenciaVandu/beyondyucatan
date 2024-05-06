@@ -2,7 +2,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12 p-0 img_contenido">
-                    <img src="{{asset($image)}}" class="img-fluid" alt="">
+                    <img src="{{asset($image ?? '')}}" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 contenido m-auto">
                     <h2>{{$titulocuerpo ?? 'No disponible'}}</h2>

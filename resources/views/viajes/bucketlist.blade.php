@@ -12,7 +12,7 @@
          @foreach ($bucket as $bucket)
          <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12 p-0 m-0 imagen">
-                    <img src="{{asset('/img/balon.jpg')}}" alt="experiencia bucketlist">
+                    <img src="{{asset($bucket->image)}}" alt="experiencia bucketlist">
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
                     <div class="descripcion">
@@ -33,7 +33,7 @@
                                             <img src="{{asset('img/icon.png')}}" alt="icono experiencia">
                                         </span> <p class="m-auto">{{$bucket -> typetour}}</p>
                                     </li>
-                                    
+
                                 </ul>
                             </div>
                             <div class="costo">
@@ -52,9 +52,9 @@
                 </div>
             </div>
             <hr class="mt-5 mb-5 p-0">
-         
+
          @endforeach
-            
+
         </div>
     </section>
     <section class="llamada">

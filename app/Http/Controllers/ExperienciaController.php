@@ -64,21 +64,42 @@ class ExperienciaController extends Controller
         return redirect()->route('admin.experiences.index');
     }
 
-    public function edit(Experience $experiencia)
+    public function edit(Experience $experience)
     {
-        return view('admin.experiences.edit', compact('experiencia'));
+        return view('admin.experiences.edit', compact('experience'));
     }
 
-    public function update(Request $request, Experience $experiencia)
+    public function update(Request $request, Experience $experience)
     {
-        $experiencia->update($request->all());
+        if ($request->file('image')) {
+            $image1 = $request->file('image')->store('public/experiences');
+            $url = Storage::url($image1);
+            $experience->update([
+                'image' => $url
+            ]);
+        }
+        if ($request->file('imagedestacada')) {
+            $image2 = $request->file('imagedestacada')->store('public/experiences');
+            $url2 = Storage::url($image2);
+            $experience->update([
+                'imagedestacada' => $url2
+            ]);
+        }
+
+        $experience->update([
+            'titulo' => $request->titulo,
+            'lightdescription' => $request->lightdescription,
+            'longdescription' => $request->longdescription,
+            'icons' => $request->icons,
+            'categories' => $request->categories,
+            'price' => $request->price,
+        ]);
         return redirect()->route('admin.experiences.index');
     }
 
-    public function destroy(Experience $experiencia)
+    public function destroy(Experience $experience)
     {
-        $experiencia->delete();
+        $experience->delete();
         return redirect()->route('admin.experiences.index');
     }
-
 }
