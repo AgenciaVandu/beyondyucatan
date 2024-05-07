@@ -35,7 +35,7 @@
                     </p>
                     <hr>
                 </div>
-            </div>  
+            </div>
             <div class="boton">
                 <a href="{{route('cotizador')}}" class="btn btn-primary">Quiero vivir esta experiencia</a>
             </div>
@@ -124,7 +124,7 @@
 
         </div>
     </div>
-    <x-destacadas.ventacruzada />
+    <x-destacadas.ventacruzada :experiences="$experiences"/>
     <section class="llamada">
         <x-cta />
     </section>

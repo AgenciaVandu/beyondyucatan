@@ -5,32 +5,25 @@
         </div>
     </div>
     <div class="opciones">
-        <a href="#" class="opcion">
-            <div class="contenido">
-                <img src="{{asset('/img/destacada.png')}}" alt="experiencia interesante">
-                <div class="interior">
-                    <h3>Tour Lorem ipsum</h3>
-                    <div class="boton">
-                        <button class="btn-secondary">
-                            Ver
-                        </button>
+        @foreach ($experiences as $experience)
+            <a href="#" class="opcion">
+                <div class="contenido">
+                    @if ($experience->imagedestacada)
+                        <img src="{{ asset($experience->imagedestacada) }}" alt="experiencia interesante">
+                    @endif
+                    @if ($experience->image)
+                        <img src="{{ asset($experience->image) }}" alt="experiencia interesante">
+                    @endif
+                    <div class="interior">
+                        <h3>{{ $experience->titulo }}</h3>
+                        <div class="boton">
+                            <button class="btn-secondary">
+                                Ver
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </a>
-        <a href="#" class="opcion">
-            <div class="contenido">
-                <img src="{{asset('/img/destacada.png')}}" alt="experiencia interesante">
-                <div class="interior">
-                    <h3>Tour Lorem ipsum</h3>
-                    <div class="boton">
-                        <button class="btn-secondary">
-                            Ver
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </a>
-
+            </a>
+        @endforeach
     </div>
 </section>

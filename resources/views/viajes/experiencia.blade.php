@@ -31,7 +31,7 @@
             </x-slot>
         </x-destacadas.experiencia>
     </section>
-    <x-destacadas.ventacruzada />
+    <x-destacadas.ventacruzada :experiences="$experiences"/>
     <section class="llamada">
         <x-cta />
     </section>

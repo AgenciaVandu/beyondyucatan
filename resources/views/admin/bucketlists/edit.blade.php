@@ -7,10 +7,27 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="flex justify-end mb-4">
+                <x-nav-link class="bg-indigo-900 py-1 px-4 text-white hover:text-gray-200 cursor-pointer"
+                    href="{{ route('admin.bucketlists.addDay', $bucket) }}">Agregar Dia</x-nav-link>
+            </div>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
+                    @isset($days)
+                        @foreach ($days as $day)
+                            <div class="flex">
+                                <img src="{{ asset($day->image) }}" alt="" class="w-20 h-20">
+                                <div>
+                                    <h2 class="text-base font-semibold leading-6 text-gray-900">{{ $day->title }}</h2>
+                                    <p class="mt-2 text-sm text-gray-700">{{ $day->description }}</p>
+                                    <a href="{{ route('admin.bucketlists.editDay',$day)}}"> Edit</a>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endisset
                     <div>
-                        <form action="{{ route('admin.bucketlists.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('admin.bucketlists.store') }}" method="post"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('POST')
                             <div class="mb-2">
@@ -61,7 +78,7 @@
                                 <input type="file"
                                     class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
                                     name="image" accept="image/*">
-                                    <img src="{{ asset($bucket->image) }}" alt="">
+                                <img src="{{ asset($bucket->image) }}" alt="">
                                 @error('image')
                                     <span class="text-xs text-red-600">{{ $message }}</span>
                                 @enderror

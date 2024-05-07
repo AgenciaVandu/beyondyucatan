@@ -60,6 +60,11 @@ Route::post('/admin/bucketlists',[BucketlistController::class,'store'])->name('a
 Route::get('/admin/bucketlists/{bucket}/edit',[BucketlistController::class, 'edit'])->name('admin.bucketlists.edit'); //
 Route::put('/admin/bucketlists/{bucket}/update',[BucketlistController::class, 'update'])->name('admin.bucketlists.update'); //
 Route::delete('/admin/bucketlists/{bucket}',[BucketlistController::class, 'destroy'])->name('admin.bucketlists.destroy'); //
+Route::get('/admin/bucketlists/{bucket}/addDay/',[BucketlistController::class, 'createDay'])->name('admin.bucketlists.addDay'); //
+Route::post('/admin/bucketlists/{bucket}/storeDay/',[BucketlistController::class,'storeDay'])->name('admin.bucketlists.storeDay'); //
+Route::get('/admin/bucketlists/{day}/editDay/',[BucketlistController::class,'editDay'])->name('admin.bucketlists.editDay'); //
+Route::put('/admin/bucketlists/{day}/updateDay/',[BucketlistController::class, 'updateDay'])->name('admin.bucketlists.updateDay'); //
+Route::delete('/admin/bucketlists/{bucket}/deleteDay/',[BucketlistController::class, 'deleteDay'])->name('admin.bucketlists.deleteDay'); //
 
 
 

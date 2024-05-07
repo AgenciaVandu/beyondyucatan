@@ -11,15 +11,15 @@ class ExperienciaController extends Controller
 {
     public function index()
     {
-        $experiencias = Experience::get();
+        $experiencias = Experience::all();
 
         return view('viajes.experiencias', ['experiencias' => $experiencias]);
     }
 
     public function show(Experience $experiencia)
     {
-
-        return view('viajes.experiencia', ['experiencia' => $experiencia]);
+        $experiencias = Experience::get();
+        return view('viajes.experiencia', ['experiencia' => $experiencia, 'experiences' => $experiencias]);
     }
 
 

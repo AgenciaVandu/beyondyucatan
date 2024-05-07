@@ -53,7 +53,7 @@
                                                         {{ $bucket->days }}</td>
                                                     <td
                                                         class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                                                        <a href="{{ route('admin.bucketlists.edit', $bucket) }}"
+                                                        <a href="{{ route('admin.bucketlists.edit', $bucket->id) }}"
                                                             class="text-indigo-600 hover:text-indigo-900">Edit<span
                                                                 class="sr-only"></span></a>
 

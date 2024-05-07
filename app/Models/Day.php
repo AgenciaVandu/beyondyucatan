@@ -4,17 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Bucketlist extends Model
+class Day extends Model
 {
     use HasFactory;
-
     protected $guarded = ['id'];
 
-
-    public function days():HasMany
+    public function bucketlist() : BelongsTo
     {
-        return $this->hasMany(Day::class);
+        return $this->belongsTo(Bucketlist::class);
     }
 }
