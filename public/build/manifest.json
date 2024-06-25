@@ -1,0 +1,86 @@
+{
+  "public/font/Austin-Roman.otf": {
+    "file": "assets/Austin-Roman-xyCw3Tjd.otf",
+    "src": "public/font/Austin-Roman.otf"
+  },
+  "public/font/Austin-RomanItalic.otf": {
+    "file": "assets/Austin-RomanItalic-OlPcXqlC.otf",
+    "src": "public/font/Austin-RomanItalic.otf"
+  },
+  "public/font/SuisseIntl-Bold.otf": {
+    "file": "assets/SuisseIntl-Bold-gobcCz8X.otf",
+    "src": "public/font/SuisseIntl-Bold.otf"
+  },
+  "public/font/SuisseIntl-Regular.otf": {
+    "file": "assets/SuisseIntl-Regular-3cW9YiZu.otf",
+    "src": "public/font/SuisseIntl-Regular.otf"
+  },
+  "public/img/webp/2.webp": {
+    "file": "assets/2-DAj9bvLP.webp",
+    "src": "public/img/webp/2.webp"
+  },
+  "public/img/webp/textura.webp": {
+    "file": "assets/textura-8JD6JlA-.webp",
+    "src": "public/img/webp/textura.webp"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-lAvwHEBZ.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-dvnG54ih.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/scss/app.scss": {
+    "file": "assets/app-GJQJaqSG.css",
+    "isEntry": true,
+    "src": "resources/scss/app.scss"
+  },
+  "resources/scss/artesanos.scss": {
+    "file": "assets/artesanos-3Y1nrW_6.css",
+    "isEntry": true,
+    "src": "resources/scss/artesanos.scss"
+  },
+  "resources/scss/bucketlist.scss": {
+    "file": "assets/bucketlist-0nsgASvc.css",
+    "isEntry": true,
+    "src": "resources/scss/bucketlist.scss"
+  },
+  "resources/scss/contacto.scss": {
+    "file": "assets/contacto-l81ch2hy.css",
+    "isEntry": true,
+    "src": "resources/scss/contacto.scss"
+  },
+  "resources/scss/cotizador.scss": {
+    "file": "assets/cotizador-N9ptAleP.css",
+    "isEntry": true,
+    "src": "resources/scss/cotizador.scss"
+  },
+  "resources/scss/detallebucket.scss": {
+    "file": "assets/detallebucket-Jd9QKEVU.css",
+    "isEntry": true,
+    "src": "resources/scss/detallebucket.scss"
+  },
+  "resources/scss/experiencia.scss": {
+    "file": "assets/experiencia-UT0kPmP3.css",
+    "isEntry": true,
+    "src": "resources/scss/experiencia.scss"
+  },
+  "resources/scss/experiencias.scss": {
+    "file": "assets/experiencias-GbhhKGlu.css",
+    "isEntry": true,
+    "src": "resources/scss/experiencias.scss"
+  },
+  "resources/scss/index.scss": {
+    "file": "assets/index---KbJ_1s.css",
+    "isEntry": true,
+    "src": "resources/scss/index.scss"
+  },
+  "resources/scss/solicitud.scss": {
+    "file": "assets/solicitud-HuFqL5aA.css",
+    "isEntry": true,
+    "src": "resources/scss/solicitud.scss"
+  }
+}
