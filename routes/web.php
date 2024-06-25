@@ -57,7 +57,7 @@ Route::delete('/admin/experiencies/{experience}',[ExperienciaController::class, 
 Route::get('/admin/bucketlists',[BucketlistController::class, 'listBucketlists'])->name('admin.bucketlists.index');
 Route::get('/admin/bucketlists/create',[BucketlistController::class, 'create'])->name('admin.bucketlists.create'); //
 Route::post('/admin/bucketlists',[BucketlistController::class,'store'])->name('admin.bucketlists.store'); //
-Route::get('/admin/bucketlists/{bucket}/edit',[BucketlistController::class, 'edit'])->name('admin.bucketlists.edit'); //
+Route::any('/admin/bucketlists/{bucket}/edit',[BucketlistController::class, 'edit'])->name('admin.bucketlists.edit'); //
 Route::put('/admin/bucketlists/{bucket}/update',[BucketlistController::class, 'update'])->name('admin.bucketlists.update'); //
 Route::delete('/admin/bucketlists/{bucket}',[BucketlistController::class, 'destroy'])->name('admin.bucketlists.destroy'); //
 Route::get('/admin/bucketlists/{bucket}/addDay/',[BucketlistController::class, 'createDay'])->name('admin.bucketlists.addDay'); //

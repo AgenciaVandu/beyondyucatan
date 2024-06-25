@@ -14,22 +14,27 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     @isset($days)
+                    Dias
                         @foreach ($days as $day)
-                            <div class="flex">
+                            <div class="flex mb-2 p-1">
                                 <img src="{{ asset($day->image) }}" alt="" class="w-20 h-20">
-                                <div>
-                                    <h2 class="text-base font-semibold leading-6 text-gray-900">{{ $day->title }}</h2>
+                                <div class="justify-around space-x-1 w-full">
+                                    <h2 class="text-base font-semibold leading-6 text-gray-900 ">{{ $day->title }}</h2>
                                     <p class="mt-2 text-sm text-gray-700">{{ $day->description }}</p>
-                                    <a href="{{ route('admin.bucketlists.editDay',$day)}}"> Edit</a>
+                                </div>
+                                <div class="flex justify-end">
+                                    <div>
+                                        <a href="{{ route('admin.bucketlists.editDay', $day) }}"> Edit</a>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
                     @endisset
                     <div>
-                        <form action="{{ route('admin.bucketlists.store') }}" method="post"
+                        <form action="{{ route('admin.bucketlists.update',$bucket) }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
-                            @method('POST')
+                            @method('PUT')
                             <div class="mb-2">
                                 <x-input-label class="w-full mb-1" for="title" :value="__('title')" />
                                 <x-text-input class="w-full" type="text" name="title" placeholder="title"
