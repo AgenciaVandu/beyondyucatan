@@ -60,7 +60,7 @@ class BucketlistController extends Controller
             'days' => $request->days,
             'typetour' => $request->typetour,
             'image' => $url,
-            'price' => $request->price,
+            'price' => $request->price
         ]);
 
         return view('admin.bucketlists.edit',compact('bucket'));

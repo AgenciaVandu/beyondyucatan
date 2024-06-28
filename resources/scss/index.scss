@@ -22,14 +22,14 @@ html {
 
 h1, h2, h3, h4, h5 {
    font-family: map-get($fuentes, "austin-roman" );
-} 
+}
 * {
    font-family: map-get($fuentes , "suis-regular" );
 }
 
 @keyframes movimiento {
    0% {
-        transform: translateY(0); 
+        transform: translateY(0);
    }
    50% {
       transform: translateY(5px);
@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5 {
 
    100% {
       transform: translateY(0px);
-   }  
+   }
 }
 .titular_index {
    .titular_2 {
@@ -49,7 +49,7 @@ h1, h2, h3, h4, h5 {
       h1 {
          padding-bottom: .6em;
       }
-     
+
    }
 
 }
@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5 {
    }
 }
 
-    
+
 
 
 .quienes-somos {
