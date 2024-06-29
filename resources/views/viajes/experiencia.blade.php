@@ -7,6 +7,9 @@
             {{ $experiencia->titulo }}
         </x-slot>
     </x-header>
+
+    <x-buscador />
+
     <section class="titular">
         <div class="container">
             <p>{{ $experiencia->lightdescription }}</p>

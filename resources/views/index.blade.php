@@ -1,16 +1,16 @@
 @push('scss')
-@vite(['resources/scss/app.scss', 'resources/scss/index.scss', 'resources/js/app.js' ])
+    @vite(['resources/scss/app.scss', 'resources/scss/index.scss', 'resources/js/app.js'])
 @endpush
 <x-layouts.guest title="Diseña tu experiencia en tu paso por Yucatán">
-    <x-header>
-        <x-slot name="tituloheader">
-            ¡Esto se trata de ti! <br>
-        </x-slot>
-        <x-slot name="descripcion">
-            Diseña tu experiencia en tu paso por Yucatán
-        </x-slot>
-        <div class="categorias">
-            <x-slot name="categorias">
+    <header class="headerindex"
+        style="background-image: url(/img/bosque.png); background-repeat: no-repeat; background-size: cover;
+    width: 100%; background-position:center; ">
+        <div class="fondo">
+            <div class="container">
+                <div class="titular">
+                    <h1>¡Esto se trata de ti! </h1>
+                    <p>Diseña tu experiencia en tu paso por Yucatán</p>
+                </div>
                 <div class="categorias">
                     <div class="categoria text-center">
                         <a href="" class="btn btn-secondary">Viaje de grupo</a>
@@ -30,21 +30,21 @@
                     <div class="categoria text-center">
                         <a href="" class="btn btn-secondary">Viaje de grupo</a>
                     </div>
-
                 </div>
-            </x-slot>
+            </div>
         </div>
-    </x-header>
 
-    
-    <x-buscador/>
+    </header>
+
+
+    <x-buscador />
 
 
     <section class="titular_index">
         <div class="titular_2 text-center">
             <h1>¡Tu aventura comienza hoy!</h1>
             <a href="#quienes-somos" class="arrow">
-                <img src="{{asset('/img/arrow.svg')}}" width="30" alt="Flecha">
+                <img src="{{ asset('/img/arrow.svg') }}" width="30" alt="Flecha">
             </a>
         </div>
     </section>
@@ -53,33 +53,39 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 contenido">
                     <h2>Quienes somos</h2>
-                    <p>Tu camino por Yucatán. Una experiencia local, honesta, emocionante y única. Somos más que guías locales, más que rutas y transporte, más que agencia de viaje. Mucho Más. <br><br> Somos creadores de experiencias, hacedores de sueños, especialistas obsesionados por generar momentos extraordinarios, momentos inolvidables, momentos únicos. <br><br> Somos secretos, memorias, historias, comida, caminos escondidos… somos una experiencia honesta y local para quien quiere algo real.</p>
+                    <p>Tu camino por Yucatán. Una experiencia local, honesta, emocionante y única. Somos más que guías
+                        locales, más que rutas y transporte, más que agencia de viaje. Mucho Más. <br><br> Somos
+                        creadores de experiencias, hacedores de sueños, especialistas obsesionados por generar momentos
+                        extraordinarios, momentos inolvidables, momentos únicos. <br><br> Somos secretos, memorias,
+                        historias, comida, caminos escondidos… somos una experiencia honesta y local para quien quiere
+                        algo real.</p>
                     <div class="boton">
-                        <a href="{{ route('experiencias') }}" class="btn btn-primary">Descubrir una experiencia para mi</a>
+                        <a href="{{ route('experiencias') }}" class="btn btn-primary">Descubrir una experiencia para
+                            mi</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 img_contenido">
-                    <img src="{{asset('/img/webp/1.webp')}}" class="img-fluid" alt="">
+                    <img src="{{ asset('/img/webp/1.webp') }}" class="img-fluid" alt="">
                 </div>
             </div>
         </div>
     </section>
 
-    @foreach($experiencias as $experiencia)
-    <x-destacadas.experiencia>
-        <x-slot name="titulocuerpo">
-            {{ $experiencia -> titulo }}
-        </x-slot>
-        <x-slot name="descripcionLarga">
-            {{ $experiencia -> longdescription}}
-        </x-slot>
-        <x-slot name="precio">
-            {{$experiencia -> price}}
-        </x-slot>
-        <x-slot name="botoncta">
-            Quiero esta experiencia
-        </x-slot>
-    </x-destacadas.experiencia>
+    @foreach ($experiencias as $experiencia)
+        <x-destacadas.experiencia>
+            <x-slot name="titulocuerpo">
+                {{ $experiencia->titulo }}
+            </x-slot>
+            <x-slot name="descripcionLarga">
+                {{ $experiencia->longdescription }}
+            </x-slot>
+            <x-slot name="precio">
+                {{ $experiencia->price }}
+            </x-slot>
+            <x-slot name="botoncta">
+                Quiero esta experiencia
+            </x-slot>
+        </x-destacadas.experiencia>
     @endforeach
 
     <div class="cta-experiencia">

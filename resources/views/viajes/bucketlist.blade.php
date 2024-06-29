@@ -2,11 +2,16 @@
 @vite(['resources/scss/app.scss', 'resources/scss/bucketlist.scss', 'resources/js/app.js' ])
 @endpush
 <x-layouts.guest title="Comienza tu aventura en Yucatán">
-    <x-header>
-        <x-slot name="tituloheader">
-            Esto lo creamos para ti
-        </x-slot>
-    </x-header>
+    <header style="background-image: url(/img/estrellas.png); background-repeat: no-repeat; background-size: cover;
+    width: 100%; background-position:center; ">
+       <div class="fondo container">
+           <div class="titular">
+               <h1>Esto lo creamos para ti</h1>
+           </div>
+       </div>
+   </header>
+   <x-buscador/>
+
     <section class="bucketlist">
         <div class="container-fluid">
          @foreach ($bucket as $bucket)

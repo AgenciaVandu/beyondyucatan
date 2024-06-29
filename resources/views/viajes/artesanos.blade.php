@@ -2,14 +2,21 @@
 @vite(['resources/scss/app.scss', 'resources/scss/artesanos.scss', 'resources/js/app.js' ])
 @endpush
 <x-layouts.guest title="Comienza tu aventura en Yucatán">
-    <x-header>
-        <x-slot name="tituloheader">
-            Conoce Nuestros Tesoros Yucatecos
-        </x-slot>
-    </x-header>
+    <header style="background-image: url(/img/artesanos-1.png); background-repeat: no-repeat; background-size: cover;
+    width: 100%; background-position:center; ">
+       <div class="fondo container">
+           <div class="titular">
+               <h1>Conoce Nuestros Tesoros Yucatecos</h1>
+           </div>
+       </div>
+   </header>
+
     <x-destacadas.artesano>
+        <x-slot name="fotoartesano">
+            <img src="{{asset('img/artesano.png')}}" class="img-fluid" alt="fotografía artesano yucateco">
+        </x-slot>
         <x-slot name="tituloartesano">
-            Esteban Abán Artesano de cocoyol
+            Esteban Abán <br> Artesano de cocoyol
         </x-slot>
         <x-slot name="descripcionartesano">
             Conoce la creatividad que desborda de las manos del gran maestro Esteban Abán, la cual se ve completada con los años de investigación que ha invertido para la realización de piezas, sobre todo joyería, con semillas de cocoyol, dzibul, y espinas de henequén. <br><br>
@@ -41,8 +48,12 @@
         </x-slot>
     </x-destacadas.artesano>
     <x-destacadas.artesano>
+        <x-slot name="fotoartesano">
+            <img src="{{asset('img/ek.png')}}" class="img-fluid" alt="fotografía artesano yucateco">
+        </x-slot>
+
         <x-slot name="tituloartesano">
-            Don Alfredo Artesano de lek
+            Don Alfredo <br> Artesano de lek
         </x-slot>
         <x-slot name="descripcionartesano">
             Conoce la creatividad que desborda de las manos del gran maestro Esteban Abán, la cual se ve completada con los años de investigación que ha invertido para la realización de piezas, sobre todo joyería, con semillas de cocoyol, dzibul, y espinas de henequén. <br><br>

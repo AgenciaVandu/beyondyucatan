@@ -7,6 +7,7 @@
             ¡Comienza tu aventura!
         </x-slot>
     </x-header>
+    <x-buscador />
     <section class="experiencias">
         <div class="opciones">
             @foreach ($experiencias as $experiencia)
