@@ -15,8 +15,14 @@
         {{$slot}}
     </main>
     <x-layouts.footer>
-        
+
     </x-layouts.footer>
 </body>
+<script>
+    window.addEventListener("scroll", function(){
+    var nav = document.querySelector("nav");
+    nav.classList.toggle("dark", window.scrollY > 0, {passive: true} );
 
+    })
+   </script>
 </html>

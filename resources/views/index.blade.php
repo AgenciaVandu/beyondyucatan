@@ -13,22 +13,22 @@
                 </div>
                 <div class="categorias">
                     <div class="categoria text-center">
-                        <a href="" class="btn btn-secondary">Viaje de grupo</a>
+                        <a href="" class="btn btn-light">Viaje de grupo</a>
                     </div>
                     <div class="categoria text-center">
-                        <a href="" class="btn btn-secondary">Viaje de grupo</a>
+                        <a href="" class="btn btn-light">Viaje de grupo</a>
                     </div>
                     <div class="categoria text-center">
-                        <a href="" class="btn btn-secondary">Viaje de grupo</a>
+                        <a href="" class="btn btn-light">Viaje de grupo</a>
                     </div>
                     <div class="categoria text-center">
-                        <a href="" class="btn btn-secondary">Viaje de grupo</a>
+                        <a href="" class="btn btn-light">Viaje de grupo</a>
                     </div>
                     <div class="categoria text-center">
-                        <a href="" class="btn btn-secondary">Viaje de grupo</a>
+                        <a href="" class="btn btn-light">Viaje de grupo</a>
                     </div>
                     <div class="categoria text-center">
-                        <a href="" class="btn btn-secondary">Viaje de grupo</a>
+                        <a href="" class="btn btn-light">Viaje de grupo</a>
                     </div>
                 </div>
             </div>

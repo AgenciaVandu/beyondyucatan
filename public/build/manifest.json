@@ -34,52 +34,52 @@
     "src": "resources/js/app.js"
   },
   "resources/scss/app.scss": {
-    "file": "assets/app-1dKk8UDX.css",
+    "file": "assets/app-k44Em_0s.css",
     "isEntry": true,
     "src": "resources/scss/app.scss"
   },
   "resources/scss/artesanos.scss": {
-    "file": "assets/artesanos-C4o-N5rZ.css",
+    "file": "assets/artesanos-HEtfJjUt.css",
     "isEntry": true,
     "src": "resources/scss/artesanos.scss"
   },
   "resources/scss/bucketlist.scss": {
-    "file": "assets/bucketlist-rsMrcZLy.css",
+    "file": "assets/bucketlist-cxe1OZZ0.css",
     "isEntry": true,
     "src": "resources/scss/bucketlist.scss"
   },
   "resources/scss/contacto.scss": {
-    "file": "assets/contacto-ORq-bHZj.css",
+    "file": "assets/contacto-mVCutFRp.css",
     "isEntry": true,
     "src": "resources/scss/contacto.scss"
   },
   "resources/scss/cotizador.scss": {
-    "file": "assets/cotizador-N9ptAleP.css",
+    "file": "assets/cotizador-efijxZtS.css",
     "isEntry": true,
     "src": "resources/scss/cotizador.scss"
   },
   "resources/scss/detallebucket.scss": {
-    "file": "assets/detallebucket-Jd9QKEVU.css",
+    "file": "assets/detallebucket-WPdQZCFB.css",
     "isEntry": true,
     "src": "resources/scss/detallebucket.scss"
   },
   "resources/scss/experiencia.scss": {
-    "file": "assets/experiencia-cZRtZ1O5.css",
+    "file": "assets/experiencia-zuwWxr9T.css",
     "isEntry": true,
     "src": "resources/scss/experiencia.scss"
   },
   "resources/scss/experiencias.scss": {
-    "file": "assets/experiencias-rDDCRjR2.css",
+    "file": "assets/experiencias-atXX-Jlr.css",
     "isEntry": true,
     "src": "resources/scss/experiencias.scss"
   },
   "resources/scss/index.scss": {
-    "file": "assets/index-8WtlbW3k.css",
+    "file": "assets/index-OF015x3U.css",
     "isEntry": true,
     "src": "resources/scss/index.scss"
   },
   "resources/scss/solicitud.scss": {
-    "file": "assets/solicitud-HuFqL5aA.css",
+    "file": "assets/solicitud-Ma-uWI2W.css",
     "isEntry": true,
     "src": "resources/scss/solicitud.scss"
   }

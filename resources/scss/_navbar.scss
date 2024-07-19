@@ -26,7 +26,7 @@
             margin-right: .5em;
         }
         &:hover {
-          background-color: colores.$naranja;   
+          background-color: colores.$naranja;
           border: 1px solid colores.$naranja;
           border-radius: 10px;
           transform: 500ms ease-in;
@@ -41,7 +41,11 @@
     }
 }
 
-.dark {
-    background-color: #000;
-    transition: 1s ease-in-out;
+
+nav.dark {
+    background-color: #000 !important;
+    padding-bottom: .4em;
+    transition: 200ms ease-in; }
+nav.dark .nav-link {
+    color: #fff !important;
 }
