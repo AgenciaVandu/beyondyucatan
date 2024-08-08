@@ -1,0 +1,31 @@
+.carousel__contenedor {
+    position: relative;
+}
+.carousel__anterior {
+    position: absolute;
+    right: 180px;
+    bottom: 30px;
+
+    background-color: transparent;
+    border: 1px solid #BC5837;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    color: #BC5837;
+}
+.carousel__siguiente {
+    position: absolute;
+    right: 140px;
+    bottom: 30px;
+
+    background-color: transparent;
+    border: 1px solid #BC5837;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    color: #BC5837;
+    z-index: 2;
+}
+.carousel__indicador {
+    display: none;
+}

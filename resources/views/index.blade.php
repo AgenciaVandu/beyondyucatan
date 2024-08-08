@@ -1,10 +1,12 @@
 @push('scss')
     @vite(['resources/scss/app.scss', 'resources/scss/index.scss', 'resources/js/app.js'])
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.css">
+    <link rel="stylesheet" href="{{asset('css/carousel.css')}}">
 @endpush
 <x-layouts.guest title="Diseña tu experiencia en tu paso por Yucatán">
     <header class="headerindex"
         style="background-image: url(/img/bosque.png); background-repeat: no-repeat; background-size: cover;
-    width: 100%; background-position:center; ">
+    width: 100%; background-position:center; min-height:100vh; ">
         <div class="fondo">
             <div class="container">
                 <div class="titular">
@@ -33,11 +35,12 @@
                 </div>
             </div>
         </div>
-
+        <x-buscador />
     </header>
 
 
-    <x-buscador />
+
+
 
 
     <section class="titular_index">
@@ -111,4 +114,9 @@
             </x-layouts.formulario>
         </div>
     </section>
+    @push('js')
+
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.js"></script>
+    <script src="{{asset('js/glider.js')}}"></script>
+    @endpush
 </x-layouts.guest>

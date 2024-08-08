@@ -25,4 +25,5 @@
 
     })
    </script>
+   @stack('js')
 </html>

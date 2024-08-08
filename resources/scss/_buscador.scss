@@ -1,38 +1,136 @@
 .buscador {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     position: absolute;
-
-    bottom: -30px;
-
-   .contenido__buscador {
-
-    width: 70%;
-    box-shadow: 1px 1px 1px 1px rgba(188, 188, 188, 0.191);
-    .buscar {
-        background-color: #d0d2d2;
-        height: 66px;
+    right: 16%;
+    .contenido__buscador {
+        box-shadow: 2px 1px 12px 2px rgb(0 0 0 / 10%);
 
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .buscar {
+        display: flex;
         flex-direction: row;
+        justify-content: center;
+            align-items: center;
+        .form-control {
+            min-height: 70px;
+            min-width: 400px;
+            border: none;
+            border-radius: 0;
+            display: flex;
 
-        .option {
-            width: 50%;
-            height: auto;
+        }
+        @media (max-width: 991px) {
             .form-control {
-                height: 66px;
-                border-radius: 0;
+                min-width: 400px;
+            }
+        } @media (max-width: 433px) {
+            .form-control {
+                min-width: 300px;
+                min-height: 50px;
             }
         }
+
+    } @media (max-width: 991px) {
+        .buscar {
+            flex-direction: column;
+        }
     }
-   }@media (max-width:680px) {
+    .btnorange {
+        min-width: 150px;
+        border: none;
+        min-height: 70px;
+    }
+}
+@media (max-width:1414px) {
+ .buscador {
+    right: 13%;
+ }
+}
+@media (max-width:1241px) {
+    .buscador {
+       right: 10%;
+    }
+   }
+
+@media (max-width:1162px) {
+    .buscador {
+        right: 7%;
+    }
+} @media (max-width:1124px) {
+    .buscador {
+        right: 5%;
+    }
+}
+@media (max-width:1054px) {
+    .buscador {
+        right: 3.2%;
+    }
+}
+@media (max-width:1012px) {
+    .buscador {
+        right: 1.4%;
+    }
+}
+@media (max-width: 991px) {
+    .buscador {
+        right: 30%;
+        bottom: -65px;
+    }
+    .form-control {
+        width: 200px;
+    }
     .buscar {
         flex-direction: column;
     }
+    .btnorange {
+        width: 400px;
+        border: none;
+        min-height: 70px;
+    }
 }
+@media (max-width: 821px) {
+    .buscador {
+        right: 25%;
+        bottom: -65px;
+    }
 
 }
+@media (max-width: 699px) {
+    .buscador {
+        right: 21%;
+    }
+}
+@media (max-width: 613px) {
+    .buscador {
+        right: 17%;
+    }
+}
+@media (max-width: 532px) {
+    .buscador {
+        right: 12.3%;
+    }
+}
+@media (max-width: 491px) {
+    .buscador {
+        right: 9.5%;
+    }
+}
+@media (max-width: 469px) {
+    .buscador {
+        right: 7.5%;
+    }
+}
+@media (max-width: 433px) {
+    .buscador {
+        right: 15%;
+        bottom: -90px;
+    }
+    .btnorange {
+        width: 303px;
+        min-height: 50px !important;
+    }
+}
+
