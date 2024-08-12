@@ -10,7 +10,7 @@ $fuentes : (
 @use 'fonts';
 @use 'colores';
 @use 'cta';
-@use 'buscadorlite';
+@use 'buscador';
 @use 'footer';
 
 h1, h2, h3, h4, h5 {
@@ -19,13 +19,26 @@ h1, h2, h3, h4, h5 {
 * {
    font-family: map-get($fuentes , "suis-regular" );
 }
-.fondo {
-    min-height:60vh;
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
-}
+.headerindex {
+    position: relative;
+    padding-bottom: 1.5em;
+    .fondo {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .titular {
+        color: #fff;
+        text-align: center;
+        line-height: 16px;
+        padding-bottom: 1em;
+        h1 {
+          font-size: 4em;
+        }
+       }
+ }
 
 .titular {
     color: #fff;

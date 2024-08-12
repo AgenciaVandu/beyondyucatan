@@ -1,13 +1,21 @@
 @push('scss')
 @vite(['resources/scss/app.scss', 'resources/scss/experiencias.scss', 'resources/js/app.js' ])
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.css">
+    <link rel="stylesheet" href="{{asset('css/carousel.css')}}">
 @endpush
 <x-layouts.guest title="Comienza tu aventura en Yucatán">
-    <x-header>
-        <x-slot name="tituloheader">
-            ¡Comienza tu aventura!
-        </x-slot>
-    </x-header>
-    <x-buscador />
+    <header class="headerindex"
+        style="background-image: url(/img/experiencias.png); background-repeat: no-repeat; background-size: cover;
+    width: 100%; background-position:center; min-height:100vh; ">
+        <div class="fondo">
+            <div class="titular">
+                <h1 >¡Comienza tu aventura!</h1>
+            </div>
+        </div>
+        <x-buscador />
+    </header>
+    
+
     <section class="experiencias">
         <div class="opciones">
             @foreach ($experiencias as $experiencia)
@@ -38,4 +46,9 @@
     <section class="llamada">
         <x-cta />
     </section>
+    @push('js')
+
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.js"></script>
+    <script src="{{asset('js/glider.js')}}"></script>
+    @endpush
 </x-layouts.guest>

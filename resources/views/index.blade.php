@@ -76,18 +76,20 @@
 
     @foreach ($experiencias as $experiencia)
         <x-destacadas.experiencia>
-            <x-slot name="titulocuerpo">
-                {{ $experiencia->titulo }}
-            </x-slot>
-            <x-slot name="descripcionLarga">
-                {{ $experiencia->longdescription }}
-            </x-slot>
-            <x-slot name="precio">
-                {{ $experiencia->price }}
-            </x-slot>
-            <x-slot name="botoncta">
-                Quiero esta experiencia
-            </x-slot>
+            <div class="container">
+                <x-slot name="titulocuerpo">
+                    {{ $experiencia->titulo }}
+                </x-slot>
+                <x-slot name="descripcionLarga">
+                    {{ $experiencia->longdescription }}
+                </x-slot>
+                <x-slot name="precio">
+                    {{ $experiencia->price }}
+                </x-slot>
+                <x-slot name="botoncta">
+                    Quiero esta experiencia
+                </x-slot>
+            </div>
         </x-destacadas.experiencia>
     @endforeach
 

@@ -1,16 +1,21 @@
 @push('scss')
 @vite(['resources/scss/app.scss', 'resources/scss/bucketlist.scss', 'resources/js/app.js' ])
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.css">
+    <link rel="stylesheet" href="{{asset('css/carousel.css')}}">
 @endpush
 <x-layouts.guest title="Comienza tu aventura en Yucatán">
-    <header style="background-image: url(/img/estrellas.png); background-repeat: no-repeat; background-size: cover;
-    width: 100%; background-position:center; ">
-       <div class="fondo container">
-           <div class="titular">
-               <h1>Esto lo creamos para ti</h1>
-           </div>
-       </div>
-   </header>
-   <x-buscador/>
+    <header class="headerindex"
+        style="background-image: url(/img/estrellas.png); background-repeat: no-repeat; background-size: cover;
+    width: 100%; background-position:center; min-height:100vh; ">
+        <div class="fondo">
+            <div class="titular">
+                <h1 >Esto lo creamos para ti</h1>
+            </div>
+        </div>
+        <x-buscador />
+    </header>
+    
+
 
     <section class="bucketlist">
         <div class="container-fluid">
@@ -65,4 +70,9 @@
     <section class="llamada">
         <x-cta />
     </section>
+    @push('js')
+
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.js"></script>
+    <script src="{{asset('js/glider.js')}}"></script>
+    @endpush
 </x-layouts.guest>

@@ -133,4 +133,14 @@
         min-height: 50px !important;
     }
 }
+@media (max-width: 376px) {
+    .buscador {
+        right: 10%;
+        bottom: -90px;
+    }
+    .btnorange {
+        width: 303px;
+        min-height: 50px !important;
+    }
+}
 
