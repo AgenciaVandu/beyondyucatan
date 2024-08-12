@@ -27,7 +27,7 @@
             </span>contactanos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Ingles</a>
+          <a class="nav-link" href="#">Inglés</a>
         </li>
         <li class="nav-item">
           <a class="nav-link">Español</a>
