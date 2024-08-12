@@ -1,7 +1,7 @@
 @push('scss')
     @vite(['resources/scss/app.scss', 'resources/scss/index.scss', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.css">
-    <link rel="stylesheet" href="{{asset('css/carousel.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/carousel.css') }}">
 @endpush
 <x-layouts.guest title="Diseña tu experiencia en tu paso por Yucatán">
     <header class="headerindex"
@@ -74,27 +74,51 @@
         </div>
     </section>
 
-    @foreach ($experiencias as $experiencia)
-        <x-destacadas.experiencia>
-            <div class="container">
-                <x-slot name="imagenExperiencia">
-                    <img src="{{asset($experiencia->imagedestacada)}}" class="img-fluid" alt="Imagen de tour">
-                </x-slot>
-                <x-slot name="titulocuerpo">
-                    {{ $experiencia->titulo }}
-                </x-slot>
-                <x-slot name="descripcionLarga">
-                    {{ $experiencia->longdescription }}
-                </x-slot>
-                <x-slot name="precio">
-                    {{ $experiencia->price }}
-                </x-slot>
-                <x-slot name="botoncta">
-                    Quiero esta experiencia
-                </x-slot>
+    <section class="experiencias">
+        <div class="container-fluid">
+            <div class="carousel">
+                <div class="carousel__contenedor">
+
+
+
+                    <div class="carousel__lista">
+                        @foreach ($experiencias as $experiencia)
+                            <x-destacadas.experiencia>
+                                <div class="container">
+                                    <x-slot name="imagenExperiencia">
+                                        <img src="{{ asset($experiencia->imagedestacada) }}" class="img-fluid"
+                                            alt="Imagen de tour">
+                                    </x-slot>
+                                    <x-slot name="titulocuerpo">
+                                        {{ $experiencia->titulo }}
+                                    </x-slot>
+                                    <x-slot name="descripcionLarga">
+                                        {{ $experiencia->longdescription }}
+                                    </x-slot>
+                                    <x-slot name="precio">
+                                        {{ $experiencia->price }}
+                                    </x-slot>
+                                    <x-slot name="botoncta">
+                                        Quiero esta experiencia
+                                    </x-slot>
+                                </div>
+                            </x-destacadas.experiencia>
+                        @endforeach
+                    </div>
+                    <button aria-label="Anterior" class="carousel__anterior" id="glider_prev">
+                        < </button>
+                            <button aria-label="Siguiente" class="carousel__siguiente" id="glider_next">
+                                >
+                            </button>
+                </div>
+
+                <div role="tablist" class="carousel__indicador"></div>
             </div>
-        </x-destacadas.experiencia>
-    @endforeach
+
+        </div>
+
+
+    </section>
 
     <div class="cta-experiencia">
         <div class="container">
@@ -120,8 +144,7 @@
         </div>
     </section>
     @push('js')
-
-    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.js"></script>
-    <script src="{{asset('js/glider.js')}}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.js"></script>
+        <script src="{{ asset('js/glider.js') }}"></script>
     @endpush
 </x-layouts.guest>
