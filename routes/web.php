@@ -5,6 +5,7 @@ use App\Http\Controllers\BucketlistController;
 use App\Http\Controllers\ExperienciaController;
 use App\Http\Controllers\PageController;
 use App\Models\Bucketlist;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -68,4 +69,7 @@ Route::delete('/admin/bucketlists/{bucket}/deleteDay/',[BucketlistController::cl
 
 
 
-
+Route::get('storage-link', function(){
+    Artisan::call('storage:link');
+    echo (Artisan::output());
+ });
