@@ -14,7 +14,7 @@
         </div>
         <x-buscador />
     </header>
-    
+
 
     <section class="experiencias">
         <div class="opciones">
@@ -22,7 +22,7 @@
             <div class="opcion">
                 <x-cards>
                     <x-slot name="imagenExperiencia">
-                        <img src="{{asset($experiencia->image)}}" class="img-fluid" alt="Imagen de tour">
+                        <img src="{{asset($experience->imagedestacada)}}" class="img-fluid" alt="Imagen de tour">
                     </x-slot>
                     <x-slot name="tituloExperiencia">
                         {{ $experiencia -> titulo }}
