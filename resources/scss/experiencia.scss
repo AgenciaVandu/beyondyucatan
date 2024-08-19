@@ -16,6 +16,28 @@ $fuentes : (
 @use 'ventacruzada';
 @use 'footer';
 
+.headerindex {
+    position: relative;
+    padding-bottom: 1.5em;
+    .fondo {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .titular {
+        color: #fff;
+        text-align: center;
+        line-height: 16px;
+        padding-bottom: 1em;
+        h1 {
+          font-size: 4em;
+        }
+       }
+ }
+
+
 h1, h2, h3, h4, h5 {
    font-family: map-get($fuentes, "austin-roman" );
 }
@@ -26,3 +48,16 @@ h1, h2, h3, h4, h5 {
 .titular {
    padding: 5em 0 5em 0;
 }
+
+.rowimg{
+    max-height: 650px;
+    max-width: 550px;
+}
+
+.rowimg img {
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+

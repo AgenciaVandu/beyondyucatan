@@ -11,9 +11,7 @@
                     @if ($experience->imagedestacada)
                         <img src="{{ asset($experience->imagedestacada) }}" alt="experiencia interesante">
                     @endif
-                    @if ($experience->image)
-                        <img src="{{ asset($experience->image) }}" alt="experiencia interesante">
-                    @endif
+                    
                     <div class="interior">
                         <h3>{{ $experience->titulo }}</h3>
                         <div class="boton">
