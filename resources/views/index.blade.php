@@ -75,7 +75,7 @@
     </section>
 
     <section class="experiencias">
-        <div class="">
+        <div class="container-fluid">
             <div class="carousel">
                 <div class="carousel__contenedor">
 
