@@ -1,17 +1,16 @@
 <section class="intereses">
-    <div class="container-fluid">
-        <div class="text-center pb-5">
+    <div class="container">
+        <div class="text-center">
             <h1>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
         </div>
-    </div>
+
     <div class="opciones">
         @foreach ($experiences as $experience)
             <a href="#" class="opcion">
-                <div class="contenido">
-                    @if ($experience->imagedestacada)
-                        <img src="{{ asset($experience->imagedestacada) }}" alt="experiencia interesante">
+                @if ($experience->imagedestacada)
+                <div class="contenido" style="background-image: url('{{ asset($experience->imagedestacada) }}'); background-position: center; background-repeat: no-repeat;">
                     @endif
-                    
+
                     <div class="interior">
                         <h3>{{ $experience->titulo }}</h3>
                         <div class="boton">
@@ -22,6 +21,8 @@
                     </div>
                 </div>
             </a>
+
         @endforeach
     </div>
+</div>
 </section>
