@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('admin.bucketlists.index')" :active="request()->routeIs('admin.bucketlists.*')">
                         {{ __('Bucketlist') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.bucketlists.index')" :active="request()->routeIs('admin.bucketlists.*')">
+                        {{ __('Categorias / Tipos') }}
+                    </x-nav-link>
                 </div>
             </div>
 
