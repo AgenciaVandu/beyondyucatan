@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BucketlistController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ExperienciaController;
+use App\Http\Controllers\IconController;
 use App\Http\Controllers\PageController;
 use App\Models\Bucketlist;
 use Illuminate\Support\Facades\Artisan;
@@ -75,6 +76,15 @@ Route::post('/admin/categories',[CategoryController::class,'store'])->name('admi
 Route::get('/admin/categories/{category}/edit',[CategoryController::class,'edit'])->name('admin.categories.edit'); //
 Route::put('/admin/categories/{category}/update',[CategoryController::class,'update'])->name('admin.categories.update'); //
 Route::delete('/admin/categories/{category}',[CategoryController::class,'destroy'])->name('admin.categories.destroy'); //
+
+//Rutas para CRUD icons
+Route::get('/admin/icons',[IconController::class,'index'])->name('admin.icons.index');
+Route::get('/admin/icons/create',[IconController::class,'create'])->name('admin.icons.create'); //
+Route::post('/admin/icons',[IconController::class,'store'])->name('admin.icons.store'); //
+Route::get('/admin/icons/{icon}/edit',[IconController::class,'edit'])->name('admin.icons.edit'); //
+Route::put('/admin/icons/{icon}/update',[IconController::class,'update'])->name('admin.icons.update'); //
+Route::delete('/admin/icons/{icon}',[IconController::class,'destroy'])->name('admin.icons.destroy'); //
+
 
 
 
