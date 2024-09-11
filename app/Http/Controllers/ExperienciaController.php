@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\category;
 use App\Models\Experience;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -32,7 +33,8 @@ class ExperienciaController extends Controller
     //Create CRUD methods for model Experience
     public function create()
     {
-        return view('admin.experiences.create');
+        $categories = category::all();
+        return view('admin.experiences.create',compact('categories'));
     }
     public function store(Request $request)
     {

@@ -48,10 +48,9 @@
                                 <select
                                     class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
                                     name="categories">
-                                    <option value="categoria1">Categoria 1</option>
-                                    <option value="categoria2">Categoria 2</option>
-                                    <option value="categoria3">Categoria 3</option>
-                                    <option value="categoria4">categoria 4</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{$category->id}}">{{ $category->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="mb-2">
