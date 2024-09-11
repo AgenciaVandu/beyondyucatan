@@ -43,7 +43,7 @@ class ExperienciaController extends Controller
             'lightdescription' => 'required',
             'longdescription' => 'required',
             'icons' => 'required',
-            'categories' => 'required',
+            //'categories' => 'required',
             'image' => 'required|mimes:jpeg,jpg,png,bmp,gif,svg|max: 2048',
             'imagedestacada' => 'required|mimes:jpeg,jpg,png,bmp,gif,svg|max: 2048',
             'price' => 'required',
@@ -58,17 +58,19 @@ class ExperienciaController extends Controller
             'lightdescription' => $request->lightdescription,
             'longdescription' => $request->longdescription,
             'icons' => $request->icons,
-            'categories' => $request->categories,
+            'categories' => '',
             'image' => $url,
             'imagedestacada' => $url2,
             'price' => $request->price,
+            'category_id' => $request->category_id
         ]);
         return redirect()->route('admin.experiences.index');
     }
 
     public function edit(Experience $experience)
     {
-        return view('admin.experiences.edit', compact('experience'));
+        $categories = category::all();
+        return view('admin.experiences.edit', compact('experience','categories'));
     }
 
     public function update(Request $request, Experience $experience)
@@ -93,8 +95,9 @@ class ExperienciaController extends Controller
             'lightdescription' => $request->lightdescription,
             'longdescription' => $request->longdescription,
             'icons' => $request->icons,
-            'categories' => $request->categories,
+            'categories' => '',
             'price' => $request->price,
+            'category_id' => $request->category_id
         ]);
         return redirect()->route('admin.experiences.index');
     }

@@ -49,11 +49,10 @@
                                 <x-input-label class="w-full mb-1" for="type" :value="__('Tipo')" />
                                 <select
                                     class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
-                                    name="typetour">
-                                    <option value="type1">type 1</option>
-                                    <option value="type2">type 2</option>
-                                    <option value="type3">type 3</option>
-                                    <option value="type4">type 4</option>
+                                    name="category_id">
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="mb-2">

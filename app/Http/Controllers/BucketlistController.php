@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bucketlist;
+use App\Models\category;
 use App\Models\Day;
 use App\Models\Experience;
 use Illuminate\Http\Request;
@@ -33,18 +34,17 @@ class BucketlistController extends Controller
 
     public function create()
     {
-        return view('admin.bucketlists.create');
+        $categories =  category::all();
+
+        return view('admin.bucketlists.create',compact('categories'));
     }
 
     public function store(Request $request)
     {
-
-
         $request->validate([
             'title' => 'required',
             'description' => 'required',
             'longdescription' => 'required',
-            'typetour' => 'required',
             'image' => 'required|mimes:jpeg,jpg,png,bmp,gif,svg|max: 2048',
             'days' => 'required',
             'price' => 'required'
@@ -58,7 +58,8 @@ class BucketlistController extends Controller
             'description' => $request->description,
             'longdescription' => $request->longdescription,
             'days' => $request->days,
-            'typetour' => $request->typetour,
+            'typetour' => '',
+            'category_id' => $request->category_id,
             'image' => $url,
             'price' => $request->price
         ]);
@@ -67,9 +68,10 @@ class BucketlistController extends Controller
     }
     public function edit(Bucketlist $bucket)
     {
+        $categories =  category::all();
         $bucket = Bucketlist::find($bucket->id);
         $days = Day::where('bucketlist_id',$bucket->id)->get();
-        return view('admin.bucketlists.edit', compact('bucket','days'));
+        return view('admin.bucketlists.edit', compact('bucket','days','categories'));
     }
 
     public function update(Request $request, Bucketlist $bucket)
@@ -87,7 +89,8 @@ class BucketlistController extends Controller
             'description' => $request->description,
             'longdescription' => $request->longdescription,
             'days' => $request->days,
-            'typetour' => $request->typetour,
+            'typetour' => '',
+            'category_id' => $request->category_id,
             'price' => $request->price,
         ]);
 

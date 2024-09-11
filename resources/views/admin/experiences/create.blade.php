@@ -47,7 +47,7 @@
                                 <x-input-label class="w-full mb-1" for="categories" :value="__('Categorias')" />
                                 <select
                                     class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
-                                    name="categories">
+                                    name="category_id">
                                     @foreach ($categories as $category)
                                         <option value="{{$category->id}}">{{ $category->name }}</option>
                                     @endforeach

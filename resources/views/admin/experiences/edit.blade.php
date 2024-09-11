@@ -10,12 +10,14 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div>
-                        <form action="{{ route('admin.experiences.update',$experience) }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('admin.experiences.update', $experience) }}" method="post"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="mb-2">
                                 <x-input-label class="w-full mb-1" for="title" :value="__('Titulo')" />
-                                <x-text-input class="w-full" type="text" name="titulo" placeholder="titulo" value="{{ $experience->titulo }}" />
+                                <x-text-input class="w-full" type="text" name="titulo" placeholder="titulo"
+                                    value="{{ $experience->titulo }}" />
                                 @error('titulo')
                                     <span class="text-xs text-red-600">{{ $message }}</span>
                                 @enderror
@@ -38,20 +40,22 @@
                             </div>
                             <div class="mb-2">
                                 <x-input-label class="w-full mb-1" for="icons" :value="__('Iconos')" />
-                                <x-text-input class="w-full" type="text" name="icons" placeholder="Iconos" value="{{ $experience->icons }}" />
+                                <x-text-input class="w-full" type="text" name="icons" placeholder="Iconos"
+                                    value="{{ $experience->icons }}" />
                                 @error('icons')
                                     <span class="text-xs text-red-600">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="mb-2">
-                                <x-input-label class="w-full mb-1" for="categories" :value="__('Categorias')" />
+                                <x-input-label class="w-full mb-1" for="categories" :value="__('Categoria')" />
                                 <select
                                     class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
-                                    name="categories">
-                                    <option value="categoria1">Categoria 1</option>
-                                    <option value="categoria2">Categoria 2</option>
-                                    <option value="categoria3">Categoria 3</option>
-                                    <option value="categoria4">categoria 4</option>
+                                    name="category_id">
+                                    {{-- agrega un operador ternario para category_id --}}
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}"
+                                            @if($category->id == $experience->category_id) selected @endif>{{ $category->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="mb-2">
@@ -69,14 +73,15 @@
                                 <input type="file"
                                     class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
                                     name="imagedestacada" accept="image/*">
-                                    <img src="{{ asset($experience->imagedestacada) }}" alt="">
+                                <img src="{{ asset($experience->imagedestacada) }}" alt="">
                                 @error('imagedestacada')
                                     <span class="text-xs text-red-600">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="mb-2">
                                 <x-input-label class="w-full mb-1" for="price" :value="__('Precio')" />
-                                <x-text-input class="w-full" type="text" name="price" placeholder="$100.00" value="{{ $experience->price }}" />
+                                <x-text-input class="w-full" type="text" name="price" placeholder="$100.00"
+                                    value="{{ $experience->price }}" />
                                 @error('price')
                                     <span class="text-xs text-red-600">{{ $message }}</span>
                                 @enderror
