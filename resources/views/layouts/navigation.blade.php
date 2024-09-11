@@ -21,8 +21,8 @@
                     <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.*')">
                         {{ __('Categorias / Tipos') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.*')">
-                        {{ __('Categorias / Tipos') }}
+                    <x-nav-link :href="route('admin.icons.index')" :active="request()->routeIs('admin.icons.*')">
+                        {{ __('Iconos') }}
                     </x-nav-link>
                 </div>
             </div>

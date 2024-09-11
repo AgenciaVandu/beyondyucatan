@@ -16,4 +16,8 @@ class Experience extends Model
     {
         return $this->belongsTo(category::class);
     }
+
+    public function icons(){
+        return $this->belongsToMany(Icon::class)->withPivot('icon_id');
+    }
 }

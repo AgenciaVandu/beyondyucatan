@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Icon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class IconController extends Controller
 {
@@ -21,7 +22,7 @@ class IconController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.icons.create');
     }
 
     /**
@@ -29,7 +30,20 @@ class IconController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'img' =>'required|image|mimes:jpeg,png,jpg,svg|max:2048',
+            'name' =>'required|string|max:255',
+        ]);
+
+        $img = $request->file('img')->store('public/icons');
+        $url = Storage::url($img);
+
+        Icon::create([
+            'img' => $url,
+            'name' => $request->name,
+        ]);
+
+        return redirect()->route('admin.icons.index')->with('success', 'Icono creado exitosamente.');
     }
 
     /**
@@ -45,7 +59,7 @@ class IconController extends Controller
      */
     public function edit(Icon $icon)
     {
-        //
+        return view('admin.icons.edit', compact('icon'));
     }
 
     /**
@@ -53,7 +67,25 @@ class IconController extends Controller
      */
     public function update(Request $request, Icon $icon)
     {
-        //
+        $request->validate([
+            'img' =>'image|mimes:jpeg,png,jpg,svg|max:2048',
+            'name' =>'required|string|max:255',
+        ]);
+
+        if ($request->file('img')) {
+            Storage::delete($icon->img);
+            $img = $request->file('img')->store('public/icons');
+            $url = Storage::url($img);
+            $icon->update([
+                'img' => $url,
+            ]);
+        }
+
+        $icon->update([
+            'name' => $request->name,
+        ]);
+
+        return redirect()->route('admin.icons.index')->with('success', 'Icono actualizado exitosamente.');
     }
 
     /**
@@ -61,6 +93,8 @@ class IconController extends Controller
      */
     public function destroy(Icon $icon)
     {
-        //
+        Storage::delete($icon->img);
+        $icon->delete();
+        return redirect()->route('admin.icons.index')->with('success', 'Icono eliminado exitosamente.');
     }
 }

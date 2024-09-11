@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\category;
 use App\Models\Experience;
+use App\Models\Icon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -13,8 +14,8 @@ class ExperienciaController extends Controller
     public function index()
     {
         $experiencias = Experience::all();
-
-        return view('viajes.experiencias', ['experiencias' => $experiencias]);
+        $categories = category::all();
+        return view('viajes.experiencias', ['experiencias' => $experiencias, 'categories' => $categories]);
     }
 
     public function show(Experience $experiencia)
@@ -34,7 +35,8 @@ class ExperienciaController extends Controller
     public function create()
     {
         $categories = category::all();
-        return view('admin.experiences.create',compact('categories'));
+        $icons = Icon::all();
+        return view('admin.experiences.create', compact('categories', 'icons'));
     }
     public function store(Request $request)
     {
@@ -53,24 +55,28 @@ class ExperienciaController extends Controller
         $url = Storage::url($image1);
         $url2 = Storage::url($image2);
 
-        Experience::create([
+        $experience = Experience::create([
             'titulo' => $request->titulo,
             'lightdescription' => $request->lightdescription,
             'longdescription' => $request->longdescription,
-            'icons' => $request->icons,
+            'icons' => '',
             'categories' => '',
             'image' => $url,
             'imagedestacada' => $url2,
             'price' => $request->price,
             'category_id' => $request->category_id
         ]);
+        $experience->icons()->attach($request->icons);
         return redirect()->route('admin.experiences.index');
     }
 
     public function edit(Experience $experience)
     {
         $categories = category::all();
-        return view('admin.experiences.edit', compact('experience','categories'));
+        $icons = Icon::all();
+        $arrayicons = $experience->icons;
+        //dd($arrayicons);
+        return view('admin.experiences.edit', compact('experience', 'categories', 'icons', 'arrayicons'));
     }
 
     public function update(Request $request, Experience $experience)
@@ -94,11 +100,13 @@ class ExperienciaController extends Controller
             'titulo' => $request->titulo,
             'lightdescription' => $request->lightdescription,
             'longdescription' => $request->longdescription,
-            'icons' => $request->icons,
+            'icons' => '',
             'categories' => '',
             'price' => $request->price,
             'category_id' => $request->category_id
         ]);
+
+        $experience->icons()->sync($request->icons);
         return redirect()->route('admin.experiences.index');
     }
 

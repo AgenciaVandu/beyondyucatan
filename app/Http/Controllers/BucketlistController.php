@@ -58,7 +58,6 @@ class BucketlistController extends Controller
             'description' => $request->description,
             'longdescription' => $request->longdescription,
             'days' => $request->days,
-            'typetour' => '',
             'category_id' => $request->category_id,
             'image' => $url,
             'price' => $request->price

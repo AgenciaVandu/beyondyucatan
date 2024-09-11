@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bucketlists', function (Blueprint $table) {
+        Schema::create('experience_icon', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('experience_id');
+            $table->unsignedBigInteger('icon_id');
+            $table->foreign('experience_id')->references('id')->on('experiences');
+            $table->foreign('icon_id')->references('id')->on('icons');
             $table->timestamps();
-            $table->string('title');
-            $table->longText('description');
-            $table->longText('longdescription');
-            $table->string('days');
-            $table->string('image');
-            $table->string('price');
         });
     }
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bucketlists');
+        Schema::dropIfExists('experience_icon');
     }
 };

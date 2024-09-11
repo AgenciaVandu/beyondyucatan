@@ -17,4 +17,8 @@ class Bucketlist extends Model
     {
         return $this->hasMany(Day::class);
     }
+
+    public function icons(){
+        return $this->belongsToMany(Icon::class);
+    }
 }

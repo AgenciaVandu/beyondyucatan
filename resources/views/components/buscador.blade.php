@@ -4,11 +4,9 @@
             <form class="buscar">
                 <div class="form-group option">
                     <select class="form-control" id="tipoCategoria">
-                        <option>Eco Turismo</option>
-                        <option>Senderismo</option>
-                        <option>Cenotes</option>
-                        <option>4</option>
-                        <option>5</option>
+                        @foreach ($categories as $category)
+                        <option>{{ $category->name}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group option">

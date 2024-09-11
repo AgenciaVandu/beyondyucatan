@@ -12,7 +12,7 @@
                 <h1 >¡Comienza tu aventura!</h1>
             </div>
         </div>
-        <x-buscador />
+        <x-buscador :$categories />
     </header>
 
 

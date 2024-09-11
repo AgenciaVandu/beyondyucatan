@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('titulo');
             $table->longText('lightdescription');
             $table->longText('longdescription');
-            $table->string('icons');
             $table->string('categories');
             $table->string('image');
             $table->string('imagedestacada');

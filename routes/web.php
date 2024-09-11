@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 // Controladores de pagina frontal
 Route::get('/experiencias', [ExperienciaController::class, 'index'])->name('experiencias'); // Experiencias grupo
@@ -42,56 +42,57 @@ Route::get('/experiencias/{experiencia}', [ExperienciaController::class, 'show']
 Route::get('/bucketlist', [BucketlistController::class, 'index'])->name('bucketlist'); // Experiencias especiales
 Route::get('/bucketlist/{bucket}', [BucketlistController::class, 'show'])->name('bucketlist-detalle'); // detalle de bucketlist
 
-Route::get('/cotizar-experiencia-en-grupo', [PageController::class, 'cotizadorgroup'] )->name('cotizador-grupo');
+Route::get('/cotizar-experiencia-en-grupo', [PageController::class, 'cotizadorgroup'])->name('cotizador-grupo');
 Route::get('/solicitar-aventura', [PageController::class, 'solicitud'])->name('cotizador'); // Solicitar aventura
 
 Route::get('/artesanos', [PageController::class, 'artesanos'])->name('artesanos'); // index de artesanos
 Route::get('/contactar-a-un-asesor', [PageController::class, 'contact'])->name('contacto'); // Vista Contacto
 
-//Controladores para administrar el contenido
-Route::get('/admin/experiencies',[ExperienciaController::class, 'listExperiences'])->name('admin.experiences.index');
-Route::get('/admin/experiencies/create',[ExperienciaController::class, 'create'])->name('admin.experiences.create'); //
-Route::post('/admin/experiencies',[ExperienciaController::class,'store'])->name('admin.experiences.store'); //
-Route::get('/admin/experiencies/{experience}/edit',[ExperienciaController::class, 'edit'])->name('admin.experiences.edit'); //
-Route::put('/admin/experiencies/{experience}/update',[ExperienciaController::class, 'update'])->name('admin.experiences.update'); //
-Route::delete('/admin/experiencies/{experience}',[ExperienciaController::class, 'destroy'])->name('admin.experiences.destroy'); //
+Route::middleware('auth')->group(function () {
+    //Controladores para administrar el contenido
+    Route::get('/admin/experiencies', [ExperienciaController::class, 'listExperiences'])->name('admin.experiences.index');
+    Route::get('/admin/experiencies/create', [ExperienciaController::class, 'create'])->name('admin.experiences.create'); //
+    Route::post('/admin/experiencies', [ExperienciaController::class, 'store'])->name('admin.experiences.store'); //
+    Route::get('/admin/experiencies/{experience}/edit', [ExperienciaController::class, 'edit'])->name('admin.experiences.edit'); //
+    Route::put('/admin/experiencies/{experience}/update', [ExperienciaController::class, 'update'])->name('admin.experiences.update'); //
+    Route::delete('/admin/experiencies/{experience}', [ExperienciaController::class, 'destroy'])->name('admin.experiences.destroy'); //
 
-//Creame Rutas para CRUD de buketlists
-Route::get('/admin/bucketlists',[BucketlistController::class, 'listBucketlists'])->name('admin.bucketlists.index');
-Route::get('/admin/bucketlists/create',[BucketlistController::class, 'create'])->name('admin.bucketlists.create'); //
-Route::post('/admin/bucketlists',[BucketlistController::class,'store'])->name('admin.bucketlists.store'); //
-Route::any('/admin/bucketlists/{bucket}/edit',[BucketlistController::class, 'edit'])->name('admin.bucketlists.edit'); //
-Route::put('/admin/bucketlists/{bucket}/update',[BucketlistController::class, 'update'])->name('admin.bucketlists.update'); //
-Route::delete('/admin/bucketlists/{bucket}',[BucketlistController::class, 'destroy'])->name('admin.bucketlists.destroy'); //
-Route::get('/admin/bucketlists/{bucket}/addDay/',[BucketlistController::class, 'createDay'])->name('admin.bucketlists.addDay'); //
-Route::post('/admin/bucketlists/{bucket}/storeDay/',[BucketlistController::class,'storeDay'])->name('admin.bucketlists.storeDay'); //
-Route::get('/admin/bucketlists/{day}/editDay/',[BucketlistController::class,'editDay'])->name('admin.bucketlists.editDay'); //
-Route::put('/admin/bucketlists/{day}/updateDay/',[BucketlistController::class, 'updateDay'])->name('admin.bucketlists.updateDay'); //
-Route::delete('/admin/bucketlists/{bucket}/deleteDay/',[BucketlistController::class, 'deleteDay'])->name('admin.bucketlists.deleteDay'); //
+    //Creame Rutas para CRUD de buketlists
+    Route::get('/admin/bucketlists', [BucketlistController::class, 'listBucketlists'])->name('admin.bucketlists.index');
+    Route::get('/admin/bucketlists/create', [BucketlistController::class, 'create'])->name('admin.bucketlists.create'); //
+    Route::post('/admin/bucketlists', [BucketlistController::class, 'store'])->name('admin.bucketlists.store'); //
+    Route::any('/admin/bucketlists/{bucket}/edit', [BucketlistController::class, 'edit'])->name('admin.bucketlists.edit'); //
+    Route::put('/admin/bucketlists/{bucket}/update', [BucketlistController::class, 'update'])->name('admin.bucketlists.update'); //
+    Route::delete('/admin/bucketlists/{bucket}', [BucketlistController::class, 'destroy'])->name('admin.bucketlists.destroy'); //
+    Route::get('/admin/bucketlists/{bucket}/addDay/', [BucketlistController::class, 'createDay'])->name('admin.bucketlists.addDay'); //
+    Route::post('/admin/bucketlists/{bucket}/storeDay/', [BucketlistController::class, 'storeDay'])->name('admin.bucketlists.storeDay'); //
+    Route::get('/admin/bucketlists/{day}/editDay/', [BucketlistController::class, 'editDay'])->name('admin.bucketlists.editDay'); //
+    Route::put('/admin/bucketlists/{day}/updateDay/', [BucketlistController::class, 'updateDay'])->name('admin.bucketlists.updateDay'); //
+    Route::delete('/admin/bucketlists/{bucket}/deleteDay/', [BucketlistController::class, 'deleteDay'])->name('admin.bucketlists.deleteDay'); //
 
-//Crear rutas para crud de categories
-Route::get('/admin/categories',[CategoryController::class,'index'])->name('admin.categories.index');
-Route::get('/admin/categories/create',[CategoryController::class,'create'])->name('admin.categories.create'); //
-Route::post('/admin/categories',[CategoryController::class,'store'])->name('admin.categories.store'); //
-Route::get('/admin/categories/{category}/edit',[CategoryController::class,'edit'])->name('admin.categories.edit'); //
-Route::put('/admin/categories/{category}/update',[CategoryController::class,'update'])->name('admin.categories.update'); //
-Route::delete('/admin/categories/{category}',[CategoryController::class,'destroy'])->name('admin.categories.destroy'); //
+    //Crear rutas para crud de categories
+    Route::get('/admin/categories', [CategoryController::class, 'index'])->name('admin.categories.index');
+    Route::get('/admin/categories/create', [CategoryController::class, 'create'])->name('admin.categories.create'); //
+    Route::post('/admin/categories', [CategoryController::class, 'store'])->name('admin.categories.store'); //
+    Route::get('/admin/categories/{category}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit'); //
+    Route::put('/admin/categories/{category}/update', [CategoryController::class, 'update'])->name('admin.categories.update'); //
+    Route::delete('/admin/categories/{category}', [CategoryController::class, 'destroy'])->name('admin.categories.destroy'); //
 
-//Rutas para CRUD icons
-Route::get('/admin/icons',[IconController::class,'index'])->name('admin.icons.index');
-Route::get('/admin/icons/create',[IconController::class,'create'])->name('admin.icons.create'); //
-Route::post('/admin/icons',[IconController::class,'store'])->name('admin.icons.store'); //
-Route::get('/admin/icons/{icon}/edit',[IconController::class,'edit'])->name('admin.icons.edit'); //
-Route::put('/admin/icons/{icon}/update',[IconController::class,'update'])->name('admin.icons.update'); //
-Route::delete('/admin/icons/{icon}',[IconController::class,'destroy'])->name('admin.icons.destroy'); //
-
-
-
-
+    //Rutas para CRUD icons
+    Route::get('/admin/icons', [IconController::class, 'index'])->name('admin.icons.index');
+    Route::get('/admin/icons/create', [IconController::class, 'create'])->name('admin.icons.create'); //
+    Route::post('/admin/icons', [IconController::class, 'store'])->name('admin.icons.store'); //
+    Route::get('/admin/icons/{icon}/edit', [IconController::class, 'edit'])->name('admin.icons.edit'); //
+    Route::put('/admin/icons/{icon}/update', [IconController::class, 'update'])->name('admin.icons.update'); //
+    Route::delete('/admin/icons/{icon}', [IconController::class, 'destroy'])->name('admin.icons.destroy'); //
+});
 
 
 
-Route::get('storage-link', function(){
+
+
+
+Route::get('storage-link', function () {
     Artisan::call('storage:link');
     echo (Artisan::output());
- });
+});

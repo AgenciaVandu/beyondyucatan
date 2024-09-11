@@ -40,8 +40,18 @@
                             </div>
                             <div class="mb-2">
                                 <x-input-label class="w-full mb-1" for="icons" :value="__('Iconos')" />
-                                <x-text-input class="w-full" type="text" name="icons" placeholder="Iconos"
-                                    value="{{ $experience->icons }}" />
+                                <div class="flex items-center space-x-4">
+                                    @foreach ($icons as $icon)
+                                        <div class="text-center">
+                                            <img src="{{ asset($icon->img) }}" alt="">
+                                            <input type="checkbox" name="icons[]" value="{{ $icon->id }}"
+                                                @foreach ($arrayicons as $item)
+                                                     @if ($item->pivot->icon_id == $icon->id)
+                                                        checked
+                                                     @endif @endforeach />
+                                        </div>
+                                    @endforeach
+                                </div>
                                 @error('icons')
                                     <span class="text-xs text-red-600">{{ $message }}</span>
                                 @enderror
@@ -54,7 +64,8 @@
                                     {{-- agrega un operador ternario para category_id --}}
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}"
-                                            @if($category->id == $experience->category_id) selected @endif>{{ $category->name }}</option>
+                                            @if ($category->id == $experience->category_id) selected @endif>{{ $category->name }}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
