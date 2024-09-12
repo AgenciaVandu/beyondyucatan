@@ -70,6 +70,19 @@
                                 </select>
                             </div>
                             <div class="mb-2">
+                                <x-input-label class="w-full mb-1" for="states" :value="__('Estados')" />
+                                <select
+                                    class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
+                                    name="state_id">
+                                    {{-- agrega un operador ternario para category_id --}}
+                                    @foreach ($states as $state)
+                                        <option value="{{ $state->id }}"
+                                            @if ($state->id == $experience->state_id) selected @endif>{{ $state->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="mb-2">
                                 <x-input-label class="w-full mb-1" for="image" :value="__('Imagen')" />
                                 <input type="file"
                                     class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"

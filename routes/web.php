@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ExperienciaController;
 use App\Http\Controllers\IconController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\StateController;
 use App\Models\Bucketlist;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -85,6 +86,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/icons/{icon}/edit', [IconController::class, 'edit'])->name('admin.icons.edit'); //
     Route::put('/admin/icons/{icon}/update', [IconController::class, 'update'])->name('admin.icons.update'); //
     Route::delete('/admin/icons/{icon}', [IconController::class, 'destroy'])->name('admin.icons.destroy'); //
+
+    //Routes CRUD states
+    Route::get('/admin/states', [StateController::class, 'index'])->name('admin.states.index');
+    Route::get('/admin/states/create', [StateController::class, 'create'])->name('admin.states.create'); //
+    Route::post('/admin/states', [StateController::class,'store'])->name('admin.states.store'); //
+    Route::get('/admin/states/{state}/edit', [StateController::class, 'edit'])->name('admin.states.edit'); //
+    Route::put('/admin/states/{state}/update', [StateController::class, 'update'])->name('admin.states.update'); //
+    Route::delete('/admin/states/{state}', [StateController::class, 'destroy'])->name('admin.states.destroy'); //
 });
 
 

@@ -24,6 +24,9 @@
                     <x-nav-link :href="route('admin.icons.index')" :active="request()->routeIs('admin.icons.*')">
                         {{ __('Iconos') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.states.index')" :active="request()->routeIs('admin.states.*')">
+                        {{ __('Estados') }}
+                    </x-nav-link>
                 </div>
             </div>
 

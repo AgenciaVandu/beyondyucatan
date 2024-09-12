@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\category;
 use App\Models\Experience;
 use App\Models\Icon;
+use App\Models\State;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -36,7 +37,8 @@ class ExperienciaController extends Controller
     {
         $categories = category::all();
         $icons = Icon::all();
-        return view('admin.experiences.create', compact('categories', 'icons'));
+        $states = State::all();
+        return view('admin.experiences.create', compact('categories', 'icons','states'));
     }
     public function store(Request $request)
     {
@@ -64,7 +66,8 @@ class ExperienciaController extends Controller
             'image' => $url,
             'imagedestacada' => $url2,
             'price' => $request->price,
-            'category_id' => $request->category_id
+            'category_id' => $request->category_id,
+            'state_id' => $request->state_id
         ]);
         $experience->icons()->attach($request->icons);
         return redirect()->route('admin.experiences.index');
@@ -75,8 +78,9 @@ class ExperienciaController extends Controller
         $categories = category::all();
         $icons = Icon::all();
         $arrayicons = $experience->icons;
+        $states = State::all();
         //dd($arrayicons);
-        return view('admin.experiences.edit', compact('experience', 'categories', 'icons', 'arrayicons'));
+        return view('admin.experiences.edit', compact('experience', 'categories', 'icons', 'arrayicons','states'));
     }
 
     public function update(Request $request, Experience $experience)
