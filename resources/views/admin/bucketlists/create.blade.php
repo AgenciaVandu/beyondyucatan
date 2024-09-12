@@ -56,6 +56,16 @@
                                 </select>
                             </div>
                             <div class="mb-2">
+                                <x-input-label class="w-full mb-1" for="state" :value="__('Estado')" />
+                                <select
+                                    class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
+                                    name="state_id">
+                                    @foreach ($states as $state)
+                                        <option value="{{ $state->id }}">{{ $state->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="mb-2">
                                 <x-input-label class="w-full mb-1" for="image" :value="__('Imagen')" />
                                 <input type="file"
                                     class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"

@@ -6,6 +6,7 @@ use App\Models\Bucketlist;
 use App\Models\category;
 use App\Models\Day;
 use App\Models\Experience;
+use App\Models\State;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -35,8 +36,8 @@ class BucketlistController extends Controller
     public function create()
     {
         $categories =  category::all();
-
-        return view('admin.bucketlists.create',compact('categories'));
+        $states = State::all();
+        return view('admin.bucketlists.create',compact('categories','states'));
     }
 
     public function store(Request $request)
@@ -60,17 +61,19 @@ class BucketlistController extends Controller
             'days' => $request->days,
             'category_id' => $request->category_id,
             'image' => $url,
-            'price' => $request->price
+            'price' => $request->price,
+            'state_id' => $request->state_id
         ]);
 
-        return view('admin.bucketlists.edit',compact('bucket'));
+        return redirect()->route('admin.bucketlists.index');
     }
     public function edit(Bucketlist $bucket)
     {
         $categories =  category::all();
         $bucket = Bucketlist::find($bucket->id);
         $days = Day::where('bucketlist_id',$bucket->id)->get();
-        return view('admin.bucketlists.edit', compact('bucket','days','categories'));
+        $states = State::all();
+        return view('admin.bucketlists.edit', compact('bucket','days','categories','states'));
     }
 
     public function update(Request $request, Bucketlist $bucket)
@@ -91,6 +94,7 @@ class BucketlistController extends Controller
             'typetour' => '',
             'category_id' => $request->category_id,
             'price' => $request->price,
+            'state_id' => $request->state_id
         ]);
 
         return redirect()->route('admin.bucketlists.index');
