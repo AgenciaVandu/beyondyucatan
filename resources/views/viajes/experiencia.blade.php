@@ -11,7 +11,7 @@
                 <h1> {{ $experiencia->titulo }}</h1>
             </div>
         </div>
-        <x-buscador />
+        <x-buscador :$categories :$states filtro="experiencia"/>
     </header>
 
     <section class="titular">
@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <div class="boton">
-                    <a href="{{ route('cotizador-grupo') }}"
+                    <a href="{{ route('cotizador-grupo',$experiencia) }}"
                         class="btn btn-primary">Quiero esta experiencia</a>
                 </div>
             </div>
@@ -63,7 +63,7 @@
     </section>
     <x-destacadas.ventacruzada :experiences="$experiences"/>
     <section class="llamada">
-        <x-cta />
+        <x-cta  />
     </section>
 
 </x-layouts.guest>

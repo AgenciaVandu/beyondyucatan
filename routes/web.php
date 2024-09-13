@@ -7,12 +7,15 @@ use App\Http\Controllers\ExperienciaController;
 use App\Http\Controllers\IconController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\StateController;
+use App\Mail\NewLead;
+use App\Mail\NewLeadExperience;
 use App\Models\Bucketlist;
 use App\Models\category;
 use App\Models\Experience;
 use App\Models\State;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,12 +62,23 @@ Route::post('/filter', function (Request $request) {
     }
 })->name('filter'); // Experiencias grupo
 
+Route::post('send-form-basic',function (Request $request){
+    Mail::to('contacto@beyondyucatan.travel')->send(new NewLead($request->name,$request->email,$request->phone,$request->country,$request->message));
+    return redirect()->route('home')->with('success', 'Tu mensaje ha sido enviado correctamente.');
+})->name('send.form.basic');
+
+Route::post('send-form-experience',function (Request $request){
+    Mail::to('contacto@beyondyucatan.travel')->send(new NewLeadExperience($request->fechallegada,$request->adultos, $request->kids, $request->name, $request->tel, $request->mail, $request->masexperiencias, $request->message, $request->titulo));
+    return redirect()->route('home')->with('success', 'Tu mensaje ha sido enviado correctamente.');
+})->name('send.form.experiences');
+
 Route::get('/experiencias/{experiencia}', [ExperienciaController::class, 'show'])->name('experiencia'); // Experiencia individual
 
 Route::get('/bucketlist', [BucketlistController::class, 'index'])->name('bucketlist'); // Experiencias especiales
 Route::get('/bucketlist/{bucket}', [BucketlistController::class, 'show'])->name('bucketlist-detalle'); // detalle de bucketlist
 
-Route::get('/cotizar-experiencia-en-grupo', [PageController::class, 'cotizadorgroup'])->name('cotizador-grupo');
+Route::get('/cotizar-experiencia-en-grupo/{experience?}', [PageController::class, 'cotizadorgroup'])->name('cotizador-grupo');
+Route::get('/cotizar-bucket-en-grupo/{bucketlist?}', [PageController::class, 'cotizadorgroupbucket'])->name('cotizador-grupo-bucket');
 Route::get('/solicitar-aventura', [PageController::class, 'solicitud'])->name('cotizador'); // Solicitar aventura
 
 Route::get('/artesanos', [PageController::class, 'artesanos'])->name('artesanos'); // index de artesanos

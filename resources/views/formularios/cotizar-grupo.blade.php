@@ -14,38 +14,40 @@
                 <span>Mándanos tus datos para ponernos en contacto contigo </span>
             </div>
             <div class="formulario-cotizador">
-                <form action="" class="contenido_cotizador">
+                <form action="{{ route('send.form.experiences') }}" method="POST" class="contenido_cotizador">
+                    @csrf
+                    @method('POST')
                     <div class="row g-3">
                         <div class="col-lg-6 col-md-6 col-6">
                             <div class="form-group">
-                                <input type="text" class="form-control w-100" placeholder="Fecha de llegada" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <input type="text" class="form-control w-100" name="fechallegada" placeholder="Fecha de llegada" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-6">
                             <div class="form-group">
-                                <input type="number" class="form-control" id="adults" placeholder="Adultos">
+                                <input type="number" class="form-control" id="adults" name="adultos" placeholder="Adultos">
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-6">
                             <div class="form-group">
-                                <input type="number" class="form-control" id="kids" placeholder="niños">
+                                <input type="number" class="form-control" id="kids" name="kids" placeholder="niños">
                             </div>
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nombre" id="name">
+                                <input type="text" class="form-control" placeholder="Nombre" name="name">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <input type="tel" class="form-control" placeholder="Teléfono" id="tel">
+                                <input type="tel" class="form-control" placeholder="Teléfono" name="tel">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group mt-3">
-                                <input type="mail" class="form-control" placeholder="Correo" id="mail">
+                                <input type="mail" class="form-control" placeholder="Correo" name="mail">
                             </div>
                         </div>
                     </div>
@@ -64,16 +66,16 @@
                         <div class="col-lg-12 col-md-6 col-sm-12">
                             <p>Estás interesado en:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="masexperiencias">
+                                <input class="form-check-input" type="checkbox" value="" name="masexperiencias">
                                 <label class="form-check-label" for="masexperiencias">
                                 Quisiera más experiencias para otros días durante mi estancia
                                 </label>
                             </div>
                         </div>
-                       
+                        <input type="hidden" name="titulo" value="{{$experience->titulo}}">
                     </div>
                     <div class="form-group mt-3">
-                        <textarea type="text" class="form-control" id="in" placeholder="Comentarios adicionales o requerimientos especiales" rows="5"></textarea>
+                        <textarea type="text" class="form-control" name="message" placeholder="Comentarios adicionales o requerimientos especiales" rows="5"></textarea>
                     </div>
                     <div class="text-center mt-4">
                         <button type="submit" class="btn btn-primary">Enviar Información</button>

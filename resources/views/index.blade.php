@@ -35,13 +35,8 @@
                 </div>
             </div>
         </div>
-        <x-buscador />
+        <x-buscador :$categories :$states filtro="experiences"/>
     </header>
-
-
-
-
-
 
     <section class="titular_index">
         <div class="titular_2 text-center">
