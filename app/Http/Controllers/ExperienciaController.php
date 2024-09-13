@@ -16,7 +16,16 @@ class ExperienciaController extends Controller
     {
         $experiencias = Experience::all();
         $categories = category::all();
-        return view('viajes.experiencias', ['experiencias' => $experiencias, 'categories' => $categories]);
+        $states = State::all();
+        return view('viajes.experiencias', ['experiencias' => $experiencias, 'categories' => $categories,'states' => $states]);
+    }
+
+    public function filter(Request $request)
+    {
+        $experiencias = Experience::where();
+        $categories = category::all();
+        $states = State::all();
+        return view('viajes.experiencias', ['experiencias' => $experiencias, 'categories' => $categories,'states' => $states]);
     }
 
     public function show(Experience $experiencia)

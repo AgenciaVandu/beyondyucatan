@@ -1,29 +1,28 @@
 <div class="buscador">
     <div class="posicion">
         <div class="contenido__buscador">
-            <form class="buscar">
+            <form class="buscar" action="{{route('filter')}}" method="POST">
+                @csrf
+                @method('POST')
                 <div class="form-group option">
-                    <select class="form-control" id="tipoCategoria">
+                    <select class="form-control" id="tipoCategoria" name="category_id">
                         @foreach ($categories as $category)
-                        <option>{{ $category->name}}</option>
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="form-group option">
-                    <select class="form-control" id="zonaCategoria">
-                        <option>Yucatán</option>
-                        <option>Quintana Roo</option>
-                        <option>Campeche</option>
-                        <option>4</option>
-                        <option>5</option>
+                    <select class="form-control" id="zonaCategoria" name="state_id">
+                        @foreach ($states as $state)
+                            <option value="{{ $state->id }}">{{ $state->name }}</option>
+                        @endforeach
                     </select>
                 </div>
+                <input type="hidden" name="filtro" value="{{ $filtro }}">
                 <div class="buscarbtn">
-                    <button class="btn btn-success btnorange" href="">Buscar</button>
+                    <button class="btn btn-success btnorange">Buscar</button>
                 </div>
-
             </form>
-
         </div>
     </div>
 </div>

@@ -16,8 +16,9 @@ class BucketlistController extends Controller
     {
 
         $bucket = Bucketlist::get();
-
-        return view('viajes.bucketlist', ['bucket' => $bucket]);
+        $categories = category::all();
+        $states = State::all();
+        return view('viajes.bucketlist', ['bucket' => $bucket, 'states' => $states, 'categories' => $categories]);
     }
 
     public function show(Bucketlist $bucket)

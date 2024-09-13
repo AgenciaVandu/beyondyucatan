@@ -8,6 +8,10 @@ use App\Http\Controllers\IconController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\StateController;
 use App\Models\Bucketlist;
+use App\Models\category;
+use App\Models\Experience;
+use App\Models\State;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -37,7 +41,24 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 
 // Controladores de pagina frontal
-Route::get('/experiencias', [ExperienciaController::class, 'index'])->name('experiencias'); // Experiencias grupo
+Route::get('/experiencias', [ExperienciaController::class, 'index'])->name('experiencias');
+Route::post('/filter', function (Request $request) {
+    if ($request->filtro == 'experiences') {
+        $experiencias = Experience::where('category_id', $request->category_id)
+            ->where('state_id', $request->state_id)
+            ->get();
+
+        $categories = category::all();
+        $states = State::all();
+        return view('viajes.experiencias', ['experiencias' => $experiencias, 'categories' => $categories, 'states' => $states]);
+    } else {
+        $bucket = Bucketlist::where('category_id', $request->category_id)->where('state_id', $request->state_id)->get();
+        $categories = category::all();
+        $states = State::all();
+        return view('viajes.bucketlist', ['bucket' => $bucket, 'states' => $states, 'categories' => $categories]);
+    }
+})->name('filter'); // Experiencias grupo
+
 Route::get('/experiencias/{experiencia}', [ExperienciaController::class, 'show'])->name('experiencia'); // Experiencia individual
 
 Route::get('/bucketlist', [BucketlistController::class, 'index'])->name('bucketlist'); // Experiencias especiales
@@ -90,7 +111,7 @@ Route::middleware('auth')->group(function () {
     //Routes CRUD states
     Route::get('/admin/states', [StateController::class, 'index'])->name('admin.states.index');
     Route::get('/admin/states/create', [StateController::class, 'create'])->name('admin.states.create'); //
-    Route::post('/admin/states', [StateController::class,'store'])->name('admin.states.store'); //
+    Route::post('/admin/states', [StateController::class, 'store'])->name('admin.states.store'); //
     Route::get('/admin/states/{state}/edit', [StateController::class, 'edit'])->name('admin.states.edit'); //
     Route::put('/admin/states/{state}/update', [StateController::class, 'update'])->name('admin.states.update'); //
     Route::delete('/admin/states/{state}', [StateController::class, 'destroy'])->name('admin.states.destroy'); //

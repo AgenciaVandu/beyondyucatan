@@ -12,9 +12,9 @@
                 <h1 >Esto lo creamos para ti</h1>
             </div>
         </div>
-        <x-buscador />
+        <x-buscador :$categories :$states filtro="bucketlist" />
     </header>
-    
+
 
 
     <section class="bucketlist">
