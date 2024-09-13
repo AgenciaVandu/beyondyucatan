@@ -24,7 +24,7 @@ class BucketlistController extends Controller
     public function show(Bucketlist $bucket)
     {
         $bukets = Bucketlist::all();
-        return view('viajes.detallebucket', ['bucket' => $bucket, 'experiences' => $bukets, 'type' => 'bucket' ]);
+        return view('viajes.detallebucket', ['bucket' => $bucket, 'experiences' => $bukets]);
     }
 
     public function listBucketlists()

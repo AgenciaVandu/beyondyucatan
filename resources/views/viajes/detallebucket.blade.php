@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="boton">
-                <a href="{{ route('cotizador-grupo', $bucket, $type) }}" class="btn btn-primary">Quiero vivir esta
+                <a href="{{ route('cotizador-grupo-bucket', $bucket) }}" class="btn btn-primary">Quiero vivir esta
                     experiencia</a>
             </div>
 

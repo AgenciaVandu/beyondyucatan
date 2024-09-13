@@ -8,6 +8,7 @@ use App\Http\Controllers\IconController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\StateController;
 use App\Mail\NewLead;
+use App\Mail\NewLeadBucketlist;
 use App\Mail\NewLeadExperience;
 use App\Models\Bucketlist;
 use App\Models\category;
@@ -71,6 +72,10 @@ Route::post('send-form-experience',function (Request $request){
     Mail::to('contacto@beyondyucatan.travel')->send(new NewLeadExperience($request->fechallegada,$request->adultos, $request->kids, $request->name, $request->tel, $request->mail, $request->masexperiencias, $request->message, $request->titulo));
     return redirect()->route('home')->with('success', 'Tu mensaje ha sido enviado correctamente.');
 })->name('send.form.experiences');
+Route::post('send-form-bucketlist',function (Request $request){
+    Mail::to('contacto@beyondyucatan.travel')->send(new NewLeadBucketlist($request->fechallegada,$request->adultos, $request->kids, $request->name, $request->tel, $request->mail, $request->masexperiencias, $request->message, $request->titulo));
+    return redirect()->route('home')->with('success', 'Tu mensaje ha sido enviado correctamente.');
+})->name('send.form.bucketlist');
 
 Route::get('/experiencias/{experiencia}', [ExperienciaController::class, 'show'])->name('experiencia'); // Experiencia individual
 
