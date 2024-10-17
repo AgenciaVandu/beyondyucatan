@@ -23,15 +23,15 @@
             <div class="col-lg-5 col-md-6 col-12">
                 <ul class="contactform">
                     <li>
-                        <a href="">
+                        <a href="tel:529994113039">
                             <span class="pe-1">
                                 <img src="{{asset('/img/whats.svg')}}" width="20" alt="">
-                            </span> contactanos <br> <strong>9999999999</strong>
+                            </span> contactanos <br> <strong>9994113039</strong>
                         </a>
 
                     </li>
                     <li>
-                        <a href="">
+                        <a href="mailto:hola@beyondyucatan.travel">
                             <span class="pe-1">
                                 <img src="{{asset('/img/mail.svg')}}" width="20" alt="">
                             </span> ENVÍANOS UN CORREO <br> <strong> HOLA@BEYONDYUCATAN.TRAVEL</strong>
@@ -61,18 +61,18 @@
         <div class="contact pt-4">
             <ul>
                 <li>
-                    <a href="">
-                        <img src="{{asset('img/border-facebook.svg')}}" width="30" alt="Icono redes sociales Facebook">
+                    <a href="https://www.facebook.com/profile.php?id=100075617091253">
+                        <img src="{{asset('img/border-facebook.svg')}}" width="30" alt="Beyondyucatan">
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        <img src="{{asset('img/border-instagram.svg')}}" width="30" alt="Icono redes sociales Facebook">
+                    <a href="https://www.instagram.com/beyondyucatan/">
+                        <img src="{{asset('img/border-instagram.svg')}}" width="30" alt="Instagram">
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        <img src="{{asset('img/border-turism.svg')}}" width="30" alt="Icono redes sociales Facebook">
+                    <a href="https://www.tripadvisor.com.mx/Attraction_Review-g150811-d19068532-Reviews-TURISMAYA-Merida_Yucatan_Peninsula.html">
+                        <img src="{{asset('img/border-turism.svg')}}" width="30" alt="Tripadvisor">
                     </a>
                 </li>
             </ul>
