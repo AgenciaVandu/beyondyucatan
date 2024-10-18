@@ -47,10 +47,16 @@ require __DIR__ . '/auth.php';
 // Controladores de pagina frontal
 Route::get('/experiencias', [ExperienciaController::class, 'index'])->name('experiencias');
 Route::post('/filter', function (Request $request) {
+    //dd($request->all());
     if ($request->filtro == 'experiences') {
-        $experiencias = Experience::where('category_id', $request->category_id)
+        if ($request->state_id == null) {
+            $experiencias = Experience::where('category_id', $request->category_id)
+            ->get();
+        }else{
+            $experiencias = Experience::where('category_id', $request->category_id)
             ->where('state_id', $request->state_id)
             ->get();
+        }
 
         $categories = category::all();
         $states = State::all();

@@ -14,7 +14,22 @@
                     <p>Diseña tu experiencia en tu paso por Yucatán</p>
                 </div>
                 <div class="categorias">
-                    <div class="categoria text-center">
+                    @foreach ($categories as $category)
+                        @if ($loop->iteration < 7)
+                            <div class="categoria text-center">
+                                {{-- <a href="" class="btn btn-light">{{ $category->name }}</a> --}}
+                                <form action="{{ route('filter') }}" method="POST">
+                                    @csrf
+                                    @method('POST')
+                                    <input type="hidden" name="category_id" value="{{ $category->id }}">
+                                    <input type="hidden" name="filtro" value="experiences">
+                                    <input type="hidden" name="state_id" value="">
+                                    <button class="btn btn-light">{{ $category->name }}</button>
+                                </form>
+                            </div>
+                        @endif
+                    @endforeach
+                    {{-- <div class="categoria text-center">
                         <a href="" class="btn btn-light">Viaje de grupo</a>
                     </div>
                     <div class="categoria text-center">
@@ -28,14 +43,11 @@
                     </div>
                     <div class="categoria text-center">
                         <a href="" class="btn btn-light">Viaje de grupo</a>
-                    </div>
-                    <div class="categoria text-center">
-                        <a href="" class="btn btn-light">Viaje de grupo</a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
-        <x-buscador :$categories :$states filtro="experiences"/>
+        <x-buscador :$categories :$states filtro="experiences" />
     </header>
 
     <section class="titular_index">
