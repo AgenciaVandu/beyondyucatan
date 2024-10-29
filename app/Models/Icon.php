@@ -16,4 +16,14 @@ class Icon extends Model
     {
         return $this->belongsToMany(Experience::class);
     }
+
+    public function bucketlists()
+    {
+        return $this->belongsToMany(Bucketlist::class);
+    }
+
+    public function days()
+    {
+        return $this->belongsToMany(Bucketlist::class);
+    }
 }

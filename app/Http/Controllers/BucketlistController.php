@@ -6,6 +6,7 @@ use App\Models\Bucketlist;
 use App\Models\category;
 use App\Models\Day;
 use App\Models\Experience;
+use App\Models\Icon;
 use App\Models\State;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -24,7 +25,9 @@ class BucketlistController extends Controller
     public function show(Bucketlist $bucket)
     {
         $bukets = Bucketlist::all();
-        return view('viajes.detallebucket', ['bucket' => $bucket, 'experiences' => $bukets]);
+        $days = Day::where('bucketlist_id', $bucket->id)->get();
+
+        return view('viajes.detallebucket', ['bucket' => $bucket, 'experiences' => $bukets,'days' => $days]);
     }
 
     public function listBucketlists()
@@ -102,14 +105,19 @@ class BucketlistController extends Controller
     }
     public function destroy(Bucketlist $bucket)
     {
-        $bucket->delete();
+        try {
+            $bucket->delete();
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.bucketlists.index')->with('error', 'No se puede eliminar el bucketlist debido a que cuenta con dias vinculados, debes eliminar primero los dias dentro del bucketlist para poder eliminarlo.');
+        }
         return redirect()->route('admin.bucketlists.index');
     }
 
 
     public function createDay(Bucketlist $bucket){
         $bucket = Bucketlist::find($bucket->id);
-        return view('admin.bucketlists.createDay',compact('bucket'));
+        $icons = Icon::all();
+        return view('admin.bucketlists.createDay',compact('bucket','icons'));
     }
 
 
@@ -127,20 +135,24 @@ class BucketlistController extends Controller
 
         $bucket = Bucketlist::find($request->bucketlist);
 
-        $bucket->days()->create([
+        $day = $bucket->days()->create([
             'title' => $request->title,
             'description' => $request->description,
             'image' => $url,
             'bucketlist_id' => $request->bucketlist_id,
         ]);
 
+
+        $day->icons()->attach($request->icons);
         return redirect()->route('admin.bucketlists.edit',compact('bucket'));
     }
 
     public function editDay(Day $day)
     {
         $day = Day::find($day->id);
-        return view('admin.bucketlists.editDay', compact('day'));
+        $icons = Icon::all();
+        $arrayicons = $day->icons;
+        return view('admin.bucketlists.editDay', compact('day','icons','arrayicons'));
     }
 
     public function updateDay(Request $request, Day $day)
@@ -159,7 +171,17 @@ class BucketlistController extends Controller
         ]);
 
         $bucket = Bucketlist::find($day->bucketlist_id);
+        $day->icons()->sync($request->icons);
+        return redirect()->route('admin.bucketlists.edit',compact('bucket'));
+    }
 
+    public function deleteDay(Day $day){
+        $bucket = Bucketlist::find($day->bucketlist_id);
+        try {
+            $day->delete();
+        } catch (\Throwable $th) {
+            return back()->with('error', 'No se puede eliminar este día, ya que está asociado a un icono, desmarque los iconos en el dia para poder eliminar');
+        }
         return redirect()->route('admin.bucketlists.edit',compact('bucket'));
     }
 }

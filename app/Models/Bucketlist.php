@@ -19,6 +19,6 @@ class Bucketlist extends Model
     }
 
     public function icons(){
-        return $this->belongsToMany(Icon::class);
+        return $this->belongsToMany(Icon::class)->withPivot('icon_id');
     }
 }

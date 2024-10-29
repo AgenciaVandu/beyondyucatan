@@ -30,6 +30,20 @@
                                 @enderror
                             </div>
                             <div class="mb-2">
+                                <x-input-label class="w-full mb-1" for="icons" :value="__('Iconos')" />
+                                <div class="flex items-center space-x-4">
+                                    @foreach ($icons as $icon)
+                                        <div class="text-center">
+                                            <img src="{{ asset($icon->img) }}" alt="">
+                                            <x-text-input type="checkbox" name="icons[]" value="{{ $icon->id }}" />
+                                        </div>
+                                    @endforeach
+                                </div>
+                                @error('icons')
+                                    <span class="text-xs text-red-600">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="mb-2">
                                 <x-input-label class="w-full mb-1" for="image" :value="__('Imagen')" />
                                 <input type="file"
                                     class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"

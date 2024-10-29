@@ -46,93 +46,63 @@
     <hr>
     <div class="dias">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 col-sm-12 p-0 imagen">
-                    <img src="{{ asset('/img/balon.jpg') }}" alt="experiencia bucketlist">
-                </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
-                    <div class="descripcion">
-                        <h2>Día 1</h2>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum doloremque, odio consequuntur
-                            blanditiis ducimus cumque omnis consequatur reiciendis, in nemo deleniti ut numquam deserunt
-                            laborum molestiae nisi ab tenetur? Natus earum minima fuga tempora aliquid, quas facilis
-                            corporis reiciendis excepturi!
-                            <br><br>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam laboriosam unde sequi, esse
-                            incidunt suscipit soluta quaerat odio iure ullam est qui tempora a, voluptatem deleniti
-                            praesentium, quo adipisci harum.
-                        </p>
-                        <div class="cta">
-                            <div class="iconos">
-                                <ul>
-                                    <li class="me-1">
-                                        <span>
-                                            <img src="{{ asset('img/icon.svg') }}" alt="icono experiencia">
-                                        </span>
-                                    </li>
-                                    <li class="me-1">
-                                        <span>
-                                            <img src="{{ asset('img/icon.svg') }}" alt="icono experiencia">
-                                        </span>
-                                    </li>
-                                    <li class="me-1">
-                                        <span>
-                                            <img src="{{ asset('img/icon.svg') }}" alt="icono experiencia">
-                                        </span>
-                                    </li>
-
-
-                                </ul>
+            @foreach ($days as $day)
+                @if ($loop->index % 2 === 0)
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 col-sm-12 p-0 imagen">
+                            <img src="{{ asset($day->image) }}" alt="experiencia bucketlist">
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
+                            <div class="descripcion">
+                                <h2>Día {{ $loop->iteration }}</h2>
+                                <p>
+                                    {{ $day->description }}
+                                </p>
+                                <div class="cta">
+                                    <div class="iconos">
+                                        <ul>
+                                            @foreach ($day->icons as $icon)
+                                                <li class="me-1">
+                                                    <span>
+                                                        <img src="{{ asset($icon->img) }}" alt="icono experiencia">
+                                                    </span>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
-                    <div class="descripcion">
-                        <h2>Día 2</h2>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum doloremque, odio consequuntur
-                            blanditiis ducimus cumque omnis consequatur reiciendis, in nemo deleniti ut numquam deserunt
-                            laborum molestiae nisi ab tenetur? Natus earum minima fuga tempora aliquid, quas facilis
-                            corporis reiciendis excepturi!
-                            <br><br>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam laboriosam unde sequi, esse
-                            incidunt suscipit soluta quaerat odio iure ullam est qui tempora a, voluptatem deleniti
-                            praesentium, quo adipisci harum.
-                        </p>
-                        <div class="cta">
-                            <div class="iconos">
-                                <ul>
-                                    <li class="me-1">
-                                        <span>
-                                            <img src="{{ asset('img/icon.svg') }}" alt="icono experiencia">
-                                        </span>
-                                    </li>
-                                    <li class="me-1">
-                                        <span>
-                                            <img src="{{ asset('img/icon.svg') }}" alt="icono experiencia">
-                                        </span>
-                                    </li>
-                                    <li class="me-1">
-                                        <span>
-                                            <img src="{{ asset('img/icon.svg') }}" alt="icono experiencia">
-                                        </span>
-                                    </li>
-
-
-                                </ul>
+                @else
+                    <div class="row mt-5">
+                        <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
+                            <div class="descripcion">
+                                <h2>Día {{ $loop->iteration }}</h2>
+                                <p>
+                                    {{ $day->description }}
+                                </p>
+                                <div class="cta">
+                                    <div class="iconos">
+                                        <ul>
+                                            @foreach ($day->icons as $icon)
+                                                <li class="me-1">
+                                                    <span>
+                                                        <img src="{{ asset($icon->img) }}" alt="icono experiencia">
+                                                    </span>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 p-0 imagen">
+                            <img src="{{ asset($day->image) }}" alt="experiencia bucketlist">
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 p-0 imagen">
-                    <img src="{{ asset('/img/balon.jpg') }}" alt="experiencia bucketlist">
-                </div>
-            </div>
-
+                @endif
+            @endforeach
         </div>
     </div>
     <x-destacadas.ventacruzada :experiences="$experiences" />
