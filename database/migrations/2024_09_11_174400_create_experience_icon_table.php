@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('experience_id');
             $table->unsignedBigInteger('icon_id');
-            $table->foreign('experience_id')->references('id')->on('experiences');
-            $table->foreign('icon_id')->references('id')->on('icons');
+            $table->foreign('experience_id')->references('id')->on('experiences')->onDelete('cascade');
+            $table->foreign('icon_id')->references('id')->on('icons')->onDelete('cascade');
             $table->timestamps();
         });
     }
