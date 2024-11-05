@@ -35,7 +35,7 @@
                             <ul>
                                 @foreach ($experiencia->icons as $icon)
                                     <li>
-                                        <img src="{{ asset($icon->img) }}" alt="icono experiencia">
+                                        <img src="{{ asset($icon->img) }}" alt="icono experiencia" width="30">
                                     </li>
                                 @endforeach
                             </ul>
@@ -43,7 +43,7 @@
                         <div class="costo">
                             <p>
                                 <span>Desde:</span>
-                                $ <span> {{ $experiencia->price }}</span> mxn P/p
+                                $ <span> {{ $experiencia->price }}</span> USD P/p
                             </p>
                             <hr>
                         </div>

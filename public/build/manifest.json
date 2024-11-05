@@ -1,86 +1,87 @@
 {
   "public/font/Austin-Roman.otf": {
-    "file": "assets/Austin-Roman-xyCw3Tjd.otf",
+    "file": "assets/Austin-Roman-DHILDdON.otf",
     "src": "public/font/Austin-Roman.otf"
   },
   "public/font/Austin-RomanItalic.otf": {
-    "file": "assets/Austin-RomanItalic-OlPcXqlC.otf",
+    "file": "assets/Austin-RomanItalic-6U9xeqUK.otf",
     "src": "public/font/Austin-RomanItalic.otf"
   },
   "public/font/SuisseIntl-Bold.otf": {
-    "file": "assets/SuisseIntl-Bold-gobcCz8X.otf",
+    "file": "assets/SuisseIntl-Bold-CChtwLPx.otf",
     "src": "public/font/SuisseIntl-Bold.otf"
   },
   "public/font/SuisseIntl-Regular.otf": {
-    "file": "assets/SuisseIntl-Regular-3cW9YiZu.otf",
+    "file": "assets/SuisseIntl-Regular-Ddxb1iJm.otf",
     "src": "public/font/SuisseIntl-Regular.otf"
   },
   "public/img/webp/2.webp": {
-    "file": "assets/2-DAj9bvLP.webp",
+    "file": "assets/2-MCP1u8s9.webp",
     "src": "public/img/webp/2.webp"
   },
   "public/img/webp/textura.webp": {
-    "file": "assets/textura-8JD6JlA-.webp",
+    "file": "assets/textura-DwkPomUD.webp",
     "src": "public/img/webp/textura.webp"
   },
   "resources/css/app.css": {
-    "file": "assets/app-lAvwHEBZ.css",
-    "isEntry": true,
-    "src": "resources/css/app.css"
+    "file": "assets/app-DJKcqdoE.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-dvnG54ih.js",
-    "isEntry": true,
-    "src": "resources/js/app.js"
+    "file": "assets/app-DLXkxiZ3.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
   },
   "resources/scss/app.scss": {
-    "file": "assets/app-k44Em_0s.css",
-    "isEntry": true,
-    "src": "resources/scss/app.scss"
+    "file": "assets/app-2uPvDBJI.css",
+    "src": "resources/scss/app.scss",
+    "isEntry": true
   },
   "resources/scss/artesanos.scss": {
-    "file": "assets/artesanos-HEtfJjUt.css",
-    "isEntry": true,
-    "src": "resources/scss/artesanos.scss"
+    "file": "assets/artesanos-CNxzhNtA.css",
+    "src": "resources/scss/artesanos.scss",
+    "isEntry": true
   },
   "resources/scss/bucketlist.scss": {
-    "file": "assets/bucketlist-o2VLqpNN.css",
-    "isEntry": true,
-    "src": "resources/scss/bucketlist.scss"
+    "file": "assets/bucketlist-C2qnkl4R.css",
+    "src": "resources/scss/bucketlist.scss",
+    "isEntry": true
   },
   "resources/scss/contacto.scss": {
-    "file": "assets/contacto-mVCutFRp.css",
-    "isEntry": true,
-    "src": "resources/scss/contacto.scss"
+    "file": "assets/contacto-DWiwKpsb.css",
+    "src": "resources/scss/contacto.scss",
+    "isEntry": true
   },
   "resources/scss/cotizador.scss": {
-    "file": "assets/cotizador-efijxZtS.css",
-    "isEntry": true,
-    "src": "resources/scss/cotizador.scss"
+    "file": "assets/cotizador-NTKUK5L-.css",
+    "src": "resources/scss/cotizador.scss",
+    "isEntry": true
   },
   "resources/scss/detallebucket.scss": {
-    "file": "assets/detallebucket-WPdQZCFB.css",
-    "isEntry": true,
-    "src": "resources/scss/detallebucket.scss"
+    "file": "assets/detallebucket-DmSFrZ78.css",
+    "src": "resources/scss/detallebucket.scss",
+    "isEntry": true
   },
   "resources/scss/experiencia.scss": {
-    "file": "assets/experiencia-UxjzW7_n.css",
-    "isEntry": true,
-    "src": "resources/scss/experiencia.scss"
+    "file": "assets/experiencia-BvyzKHrB.css",
+    "src": "resources/scss/experiencia.scss",
+    "isEntry": true
   },
   "resources/scss/experiencias.scss": {
-    "file": "assets/experiencias-ozKmLjsv.css",
-    "isEntry": true,
-    "src": "resources/scss/experiencias.scss"
+    "file": "assets/experiencias-DITtiL92.css",
+    "src": "resources/scss/experiencias.scss",
+    "isEntry": true
   },
   "resources/scss/index.scss": {
-    "file": "assets/index-FMigBKah.css",
-    "isEntry": true,
-    "src": "resources/scss/index.scss"
+    "file": "assets/index-BjGOvIdz.css",
+    "src": "resources/scss/index.scss",
+    "isEntry": true
   },
   "resources/scss/solicitud.scss": {
-    "file": "assets/solicitud-Ma-uWI2W.css",
-    "isEntry": true,
-    "src": "resources/scss/solicitud.scss"
+    "file": "assets/solicitud-CK0-_fbe.css",
+    "src": "resources/scss/solicitud.scss",
+    "isEntry": true
   }
 }
