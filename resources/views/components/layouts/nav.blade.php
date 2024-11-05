@@ -33,7 +33,10 @@
                 <li class="nav-item">
                     <a class="nav-link">Español</a>
                 </li> --}}
-                <div id="google_translate_element" class="google"></div>
+                <li class="nav-item">
+                    <div id="google_translate_element" class="google"></div>
+                </li>
+
             </ul>
 
         </div>

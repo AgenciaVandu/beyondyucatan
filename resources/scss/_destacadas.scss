@@ -8,7 +8,7 @@ $fuentes : (
 @use 'fonts';
 @use 'colores';
 .experiencias {
-  
+
     min-height: 600px;
     display: flex;
     justify-content: center;
@@ -18,6 +18,12 @@ $fuentes : (
        max-width: 550px;
        height: 720px;
        object-fit: cover;
+
+       img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+       }
     }
     .contenido {
        padding: 4em 3.8em;
@@ -45,7 +51,7 @@ $fuentes : (
              margin: 0;
              padding: 0;
              li {
-                
+
                 img {
                    height: 40px;
                 }
@@ -64,7 +70,7 @@ $fuentes : (
              border: solid 1px colores.$naranja;
           }
        }
-      
+
     } @media (max-width:550px) {
       .cta {
          display: block;

@@ -92,8 +92,8 @@
                         @foreach ($experiencias as $experiencia)
                             <x-destacadas.experiencia :$experiencia>
                                 <div class="container">
-                                    <x-slot name="imagenExperiencia">
-                                        <img src="{{ asset($experiencia->imagedestacada) }}" class="img-fluid"
+                                    <x-slot name="imagenExperiencia" >
+                                        <img src="{{ asset($experiencia->imagedestacada) }}"
                                             alt="Imagen de tour">
                                     </x-slot>
                                     <x-slot name="titulocuerpo">

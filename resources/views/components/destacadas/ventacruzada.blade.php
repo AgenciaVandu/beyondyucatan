@@ -1,7 +1,7 @@
 <section class="intereses">
     <div class="container">
         <div class="text-center">
-            <h1>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+            <h1>Experiencias que te podrían interesar.</h1>
         </div>
 
     <div class="opciones">
