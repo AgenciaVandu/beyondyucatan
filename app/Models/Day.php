@@ -15,4 +15,8 @@ class Day extends Model
     {
         return $this->belongsTo(Bucketlist::class);
     }
+
+    public function icons(){
+        return $this->belongsToMany(Icon::class)->withPivot('icon_id');
+    }
 }

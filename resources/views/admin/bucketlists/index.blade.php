@@ -42,6 +42,10 @@
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-200">
+                                            @if (Session::has('error'))
+                                                <div class="bg-red-400 p-3 rounded-lg text-sm">
+                                                    {{ Session::get('error') }}</div>
+                                            @endif
                                             @foreach ($buckets as $bucket)
                                                 <tr>
                                                     <td

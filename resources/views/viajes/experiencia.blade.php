@@ -11,7 +11,7 @@
                 <h1> {{ $experiencia->titulo }}</h1>
             </div>
         </div>
-        <x-buscador :$categories :$states filtro="experiencia"/>
+        <x-buscador :$categories :$states filtro="experiencia" />
     </header>
 
     <section class="titular">
@@ -20,50 +20,46 @@
         </div>
     </section>
     <section class="infoexp">
-       <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12 rowimg">
-               <img src=" {{ $experiencia->imagedestacada }}" alt="">
-            </div>
-            <div class="col-lg-6 col-md-12 col-sm-12 contenido m-auto">
-                <h2>{{ $experiencia->titulo }}</h2>
-                <p>
-                    {{ $experiencia->longdescription }}
-                </p>
-                <div class="cta">
-                    <div class="iconos">
-                        <ul>
-                            <li>
-                                <img src="{{ asset('img/icon.svg') }}" alt="icono experiencia">
-                            </li>
-                            <li>
-                                <img src="{{ asset('img/icon.svg') }}" alt="icono experiencia">
-                            </li>
-                            <li>
-                                <img src="{{ asset('img/icon.svg') }}" alt="icono experiencia">
-                            </li>
-                        </ul>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 rowimg">
+                    <img src=" {{ $experiencia->imagedestacada }}" alt="">
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 contenido m-auto">
+                    <h2>{{ $experiencia->titulo }}</h2>
+                    <p>
+                        {{ $experiencia->longdescription }}
+                    </p>
+                    <div class="cta">
+                        <div class="iconos">
+                            <ul>
+                                @foreach ($experiencia->icons as $icon)
+                                    <li>
+                                        <img src="{{ asset($icon->img) }}" alt="icono experiencia">
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        <div class="costo">
+                            <p>
+                                <span>Desde:</span>
+                                $ <span> {{ $experiencia->price }}</span> mxn P/p
+                            </p>
+                            <hr>
+                        </div>
                     </div>
-                    <div class="costo">
-                        <p>
-                            <span>Desde:</span>
-                            $ <span> {{ $experiencia->price }}</span> mxn P/p
-                        </p>
-                        <hr>
+                    <div class="boton">
+                        <a href="{{ route('cotizador-grupo', $experiencia) }}" class="btn btn-primary">Quiero esta
+                            experiencia</a>
                     </div>
                 </div>
-                <div class="boton">
-                    <a href="{{ route('cotizador-grupo',$experiencia) }}"
-                        class="btn btn-primary">Quiero esta experiencia</a>
-                </div>
             </div>
-           </div>
-       </div>
+        </div>
 
     </section>
-    <x-destacadas.ventacruzada :experiences="$experiences"/>
+    <x-destacadas.ventacruzada :experiences="$experiences" />
     <section class="llamada">
-        <x-cta  />
+        <x-cta />
     </section>
 
 </x-layouts.guest>

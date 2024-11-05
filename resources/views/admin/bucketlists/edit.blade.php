@@ -12,9 +12,12 @@
                     href="{{ route('admin.bucketlists.addDay', $bucket) }}">Agregar Dia</x-nav-link>
             </div>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                @if (Session::has('error'))
+                    <div class="bg-red-400 p-3 rounded-lg text-sm">{{ Session::get('error') }}</div>
+                @endif
                 <div class="p-6 text-gray-900">
                     @isset($days)
-                    Dias
+                        Dias
                         @foreach ($days as $day)
                             <div class="flex mb-2 p-1">
                                 <img src="{{ asset($day->image) }}" alt="" class="w-20 h-20">
@@ -26,12 +29,15 @@
                                     <div>
                                         <a href="{{ route('admin.bucketlists.editDay', $day) }}"> Edit</a>
                                     </div>
+                                    <div class="text-red-400 ml-4">
+                                        <a href="{{ route('admin.bucketlists.deleteDay', $day) }}"> Eliminar</a>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
                     @endisset
                     <div>
-                        <form action="{{ route('admin.bucketlists.update',$bucket) }}" method="post"
+                        <form action="{{ route('admin.bucketlists.update', $bucket) }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
@@ -73,7 +79,9 @@
                                     class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
                                     name="category_id">
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}" @if($category->id == $bucket->category_id) selected @endif >{{ $category->name }}</option>
+                                        <option value="{{ $category->id }}"
+                                            @if ($category->id == $bucket->category_id) selected @endif>{{ $category->name }}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
@@ -83,7 +91,9 @@
                                     class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
                                     name="state_id">
                                     @foreach ($states as $state)
-                                        <option value="{{ $state->id }}" @if($state->id == $bucket->state_id) selected @endif >{{ $state->name }}</option>
+                                        <option value="{{ $state->id }}"
+                                            @if ($state->id == $bucket->state_id) selected @endif>{{ $state->name }}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>

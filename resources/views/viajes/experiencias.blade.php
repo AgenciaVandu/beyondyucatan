@@ -20,7 +20,7 @@
         <div class="opciones">
             @foreach ($experiencias as $experiencia)
             <div class="opcion">
-                <x-cards>
+                <x-cards :$experiencia>
                     <x-slot name="imagenExperiencia">
                         <img src="{{asset($experiencia->image)}}" class="img-fluid" alt="Imagen de tour">
                     </x-slot>
