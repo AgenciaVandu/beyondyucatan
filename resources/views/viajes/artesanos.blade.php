@@ -85,13 +85,8 @@
             Don Alfredo <br> Artesano de lek
         </x-slot>
         <x-slot name="descripcionartesano">
-            Conoce la creatividad que desborda de las manos del gran maestro Esteban Abán, la cual se ve completada con
-            los años de investigación que ha invertido para la realización de piezas, sobre todo joyería, con semillas
-            de cocoyol, dzibul, y espinas de henequén. <br><br>
+            Es un destacado artesano de Valladolid, Yucatán, especializado en la elaboración de piezas artesanales con jícara, un material típico de la región. Su trabajo incluye la creación de objetos decorativos como lámparas y tortilleras, todos finamente decorados y hechos a mano. <br><br> Don Alfredo ha participado en diversas ferias y exposiciones de arte popular, como el evento "Arte a Mano", donde ha mostrado su habilidad y creatividad, siendo reconocido por su maestría en este arte tradicional
 
-            Conoce la creatividad que desborda de las manos del gran maestro Esteban Abán, la cual se ve completada con
-            los años de investigación que ha invertido para la realización de piezas, sobre todo joyería, con semillas
-            de cocoyol, dzibul, y espinas de henequén
         </x-slot>
         <x-slot name="imgartesano">
             <div class="row p-5">

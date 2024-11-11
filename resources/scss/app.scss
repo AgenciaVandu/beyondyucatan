@@ -49,7 +49,8 @@ $form-range-thumb-active-bg: tint-color($naranja, 70%);
   @include boton(#fff, $naranja, 10px, #fff, 180px );
 }
 .btn-info {
-  @include boton($naranja, $naranja, 10px, #fff, 180px );
+  @include boton(#fff, $naranja, 10px, #fff, 180px );
+  background-color: $naranja;
 }
 .btn-success {
     @include boton(#fff, $naranja, 0, none, 180px );
@@ -57,7 +58,7 @@ $form-range-thumb-active-bg: tint-color($naranja, 70%);
 }
 .btn-light {
     @include boton(#fff, $naranja, 10px, none, 180px );
-    background:gray;
+    background:transparent;
     border-color: gray;
 }
 

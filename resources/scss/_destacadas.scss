@@ -15,10 +15,10 @@ $fuentes : (
     align-items: center;
     overflow: hidden;
     .img_contenido {
-       max-width: 550px;
-       height: 720px;
+        margin-left: 0;
+       max-width: 600px;
+       height: 710px;
        object-fit: cover;
-
        img {
         object-fit: cover;
         width: 100%;

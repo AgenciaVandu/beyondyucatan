@@ -22,7 +22,9 @@
             <div class="opcion">
                 <x-cards :$experiencia>
                     <x-slot name="imagenExperiencia">
-                        <img src="{{asset($experiencia->image)}}" class="img-fluid" alt="Imagen de tour">
+                        <a href="/experiencias/{{$experiencia->id}}">
+                            <img src="{{asset($experiencia->image)}}" class="img-fluid" alt="Imagen de tour">
+                        </a>
                     </x-slot>
                     <x-slot name="tituloExperiencia">
                         {{ $experiencia -> titulo }}
@@ -34,7 +36,7 @@
                         {{$experiencia -> price}}
                     </x-slot>
                     <x-slot name="btnExperiencia">
-                        <a href="/experiencias/{{$experiencia->id}}" class="btn btn-info">Ver experiencia</a>
+                        <a href="/experiencias/{{$experiencia->id}}" class="btn btn-secondary">Ver experiencia</a>
                     </x-slot>
 
                 </x-cards>

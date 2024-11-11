@@ -1,7 +1,5 @@
 <div class="card">
-    <a href="">
-        {{ $imagenExperiencia ?? 'no disponible' }}
-    </a>
+    {{ $imagenExperiencia ?? 'no disponible' }}
     <div class="contenido1">
         <h3>{{ $tituloExperiencia ?? 'Título no disponible' }}</h3>
         <p>{{ $descripcionExperiencia ?? 'Descripción no disponible' }}</p>

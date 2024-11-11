@@ -1,7 +1,8 @@
 <div class="carousel__elemento">
     <div class="row"> {{-- Carrusel --}}
-        <div class="col-lg-6 col-md-12 col-sm-12 p-0 img_contenido">
-            <div >{{ $imagenExperiencia ?? 'No disponible' }}</div>
+        <div class="col-lg-6 col-md-12 col-sm-12 ">
+            {{ $imagenExperiencia ?? 'No disponible' }}
+            {{-- <div>{{ $imagenExperiencia ?? 'No disponible' }}</div> --}}
         </div>
         <div class="col-lg-6 col-md-12 col-sm-12 contenido m-auto">
             <h2>{{ $titulocuerpo ?? 'No disponible' }}</h2>

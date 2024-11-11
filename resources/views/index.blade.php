@@ -82,47 +82,41 @@
     </section>
 
     <section class="experiencias">
-        <div class="container-fluid">
-            <div class="carousel">
-                <div class="carousel__contenedor">
+        <div class="carousel__contenedor">
 
+            <div class="carousel__lista">
+                @foreach ($experiencias as $experiencia)
+                    <x-destacadas.experiencia :$experiencia>
+                        <x-slot name="imagenExperiencia" >
+                            <div class="p-0 img_contenido">
+                             <img src="{{ asset($experiencia->imagedestacada) }}"
+                             alt="Imagen de tour">
+                         </div>
 
-
-                    <div class="carousel__lista">
-                        @foreach ($experiencias as $experiencia)
-                            <x-destacadas.experiencia :$experiencia>
-                                <div class="container">
-                                    <x-slot name="imagenExperiencia" >
-                                        <img src="{{ asset($experiencia->imagedestacada) }}"
-                                            alt="Imagen de tour">
-                                    </x-slot>
-                                    <x-slot name="titulocuerpo">
-                                        {{ $experiencia->titulo }}
-                                    </x-slot>
-                                    <x-slot name="descripcionLarga">
-                                        {{ $experiencia->longdescription }}
-                                    </x-slot>
-                                    <x-slot name="precio">
-                                        {{ $experiencia->price }}
-                                    </x-slot>
-                                    <x-slot name="botoncta">
-                                        Quiero esta experiencia
-                                    </x-slot>
-                                </div>
-                            </x-destacadas.experiencia>
-                        @endforeach
-                    </div>
-                    <button aria-label="Anterior" class="carousel__anterior" id="glider_prev">
-                        < </button>
-                            <button aria-label="Siguiente" class="carousel__siguiente" id="glider_next">
-                                >
-                            </button>
-                </div>
-
-                <div role="tablist" class="carousel__indicador"></div>
+                         </x-slot>
+                         <x-slot name="titulocuerpo">
+                             {{ $experiencia->titulo }}
+                         </x-slot>
+                         <x-slot name="descripcionLarga">
+                             {{ $experiencia->longdescription }}
+                         </x-slot>
+                         <x-slot name="precio">
+                             {{ $experiencia->price }}
+                         </x-slot>
+                         <x-slot name="botoncta">
+                             Quiero esta experiencia
+                         </x-slot>
+                    </x-destacadas.experiencia>
+                @endforeach
             </div>
-
+            <button aria-label="Anterior" class="carousel__anterior" id="glider_prev">
+                < </button>
+                    <button aria-label="Siguiente" class="carousel__siguiente" id="glider_next">
+                        >
+                    </button>
         </div>
+
+        <div role="tablist" class="carousel__indicador"></div>
 
 
     </section>
