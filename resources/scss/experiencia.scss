@@ -78,4 +78,15 @@ h1, h2, h3, h4, h5 {
             }
         }
     }
+    .costo {
+
+        p, span {
+           text-align: left;
+           font-family: map-get($fuentes , "suis-bold" );
+
+        }
+        hr {
+           border: solid 1.5px colores.$naranja;
+        }
+     }
 }

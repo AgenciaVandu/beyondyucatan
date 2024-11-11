@@ -11,7 +11,7 @@
     gap: 20px;
     a {
         text-decoration: none;
-
+        background-color: black;
     }
 }
 
@@ -23,6 +23,12 @@
     justify-content: center;
     align-items: center;
     margin-right: 1em;
+    .interior {
+        position: absolute;
+        text-align: center;
+        color: #fff;
+        z-index: 10;
+    }
             .contenido {
                 width: 300px;
                 height: 500px;
@@ -38,11 +44,12 @@
 
 
                 }
-                .interior {
-                    text-align: center;
-                    color: #fff;
 
-                }
+                transition: .5s ease;
 
-            }
+        }.contenido:hover {
+            background-color: black;
+            opacity: .5;
+            transition: ease .5s;
+        }
     }

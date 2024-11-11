@@ -19,7 +19,7 @@
         <div class="costo">
             <p>
                 <span>Desde:</span>
-                $ <span>{{ $precio ?? 'N/A' }}</span> mxn
+                $ <span>{{ $precio ?? 'N/A' }}</span> USD
             </p>
             <hr>
         </div>

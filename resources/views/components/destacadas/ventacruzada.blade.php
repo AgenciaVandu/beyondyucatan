@@ -8,17 +8,18 @@
         @foreach ($experiences as $experience)
             <a href="#" class="opcion">
                 @if ($experience->imagedestacada)
+
+                <div class="interior">
+                    <h3>{{ $experience->titulo }}</h3>
+                    <div class="boton">
+                        <button class="btn-secondary">
+                            Ver
+                        </button>
+                    </div>
+                </div>
+                
                 <div class="contenido" style="background-image: url('{{ asset($experience->imagedestacada) }}'); background-position: center; background-repeat: no-repeat;">
                     @endif
-
-                    <div class="interior">
-                        <h3>{{ $experience->titulo }}</h3>
-                        <div class="boton">
-                            <button class="btn-secondary">
-                                Ver
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </a>
 

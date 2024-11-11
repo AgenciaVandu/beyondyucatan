@@ -32,10 +32,10 @@
                     </p>
                     <div class="cta">
                         <div class="iconos">
-                            <ul>
+                            <ul style="display: flex; gap: 5px;">
                                 @foreach ($experiencia->icons as $icon)
                                     <li>
-                                        <img src="{{ asset($icon->img) }}" alt="icono experiencia" width="30">
+                                        <img src="{{ asset($icon->img) }}" alt="icono experiencia" width="35">
                                     </li>
                                 @endforeach
                             </ul>
