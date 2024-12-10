@@ -1,7 +1,7 @@
 @push('scss')
-@vite(['resources/scss/app.scss', 'resources/scss/experiencias.scss', 'resources/js/app.js' ])
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.css">
-    <link rel="stylesheet" href="{{asset('css/carousel.css')}}">
+    @vite(['resources/scss/app.scss', 'resources/scss/experiencias.scss', 'resources/js/app.js'])
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.css">
+    <link rel="stylesheet" href="{{ asset('css/carousel.css') }}">
 @endpush
 <x-layouts.guest title="Comienza tu aventura en Yucatán">
     <header class="headerindex"
@@ -9,7 +9,7 @@
     width: 100%; background-position:center; min-height:100vh; ">
         <div class="fondo">
             <div class="titular">
-                <h1 >¡Comienza tu aventura!</h1>
+                <h1>¡Comienza tu aventura!</h1>
             </div>
         </div>
         <x-buscador :$categories :$states filtro="experiences" />
@@ -19,26 +19,36 @@
     <section class="experiencias">
         <div class="opciones">
             @foreach ($experiencias as $experiencia)
-            <div class="opcion">
-                <x-cards :$experiencia>
-                    <x-slot name="imagenExperiencia">
-                        <img src="{{asset($experiencia->image)}}" class="img-fluid" alt="Imagen de tour">
-                    </x-slot>
-                    <x-slot name="tituloExperiencia">
-                        {{ $experiencia -> titulo }}
-                    </x-slot>
-                    <x-slot name="descripcionExperiencia">
-                        {{ $experiencia -> lightdescription}}
-                    </x-slot>
-                    <x-slot name="precio">
-                        {{$experiencia -> price}}
-                    </x-slot>
-                    <x-slot name="btnExperiencia">
-                        <a href="/experiencias/{{$experiencia->id}}" class="btn btn-info">Ver experiencia</a>
-                    </x-slot>
+                <div class="opcion">
+                    <x-cards :$experiencia>
+                        <x-slot name="imagenExperiencia">
+                            <img src="{{ asset($experiencia->image) }}" class="img-fluid" alt="Imagen de tour">
+                        </x-slot>
+                        <x-slot name="tituloExperiencia">
+                            @if (session()->get('locale') == 'es')
+                                {{ $experiencia->titulo }}
+                            @else
+                                {{ $experiencia->titulo_en }}
+                            @endif
+                        </x-slot>
+                        <x-slot name="descripcionExperiencia">
+                            @if (session()->get('locale') == 'en')
+                                {!! $experiencia->lightdescription !!}
+                            @else
+                                {!! $experiencia->lightdescription_en !!}
+                            @endif
 
-                </x-cards>
-            </div>
+                        </x-slot>
+                        <x-slot name="precio">
+                            {{ $experiencia->price }}
+                        </x-slot>
+                        <x-slot name="btnExperiencia">
+                            <a href="{{ route('experiencia', $experiencia->id) }}" class="btn btn-info">Ver
+                                experiencia</a>
+                        </x-slot>
+
+                    </x-cards>
+                </div>
             @endforeach
 
         </div>
@@ -47,8 +57,7 @@
         <x-cta />
     </section>
     @push('js')
-
-    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.js"></script>
-    <script src="{{asset('js/glider.js')}}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.js"></script>
+        <script src="{{ asset('js/glider.js') }}"></script>
     @endpush
 </x-layouts.guest>

@@ -34,7 +34,10 @@
                     <a class="nav-link">Español</a>
                 </li> --}}
                 <li class="nav-item">
-                    <div id="google_translate_element" class="google"></div>
+                    <a href="{{ route('set.lang', 'es') }}">Es</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('set.lang', 'en') }}">En</a>
                 </li>
 
             </ul>

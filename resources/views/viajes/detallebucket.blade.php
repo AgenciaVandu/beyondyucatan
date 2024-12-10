@@ -4,12 +4,16 @@
 <x-layouts.guest title="Comienza tu aventura en Yucatán">
     <x-header>
         <x-slot name="tituloheader">
+            @if (session()->get('locale') == 'es')
             {{ $bucket->title }}
+            @else
+            {{ $bucket->title_en }}
+            @endif
         </x-slot>
     </x-header>
     <section class="intro">
         <div class="container">
-            <p>{{ $bucket->description }}</p>
+            <p>{!! $bucket->description !!}</p>
             <div class="cta">
                 <div class="iconos">
                     <ul>
@@ -55,9 +59,15 @@
                         <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
                             <div class="descripcion">
                                 <h2>Día {{ $loop->iteration }}</h2>
-                                <p>
-                                    {{ $day->description }}
-                                </p>
+                                @if (session()->get('locale') == 'es')
+                                    <p>
+                                        {!! $day->description !!}
+                                    </p>
+                                @else
+                                    <p>
+                                        {!! $day->description_en !!}
+                                    </p>
+                                @endif
                                 <div class="cta">
                                     <div class="iconos">
                                         <ul>
@@ -79,9 +89,15 @@
                         <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
                             <div class="descripcion">
                                 <h2>Día {{ $loop->iteration }}</h2>
-                                <p>
-                                    {{ $day->description }}
-                                </p>
+                                @if (session()->get('locale') == 'es')
+                                    <p>
+                                        {!! $day->description !!}
+                                    </p>
+                                @else
+                                    <p>
+                                        {!! $day->description_en !!}
+                                    </p>
+                                @endif
                                 <div class="cta">
                                     <div class="iconos">
                                         <ul>

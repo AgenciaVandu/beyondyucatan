@@ -8,7 +8,11 @@
     width: 100%; background-position:center; min-height:100vh; ">
         <div class="fondo">
             <div class="titular">
-                <h1> {{ $experiencia->titulo }}</h1>
+                @if (session()->get('locale') == 'es')
+                    <h1> {{ $experiencia->titulo }}</h1>
+                @else
+                    <h1> {{ $experiencia->titulo_en }}</h1>
+                @endif
             </div>
         </div>
         <x-buscador :$categories :$states filtro="experiencia" />
@@ -16,7 +20,11 @@
 
     <section class="titular">
         <div class="container">
-            <p>{{ $experiencia->lightdescription }}</p>
+            @if (session()->get('locale') == 'es')
+                <p>{!! $experiencia->lightdescription !!}</p>
+            @else
+                <p>{!! $experiencia->lightdescription_en !!}</p>
+            @endif
         </div>
     </section>
     <section class="infoexp">
@@ -26,10 +34,17 @@
                     <img src=" {{ $experiencia->imagedestacada }}" alt="">
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 contenido m-auto">
-                    <h2>{{ $experiencia->titulo }}</h2>
-                    <p>
-                        {{ $experiencia->longdescription }}
-                    </p>
+                    @if (session()->get('locale') == 'es')
+                        <h2>{{ $experiencia->titulo }}</h2>
+                        <p>
+                            {!! $experiencia->longdescription !!}
+                        </p>
+                    @else
+                        <h2>{{ $experiencia->titulo_en }}</h2>
+                        <p>
+                            {!! $experiencia->longdescription_en !!}
+                        </p>
+                    @endif
                     <div class="cta">
                         <div class="iconos">
                             <ul>

@@ -61,7 +61,9 @@ class BucketlistController extends Controller
         $bucket = Bucketlist::create([
             'title' => $request->title,
             'description' => $request->description,
+            'description_en' => $request->description_en,
             'longdescription' => $request->longdescription,
+            'longdescription_en' => $request->longdescription_en,
             'days' => $request->days,
             'category_id' => $request->category_id,
             'image' => $url,
@@ -93,7 +95,13 @@ class BucketlistController extends Controller
         $bucket->update([
             'title' => $request->title,
             'description' => $request->description,
+            'description_en' => $request->description_en,
             'longdescription' => $request->longdescription,
+            'longdescription_en' => $request->longdescription_en,
+            'days' => $request->days,
+            'typetour' => '',
+            'category_id' => $request->category_id,
+            'price' => $request->price,
             'days' => $request->days,
             'typetour' => '',
             'category_id' => $request->category_id,
@@ -138,6 +146,8 @@ class BucketlistController extends Controller
         $day = $bucket->days()->create([
             'title' => $request->title,
             'description' => $request->description,
+            'title_en' => $request->title_en,
+            'description_en' => $request->description_en,
             'image' => $url,
             'bucketlist_id' => $request->bucketlist_id,
         ]);
@@ -168,6 +178,8 @@ class BucketlistController extends Controller
         $day->update([
             'title' => $request->title,
             'description' => $request->description,
+            'title_en' => $request->title_en,
+            'description_en' => $request->description_en,
         ]);
 
         $bucket = Bucketlist::find($day->bucketlist_id);

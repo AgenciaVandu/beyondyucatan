@@ -13,28 +13,68 @@
                         <form action="{{ route('admin.experiences.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('POST')
-                            <div class="mb-2">
-                                <x-input-label class="w-full mb-1" for="title" :value="__('Titulo')" />
-                                <x-text-input class="w-full" type="text" name="titulo" placeholder="titulo" value="{{ old('titulo') }}" />
-                                @error('titulo')
-                                    <span class="text-xs text-red-600">{{ $message }}</span>
-                                @enderror
+                            <h1 class="text-lg font-light text-blue-300 text-center">
+                                Version Español
+                            </h1>
+                            <div class="bg-slate-100 p-3 rounded-lg shadow-md">
+                                <div class="mb-2">
+                                    <x-input-label class="w-full mb-1" for="title" :value="__('Titulo')" />
+                                    <x-text-input class="w-full" type="text" name="titulo" placeholder="titulo"
+                                        value="{{ old('titulo') }}" />
+                                    @error('titulo')
+                                        <span class="text-xs text-red-600">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-2">
+                                    <x-input-label class="w-full mb-1" for="lightdescription" :value="__('Descripcion corta')" />
+                                    <textarea id="ckcontent"
+                                        class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
+                                        type="text" name="lightdescription" placeholder="Descripcion corta">{{ old('longdescription') }}</textarea>
+                                    @error('lightdescription')
+                                        <span class="text-xs text-red-600">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-2">
+                                    <x-input-label class="w-full mb-1" for="longdescription" :value="__('Descripcion larga')" />
+                                    <textarea id="ckcontent2"
+                                        class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
+                                        type="text" name="longdescription" placeholder="Descripcion larga">{{ old('longdescription') }}</textarea>
+                                    @error('longdescription')
+                                        <span class="text-xs text-red-600">{{ $message }}</span>
+                                    @enderror
+                                </div>
                             </div>
-                            <div class="mb-2">
-                                <x-input-label class="w-full mb-1" for="lightdescription" :value="__('Descripcion corta')" />
-                                <textarea class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
-                                    rows="3" type="text" name="lightdescription" placeholder="Descripcion corta">{{old('longdescription')}}</textarea>
-                                @error('lightdescription')
-                                    <span class="text-xs text-red-600">{{ $message }}</span>
-                                @enderror
-                            </div>
-                            <div class="mb-2">
-                                <x-input-label class="w-full mb-1" for="longdescription" :value="__('Descripcion larga')" />
-                                <textarea class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
-                                    rows="3" type="text" name="longdescription" placeholder="Descripcion larga">{{old('longdescription')}}</textarea>
-                                @error('longdescription')
-                                    <span class="text-xs text-red-600">{{ $message }}</span>
-                                @enderror
+                            {{-- inputs ingles --}}
+                            <h1 class="text-lg font-light text-blue-300 mt-2 text-center">
+                                Version Inglés
+                            </h1>
+                            <div class="bg-red-50 p-3 rounded-lg shadow-md mb-2">
+                                <div class="mb-2">
+                                    <x-input-label class="w-full mb-1" for="title" :value="__('Titulo')" />
+                                    <x-text-input class="w-full" type="text" name="titulo_en" placeholder="titulo"
+                                        value="{{ old('titulo') }}" />
+                                    @error('titulo')
+                                        <span class="text-xs text-red-600">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-2">
+                                    <x-input-label class="w-full mb-1" for="lightdescription" :value="__('Descripcion corta')" />
+                                    <textarea id="ckcontent3"
+                                        class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
+                                        type="text" name="lightdescription_en" placeholder="Descripcion corta">{{ old('longdescription') }}</textarea>
+                                    @error('lightdescription')
+                                        <span class="text-xs text-red-600">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-2">
+                                    <x-input-label class="w-full mb-1" for="longdescription" :value="__('Descripcion larga')" />
+                                    <textarea id="ckcontent4"
+                                        class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
+                                        type="text" name="longdescription_en" placeholder="Descripcion larga">{{ old('longdescription') }}</textarea>
+                                    @error('longdescription')
+                                        <span class="text-xs text-red-600">{{ $message }}</span>
+                                    @enderror
+                                </div>
                             </div>
                             <div class="mb-2">
                                 <x-input-label class="w-full mb-1" for="icons" :value="__('Iconos')" />
@@ -56,7 +96,7 @@
                                     class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
                                     name="category_id">
                                     @foreach ($categories as $category)
-                                        <option value="{{$category->id}}">{{ $category->name }}</option>
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -66,7 +106,7 @@
                                     class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
                                     name="state_id">
                                     @foreach ($states as $state)
-                                        <option value="{{$state->id}}">{{ $state->name }}</option>
+                                        <option value="{{ $state->id }}">{{ $state->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -90,7 +130,8 @@
                             </div>
                             <div class="mb-2">
                                 <x-input-label class="w-full mb-1" for="price" :value="__('Precio')" />
-                                <x-text-input class="w-full" type="text" name="price" placeholder="$100.00" value="{{ old('price') }}" />
+                                <x-text-input class="w-full" type="text" name="price" placeholder="$100.00"
+                                    value="{{ old('price') }}" />
                                 @error('price')
                                     <span class="text-xs text-red-600">{{ $message }}</span>
                                 @enderror

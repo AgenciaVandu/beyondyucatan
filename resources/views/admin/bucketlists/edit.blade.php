@@ -23,7 +23,7 @@
                                 <img src="{{ asset($day->image) }}" alt="" class="w-20 h-20">
                                 <div class="justify-around space-x-1 w-full">
                                     <h2 class="text-base font-semibold leading-6 text-gray-900 ">{{ $day->title }}</h2>
-                                    <p class="mt-2 text-sm text-gray-700">{{ $day->description }}</p>
+                                    <p class="mt-2 text-sm text-gray-700">{!! $day->description !!}</p>
                                 </div>
                                 <div class="flex justify-end">
                                     <div>
@@ -41,29 +41,69 @@
                             enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
-                            <div class="mb-2">
-                                <x-input-label class="w-full mb-1" for="title" :value="__('title')" />
-                                <x-text-input class="w-full" type="text" name="title" placeholder="title"
-                                    value="{{ $bucket->title }}" />
-                                @error('title')
-                                    <span class="text-xs text-red-600">{{ $message }}</span>
-                                @enderror
+                            <h1 class="text-lg font-light text-blue-300 text-center">
+                                Version Español
+                            </h1>
+                            <div class="bg-slate-100 p-3 rounded-lg shadow-md">
+                                <div class="mb-2">
+                                    <x-input-label class="w-full mb-1" for="title" :value="__('title')" />
+                                    <x-text-input class="w-full" type="text" name="title" placeholder="title"
+                                        value="{{ $bucket->title }}" />
+                                    @error('title')
+                                        <span class="text-xs text-red-600">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-2">
+                                    <x-input-label class="w-full mb-1" for="description" :value="__('Descripcion corta')" />
+                                    <textarea id="ckcontent"
+                                        class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
+                                        type="text" name="description" placeholder="Descripcion corta">{{ $bucket->description }}</textarea>
+                                    @error('description')
+                                        <span class="text-xs text-red-600">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-2">
+                                    <x-input-label class="w-full mb-1" for="longdescription" :value="__('Descripcion larga')" />
+                                    <textarea id="ckcontent2"
+                                        class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
+                                        type="text" name="longdescription" placeholder="Descripcion larga">{{ $bucket->longdescription }}</textarea>
+                                    {{-- {{ $bucket->description }} --}}
+                                    @error('longdescription')
+                                        <span class="text-xs text-red-600">{{ $message }}</span>
+                                    @enderror
+                                </div>
                             </div>
-                            <div class="mb-2">
-                                <x-input-label class="w-full mb-1" for="description" :value="__('Descripcion corta')" />
-                                <textarea class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
-                                    rows="3" type="text" name="description" placeholder="Descripcion corta">{{ $bucket->description }}</textarea>
-                                @error('description')
-                                    <span class="text-xs text-red-600">{{ $message }}</span>
-                                @enderror
-                            </div>
-                            <div class="mb-2">
-                                <x-input-label class="w-full mb-1" for="longdescription" :value="__('Descripcion larga')" />
-                                <textarea class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
-                                    rows="3" type="text" name="longdescription" placeholder="Descripcion larga">{{ $bucket->longdescription }}</textarea>
-                                @error('longdescription')
-                                    <span class="text-xs text-red-600">{{ $message }}</span>
-                                @enderror
+                            {{-- inputs ingles --}}
+                            <h1 class="text-lg font-light text-blue-300 mt-2 text-center">
+                                Version Inglés
+                            </h1>
+                            <div class="bg-red-50 p-3 rounded-lg shadow-md mb-2">
+                                <div class="mb-2">
+                                    <x-input-label class="w-full mb-1" for="title" :value="__('title')" />
+                                    <x-text-input class="w-full" type="text" name="title_en" placeholder="title"
+                                        value="{{ $bucket->title_en }}" />
+                                    @error('title_en')
+                                        <span class="text-xs text-red-600">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-2">
+                                    <x-input-label class="w-full mb-1" for="description" :value="__('Descripcion corta')" />
+                                    <textarea id="ckcontent3"
+                                        class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
+                                        type="text" name="description_en" placeholder="Descripcion corta">{{ $bucket->description_en }}</textarea>
+                                    @error('description_en')
+                                        <span class="text-xs text-red-600">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-2">
+                                    <x-input-label class="w-full mb-1" for="longdescription" :value="__('Descripcion larga')" />
+                                    <textarea id="ckcontent4"
+                                        class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
+                                        type="text" name="longdescription_en" placeholder="Descripcion larga">{{ $bucket->longdescription_en }}</textarea>
+                                    @error('longdescription_en')
+                                        <span class="text-xs text-red-600">{{ $message }}</span>
+                                    @enderror
+                                </div>
                             </div>
                             <div class="mb-2">
                                 <x-input-label class="w-full mb-1" for="days" :value="__('Dias')" />

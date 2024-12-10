@@ -17,6 +17,7 @@ use App\Models\State;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -142,12 +143,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/admin/states/{state}', [StateController::class, 'destroy'])->name('admin.states.destroy'); //
 });
 
+Route::get('locale/{locale}',function($locale){
+    session()->put('locale',$locale);
+    return Redirect::back();
+})->name('set.lang');
 
 
 
 
 
-Route::get('storage-link', function () {
+/* Route::get('storage-link', function () {
     Artisan::call('storage:link');
     echo (Artisan::output());
-});
+}); */

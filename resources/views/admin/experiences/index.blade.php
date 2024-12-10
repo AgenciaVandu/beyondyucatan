@@ -45,7 +45,7 @@
                                                         class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
                                                         {{ $experience->titulo }}</td>
                                                     <td class="px-3 py-4 text-sm text-gray-500">
-                                                        {{ $experience->lightdescription }}</td>
+                                                        {!! $experience->lightdescription !!}</td>
                                                     <td
                                                         class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
                                                         <a href="{{ route('admin.experiences.edit', $experience) }}"

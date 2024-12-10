@@ -13,29 +13,68 @@
                         <form action="{{ route('admin.bucketlists.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('POST')
-                            <div class="mb-2">
-                                <x-input-label class="w-full mb-1" for="title" :value="__('title')" />
-                                <x-text-input class="w-full" type="text" name="title" placeholder="title"
-                                    value="{{ old('title') }}" />
-                                @error('title')
-                                    <span class="text-xs text-red-600">{{ $message }}</span>
-                                @enderror
+                            <h1 class="text-lg font-light text-blue-300 text-center">
+                                Version Español
+                            </h1>
+                            <div class="bg-slate-100 p-3 rounded-lg shadow-md">
+                                <div class="mb-2">
+                                    <x-input-label class="w-full mb-1" for="title" :value="__('Titulo')" />
+                                    <x-text-input class="w-full" type="text" name="title" placeholder="Titulo"
+                                        value="{{ old('title') }}" />
+                                    @error('title')
+                                        <span class="text-xs text-red-600">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-2">
+                                    <x-input-label class="w-full mb-1" for="description" :value="__('Descripcion corta')" />
+                                    <textarea id="ckcontent"
+                                        class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
+                                        type="text" name="description" placeholder="Descripcion corta">{{ !!old('description') }}</textarea>
+                                    @error('description')
+                                        <span class="text-xs text-red-600">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-2">
+                                    <x-input-label class="w-full mb-1" for="longdescription" :value="__('Descripcion larga')" />
+                                    <textarea id="ckcontent2"
+                                        class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
+                                        type="text" name="longdescription" placeholder="Descripcion larga">{{ old('longdescription') }}</textarea>
+                                    @error('longdescription')
+                                        <span class="text-xs text-red-600">{{ $message }}</span>
+                                    @enderror
+                                </div>
                             </div>
-                            <div class="mb-2">
-                                <x-input-label class="w-full mb-1" for="description" :value="__('Descripcion corta')" />
-                                <textarea class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
-                                    rows="3" type="text" name="description" placeholder="Descripcion corta">{{ old('description') }}</textarea>
-                                @error('description')
-                                    <span class="text-xs text-red-600">{{ $message }}</span>
-                                @enderror
-                            </div>
-                            <div class="mb-2">
-                                <x-input-label class="w-full mb-1" for="longdescription" :value="__('Descripcion larga')" />
-                                <textarea class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
-                                    rows="3" type="text" name="longdescription" placeholder="Descripcion larga">{{ old('longdescription') }}</textarea>
-                                @error('longdescription')
-                                    <span class="text-xs text-red-600">{{ $message }}</span>
-                                @enderror
+                            {{-- inputs ingles --}}
+                            <h1 class="text-lg font-light text-blue-300 mt-2 text-center">
+                                Version Inglés
+                            </h1>
+                            <div class="bg-red-50 p-3 rounded-lg shadow-md mb-2">
+                                <div class="mb-2">
+                                    <x-input-label class="w-full mb-1" for="title" :value="__('title')" />
+                                    <x-text-input class="w-full" type="text" name="title_en" placeholder="title"
+                                        value="{{ old('title') }}" />
+                                    @error('title')
+                                        <span class="text-xs text-red-600">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-2">
+                                    <x-input-label class="w-full mb-1" for="description" :value="__('Descripcion corta')" />
+                                    <textarea id="ckcontent3"
+                                        class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
+                                        type="text" name="description_en" placeholder="Descripcion corta">{{ !!old('description') }}</textarea>
+                                    @error('description')
+                                        <span class="text-xs text-red-600">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-2">
+                                    <x-input-label class="w-full mb-1" for="longdescription" :value="__('Descripcion larga')" />
+                                    <textarea id="ckcontent4"
+                                        class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
+                                        type="text" name="longdescription_en" placeholder="Descripcion larga">{{ old('longdescription') }}</textarea>
+                                    @error('longdescription')
+                                        <span class="text-xs text-red-600">{{ $message }}</span>
+                                    @enderror
+                                </div>
                             </div>
                             <div class="mb-2">
                                 <x-input-label class="w-full mb-1" for="days" :value="__('Dias')" />
