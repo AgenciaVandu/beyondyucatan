@@ -24,7 +24,7 @@
     "src": "public/img/webp/textura.webp"
   },
   "resources/css/app.css": {
-    "file": "assets/app-DJKcqdoE.css",
+    "file": "assets/app-QsphyPL8.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -33,6 +33,15 @@
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
+  },
+  "resources/js/ckeditor.js": {
+    "file": "assets/ckeditor-BFnAqY8A.js",
+    "name": "ckeditor",
+    "src": "resources/js/ckeditor.js",
+    "isEntry": true,
+    "css": [
+      "assets/ckeditor-BoncNGpU.css"
+    ]
   },
   "resources/scss/app.scss": {
     "file": "assets/app-2uPvDBJI.css",
