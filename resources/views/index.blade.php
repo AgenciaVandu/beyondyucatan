@@ -92,10 +92,10 @@
                                             <img src="{{ asset($experiencia->imagedestacada) }}" alt="Imagen de tour">
                                         </x-slot>
                                         <x-slot name="titulocuerpo">
-                                            {{ $experiencia->titulo }}
+                                            {!! $experiencia->titulo !!}
                                         </x-slot>
                                         <x-slot name="descripcionLarga">
-                                            {{ $experiencia->longdescription }}
+                                            {!! $experiencia->longdescription !!}
                                         </x-slot>
                                         <x-slot name="precio">
                                             {{ $experiencia->price }}
