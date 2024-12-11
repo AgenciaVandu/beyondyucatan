@@ -49,7 +49,6 @@
         </div>
         <x-buscador :$categories :$states filtro="experiences" />
     </header>
-
     <section class="titular_index">
         <div class="titular_2 text-center">
             <h1>¡Tu aventura comienza hoy!</h1>
@@ -80,35 +79,50 @@
             </div>
         </div>
     </section>
-
     <section class="experiencias">
         <div class="container-fluid">
             <div class="carousel">
                 <div class="carousel__contenedor">
-
-
-
                     <div class="carousel__lista">
                         @foreach ($experiencias as $experiencia)
                             <x-destacadas.experiencia :$experiencia>
-                                <div class="container">
-                                    <x-slot name="imagenExperiencia" >
-                                        <img src="{{ asset($experiencia->imagedestacada) }}"
-                                            alt="Imagen de tour">
-                                    </x-slot>
-                                    <x-slot name="titulocuerpo">
-                                        {{ $experiencia->titulo }}
-                                    </x-slot>
-                                    <x-slot name="descripcionLarga">
-                                        {{ $experiencia->longdescription }}
-                                    </x-slot>
-                                    <x-slot name="precio">
-                                        {{ $experiencia->price }}
-                                    </x-slot>
-                                    <x-slot name="botoncta">
-                                        Quiero esta experiencia
-                                    </x-slot>
-                                </div>
+                                @if (session()->get('locale') == 'es')
+                                    <div class="container">
+                                        <x-slot name="imagenExperiencia">
+                                            <img src="{{ asset($experiencia->imagedestacada) }}" alt="Imagen de tour">
+                                        </x-slot>
+                                        <x-slot name="titulocuerpo">
+                                            {{ $experiencia->titulo }}
+                                        </x-slot>
+                                        <x-slot name="descripcionLarga">
+                                            {{ $experiencia->longdescription }}
+                                        </x-slot>
+                                        <x-slot name="precio">
+                                            {{ $experiencia->price }}
+                                        </x-slot>
+                                        <x-slot name="botoncta">
+                                            Quiero esta experiencia
+                                        </x-slot>
+                                    </div>
+                                @else
+                                    <div class="container">
+                                        <x-slot name="imagenExperiencia">
+                                            <img src="{{ asset($experiencia->imagedestacada) }}" alt="Imagen de tour">
+                                        </x-slot>
+                                        <x-slot name="titulocuerpo">
+                                            {{ $experiencia->titulo_en }}
+                                        </x-slot>
+                                        <x-slot name="descripcionLarga">
+                                            {!! $experiencia->longdescription_en !!}
+                                        </x-slot>
+                                        <x-slot name="precio">
+                                            {{ $experiencia->price }}
+                                        </x-slot>
+                                        <x-slot name="botoncta">
+                                            Quiero esta experiencia
+                                        </x-slot>
+                                    </div>
+                                @endif
                             </x-destacadas.experiencia>
                         @endforeach
                     </div>
@@ -118,15 +132,10 @@
                                 >
                             </button>
                 </div>
-
                 <div role="tablist" class="carousel__indicador"></div>
             </div>
-
         </div>
-
-
     </section>
-
     <div class="cta-experiencia">
         <div class="container">
             <div class="titular">
