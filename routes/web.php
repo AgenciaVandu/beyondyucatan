@@ -145,7 +145,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get('locale/{locale}',function($locale){
     session()->put('locale',$locale);
-    return Redirect::back();
+    session(['lang' => $locale]);
+    return back();
 })->name('set.lang');
 
 

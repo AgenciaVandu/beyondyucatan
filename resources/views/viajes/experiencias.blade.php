@@ -9,7 +9,11 @@
     width: 100%; background-position:center; min-height:100vh; ">
         <div class="fondo">
             <div class="titular">
-                <h1>¡Comienza tu aventura!</h1>
+                @if (session()->get('locale') == 'es')
+                    <h1>¡Comienza tu aventura!</h1>
+                @else
+                    <h1>Start your adventure!</h1>
+                @endif
             </div>
         </div>
         <x-buscador :$categories :$states filtro="experiences" />
@@ -43,8 +47,12 @@
                             {{ $experiencia->price }}
                         </x-slot>
                         <x-slot name="btnExperiencia">
-                            <a href="{{ route('experiencia', $experiencia->id) }}" class="btn btn-info">Ver
-                                experiencia</a>
+                            @if (session()->get('locale') == 'es')
+                                <a href="{{ route('experiencia', $experiencia->id) }}" class="btn btn-info">Ver
+                                    experiencia</a>
+                            @else
+                                <a href="{{ route('experiencia', $experiencia->id) }}" class="btn-info p-2">Check this experience</a>
+                            @endif
                         </x-slot>
 
                     </x-cards>

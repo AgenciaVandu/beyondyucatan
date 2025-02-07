@@ -57,15 +57,24 @@
                         </div>
                         <div class="costo">
                             <p>
-                                <span>Desde:</span>
+                                @if (session()->get('locale') == 'es')
+                                    <span>Desde:</span>
+                                @else
+                                    <span>From:</span>
+                                @endif
                                 $ <span> {{ $experiencia->price }}</span> USD P/p
                             </p>
                             <hr>
                         </div>
                     </div>
                     <div class="boton">
-                        <a href="{{ route('cotizador-grupo', $experiencia) }}" class="btn btn-primary">Quiero esta
-                            experiencia</a>
+                        @if (session()->get('locale') == 'es')
+                            <a href="{{ route('cotizador-grupo', $experiencia) }}" class="btn btn-primary">Quiero esta
+                                experiencia</a>
+                        @else
+                            <a href="{{ route('cotizador-grupo', $experiencia) }}" class="btn btn-primary">I want this
+                                experience</a>
+                        @endif
                     </div>
                 </div>
             </div>

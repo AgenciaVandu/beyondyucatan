@@ -20,7 +20,11 @@
                 </div>
                 <input type="hidden" name="filtro" value="{{ $filtro }}">
                 <div class="buscarbtn">
+                    @if (session()->get('locale') == 'es')
                     <button class="btn btn-success btnorange">Buscar</button>
+                    @else
+                    <button class="btn btn-success btnorange">Search</button>
+                    @endif
                 </div>
             </form>
         </div>

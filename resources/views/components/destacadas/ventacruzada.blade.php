@@ -10,6 +10,7 @@
                     @if ($experience->imagedestacada)
                         <div class="contenido"
                             style="background-image: url('{{ asset($experience->imagedestacada) }}'); background-position: center; background-repeat: no-repeat;">
+                        </div>
                     @endif
 
                     <div class="interior">
@@ -24,9 +25,8 @@
                             </button>
                         </div>
                     </div>
+                </a>
+            @endforeach
         </div>
-        </a>
-        @endforeach
-    </div>
     </div>
 </section>
