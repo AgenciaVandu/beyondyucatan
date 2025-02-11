@@ -20,4 +20,13 @@ class Experience extends Model
     public function icons(){
         return $this->belongsToMany(Icon::class)->withPivot('icon_id');
     }
+
+    //Slugs
+    public function getRouteKeyName(){
+        if (session()->get('locale') == 'es') {
+            return 'slug_es';
+        }else{
+            return 'slug_en';
+        }
+    }
 }

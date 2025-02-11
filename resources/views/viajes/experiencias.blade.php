@@ -48,10 +48,10 @@
                         </x-slot>
                         <x-slot name="btnExperiencia">
                             @if (session()->get('locale') == 'es')
-                                <a href="{{ route('experiencia', $experiencia->id) }}" class="btn btn-info">Ver
+                                <a href="{{ route('experiencia', $experiencia) }}" class="btn btn-info">Ver
                                     experiencia</a>
                             @else
-                                <a href="{{ route('experiencia', $experiencia->id) }}" class="btn-info p-2">Check this experience</a>
+                                <a href="{{ route('experiencia', $experiencia) }}" class="btn-info p-2">Check this experience</a>
                             @endif
                         </x-slot>
 

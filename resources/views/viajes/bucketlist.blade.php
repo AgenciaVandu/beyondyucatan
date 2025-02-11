@@ -64,7 +64,7 @@
                                 </div>
                             </div>
                             <div class="boton">
-                                <a href="/bucketlist/{{ $bucket->id }}" class="btn btn-primary">Quiero vivir esta
+                                <a href="{{ route('bucketlist-detalle',$bucket) }}}}" class="btn btn-primary">Quiero vivir esta
                                     experiencia</a>
                             </div>
                         </div>

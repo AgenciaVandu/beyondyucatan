@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,10 +85,10 @@ Route::post('send-form-bucketlist',function (Request $request){
     return redirect()->route('home')->with('success', 'Tu mensaje ha sido enviado correctamente.');
 })->name('send.form.bucketlist');
 
-Route::get('/experiencias/{experiencia}', [ExperienciaController::class, 'show'])->name('experiencia'); // Experiencia individual
+Route::get('/experiencias/{experience}', [ExperienciaController::class, 'show'])->name('experiencia'); // Experiencia individual
 
 Route::get('/bucketlist', [BucketlistController::class, 'index'])->name('bucketlist'); // Experiencias especiales
-Route::get('/bucketlist/{bucket}', [BucketlistController::class, 'show'])->name('bucketlist-detalle'); // detalle de bucketlist
+Route::get('/bucketlist/{bucketlist}', [BucketlistController::class, 'show'])->name('bucketlist-detalle'); // detalle de bucketlist
 
 Route::get('/cotizar-experiencia-en-grupo/{experience?}', [PageController::class, 'cotizadorgroup'])->name('cotizador-grupo');
 Route::get('/cotizar-bucket-en-grupo/{bucketlist?}', [PageController::class, 'cotizadorgroupbucket'])->name('cotizador-grupo-bucket');
@@ -156,4 +157,20 @@ Route::get('locale/{locale}',function($locale){
 Route::get('storage-link', function () {
     Artisan::call('migrate');
     echo (Artisan::output());
+});
+
+Route::get('/slugs', function () {
+    $experiences = Experience::all();
+    foreach ($experiences as $experience) {
+        $experience->slug_es = Str::slug($experience->titulo);
+        $experience->slug_en = Str::slug($experience->titulo_en);
+        $experience->save();
+    }
+
+    $bucketlists = Bucketlist::all();
+    foreach ($bucketlists as $bucketlist) {
+        $bucketlist->slug_es = Str::slug($bucketlist->title);
+        $bucketlist->slug_en = Str::slug($bucketlist->title_en);
+        $bucketlist->save();
+    }
 });
