@@ -199,6 +199,6 @@
     @endif
     @push('js')
         <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.js"></script>
-        <script src="{{ asset('js/glider.js') }}"></script>
+        <script src="{{ asset('/js/glider.js') }}"></script>
     @endpush
 </x-layouts.guest>
