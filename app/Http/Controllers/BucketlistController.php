@@ -22,12 +22,12 @@ class BucketlistController extends Controller
         return view('viajes.bucketlist', ['bucket' => $bucket, 'states' => $states, 'categories' => $categories]);
     }
 
-    public function show(Bucketlist $bucket)
+    public function show(Bucketlist $bucketlist)
     {
         $bukets = Bucketlist::all();
-        $days = Day::where('bucketlist_id', $bucket->id)->get();
+        $days = Day::where('bucketlist_id', $bucketlist->id)->get();
 
-        return view('viajes.detallebucket', ['bucket' => $bucket, 'experiences' => $bukets,'days' => $days]);
+        return view('viajes.detallebucket', ['bucket' => $bucketlist, 'experiences' => $bukets,'days' => $days]);
     }
 
     public function listBucketlists()
@@ -73,13 +73,12 @@ class BucketlistController extends Controller
 
         return redirect()->route('admin.bucketlists.index');
     }
-    public function edit(Bucketlist $bucket)
+    public function edit(Bucketlist $bucketlist)
     {
         $categories =  category::all();
-        $bucket = Bucketlist::find($bucket->id);
-        $days = Day::where('bucketlist_id',$bucket->id)->get();
+        $days = Day::where('bucketlist_id',$bucketlist->id)->get();
         $states = State::all();
-        return view('admin.bucketlists.edit', compact('bucket','days','categories','states'));
+        return view('admin.bucketlists.edit', compact('bucketlist','days','categories','states'));
     }
 
     public function update(Request $request, Bucketlist $bucket)

@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex justify-end mb-4">
                 <x-nav-link class="bg-indigo-900 py-1 px-4 text-white hover:text-gray-200 cursor-pointer"
-                    href="{{ route('admin.bucketlists.addDay', $bucket) }}">Agregar Dia</x-nav-link>
+                    href="{{ route('admin.bucketlists.addDay', $bucketlist) }}">Agregar Dia</x-nav-link>
             </div>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 @if (Session::has('error'))
@@ -37,7 +37,7 @@
                         @endforeach
                     @endisset
                     <div>
-                        <form action="{{ route('admin.bucketlists.update', $bucket) }}" method="post"
+                        <form action="{{ route('admin.bucketlists.update', $bucketlist) }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
@@ -48,7 +48,7 @@
                                 <div class="mb-2">
                                     <x-input-label class="w-full mb-1" for="title" :value="__('title')" />
                                     <x-text-input class="w-full" type="text" name="title" placeholder="title"
-                                        value="{{ $bucket->title }}" />
+                                        value="{{ $bucketlist->title }}" />
                                     @error('title')
                                         <span class="text-xs text-red-600">{{ $message }}</span>
                                     @enderror
@@ -57,7 +57,7 @@
                                     <x-input-label class="w-full mb-1" for="description" :value="__('Descripcion corta')" />
                                     <textarea id="ckcontent"
                                         class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
-                                        type="text" name="description" placeholder="Descripcion corta">{{ $bucket->description }}</textarea>
+                                        type="text" name="description" placeholder="Descripcion corta">{{ $bucketlist->description }}</textarea>
                                     @error('description')
                                         <span class="text-xs text-red-600">{{ $message }}</span>
                                     @enderror
@@ -66,8 +66,8 @@
                                     <x-input-label class="w-full mb-1" for="longdescription" :value="__('Descripcion larga')" />
                                     <textarea id="ckcontent2"
                                         class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
-                                        type="text" name="longdescription" placeholder="Descripcion larga">{{ $bucket->longdescription }}</textarea>
-                                    {{-- {{ $bucket->description }} --}}
+                                        type="text" name="longdescription" placeholder="Descripcion larga">{{ $bucketlist->longdescription }}</textarea>
+                                    {{-- {{ $bucketlist->description }} --}}
                                     @error('longdescription')
                                         <span class="text-xs text-red-600">{{ $message }}</span>
                                     @enderror
@@ -81,7 +81,7 @@
                                 <div class="mb-2">
                                     <x-input-label class="w-full mb-1" for="title" :value="__('title')" />
                                     <x-text-input class="w-full" type="text" name="title_en" placeholder="title"
-                                        value="{{ $bucket->title_en }}" />
+                                        value="{{ $bucketlist->title_en }}" />
                                     @error('title_en')
                                         <span class="text-xs text-red-600">{{ $message }}</span>
                                     @enderror
@@ -90,7 +90,7 @@
                                     <x-input-label class="w-full mb-1" for="description" :value="__('Descripcion corta')" />
                                     <textarea id="ckcontent3"
                                         class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
-                                        type="text" name="description_en" placeholder="Descripcion corta">{{ $bucket->description_en }}</textarea>
+                                        type="text" name="description_en" placeholder="Descripcion corta">{{ $bucketlist->description_en }}</textarea>
                                     @error('description_en')
                                         <span class="text-xs text-red-600">{{ $message }}</span>
                                     @enderror
@@ -99,7 +99,7 @@
                                     <x-input-label class="w-full mb-1" for="longdescription" :value="__('Descripcion larga')" />
                                     <textarea id="ckcontent4"
                                         class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
-                                        type="text" name="longdescription_en" placeholder="Descripcion larga">{{ $bucket->longdescription_en }}</textarea>
+                                        type="text" name="longdescription_en" placeholder="Descripcion larga">{{ $bucketlist->longdescription_en }}</textarea>
                                     @error('longdescription_en')
                                         <span class="text-xs text-red-600">{{ $message }}</span>
                                     @enderror
@@ -108,7 +108,7 @@
                             <div class="mb-2">
                                 <x-input-label class="w-full mb-1" for="days" :value="__('Dias')" />
                                 <x-text-input class="w-full" type="text" name="days" placeholder="days"
-                                    value="{{ $bucket->days }}" />
+                                    value="{{ $bucketlist->days }}" />
                                 @error('days')
                                     <span class="text-xs text-red-600">{{ $message }}</span>
                                 @enderror
@@ -120,7 +120,7 @@
                                     name="category_id">
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}"
-                                            @if ($category->id == $bucket->category_id) selected @endif>{{ $category->name }}
+                                            @if ($category->id == $bucketlist->category_id) selected @endif>{{ $category->name }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -132,7 +132,7 @@
                                     name="state_id">
                                     @foreach ($states as $state)
                                         <option value="{{ $state->id }}"
-                                            @if ($state->id == $bucket->state_id) selected @endif>{{ $state->name }}
+                                            @if ($state->id == $bucketlist->state_id) selected @endif>{{ $state->name }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -142,7 +142,7 @@
                                 <input type="file"
                                     class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
                                     name="image" accept="image/*">
-                                <img src="{{ asset($bucket->image) }}" alt="">
+                                <img src="{{ asset($bucketlist->image) }}" alt="">
                                 @error('image')
                                     <span class="text-xs text-red-600">{{ $message }}</span>
                                 @enderror
@@ -150,7 +150,7 @@
                             <div class="mb-2">
                                 <x-input-label class="w-full mb-1" for="price" :value="__('Precio')" />
                                 <x-text-input class="w-full" type="text" name="price" placeholder="$100.00"
-                                    value="{{ $bucket->price }}" />
+                                    value="{{ $bucketlist->price }}" />
                                 @error('price')
                                     <span class="text-xs text-red-600">{{ $message }}</span>
                                 @enderror
