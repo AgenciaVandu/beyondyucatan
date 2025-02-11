@@ -31,7 +31,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12 rowimg">
-                    <img src="{{ $experiencia->imagedestacada }}" alt="">
+                    <img src="{{ $experiencia->imagendestacada }}" alt="">
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 contenido m-auto">
                     @if (session()->get('locale') == 'es')
