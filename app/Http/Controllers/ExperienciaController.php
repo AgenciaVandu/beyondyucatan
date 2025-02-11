@@ -28,12 +28,12 @@ class ExperienciaController extends Controller
         return view('viajes.experiencias', ['experiencias' => $experiencias, 'categories' => $categories,'states' => $states]);
     }
 
-    public function show(Experience $experiencia)
+    public function show(Experience $experience)
     {
-        $experiencias = Experience::get();
+        $experiences = Experience::all();
         $categories = category::all();
         $states = State::all();
-        return view('viajes.experiencia', ['experiencia' => $experiencia, 'experiences' => $experiencias, 'states' => $states, 'categories' => $categories]);
+        return view('viajes.experiencia', ['experiencia' => $experience, 'experiences' => $experiences, 'states' => $states, 'categories' => $categories]);
     }
 
 
