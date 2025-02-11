@@ -6,7 +6,7 @@
 
         <div class="opciones">
             @foreach ($experiences as $experience)
-                <a href="{{ route('experiencia', $experience->id) }}" class="opcion">
+                <a href="{{ route('experiencia', $experience) }}" class="opcion">
                     @if ($experience->imagedestacada)
                         <div class="contenido"
                             style="background-image: url('{{ asset($experience->imagedestacada) }}'); background-position: center; background-repeat: no-repeat;">
