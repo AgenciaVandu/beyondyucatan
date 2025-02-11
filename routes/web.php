@@ -48,7 +48,7 @@ require __DIR__ . '/auth.php';
 
 // Controladores de pagina frontal
 Route::get('/experiencias', [ExperienciaController::class, 'index'])->name('experiencias');
-Route::post('/filter', function (Request $request) {
+Route::any('/filter', function (Request $request) {
     //dd($request->all());
     if ($request->filtro == 'experiences') {
         if ($request->state_id == null) {
