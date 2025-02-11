@@ -144,7 +144,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/admin/states/{state}', [StateController::class, 'destroy'])->name('admin.states.destroy'); //
 });
 
-Route::get('locale/{locale}',function($locale){
+Route::any('locale/{locale}',function($locale){
     session()->put('locale',$locale);
     session(['lang' => $locale]);
     return back();
