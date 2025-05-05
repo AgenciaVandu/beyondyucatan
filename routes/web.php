@@ -155,7 +155,7 @@ Route::any('locale/{locale}',function($locale){
 
 
 Route::get('storage-link', function () {
-    Artisan::call('migrate');
+    Artisan::call('storage:link');
     echo (Artisan::output());
 });
 
