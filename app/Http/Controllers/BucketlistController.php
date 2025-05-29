@@ -121,10 +121,9 @@ class BucketlistController extends Controller
     }
 
 
-    public function createDay(Bucketlist $bucket){
-        $bucket = Bucketlist::find($bucket->id);
+    public function createDay(Bucketlist $bucketlist){
         $icons = Icon::all();
-        return view('admin.bucketlists.createDay',compact('bucket','icons'));
+        return view('admin.bucketlists.createDay',compact('bucketlist','icons'));
     }
 
 

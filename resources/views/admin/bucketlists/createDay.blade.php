@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div>
-                        <form action="{{ route('admin.bucketlists.storeDay') }}" method="post"
+                        <form action="{{ route('admin.bucketlists.storeDay', $bucketlist) }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
                             @method('POST')
@@ -82,7 +82,7 @@
                                     <span class="text-xs text-red-600">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <input type="hidden" name="bucketlist" value="{{ $bucket->id }}">
+                            <input type="hidden" name="bucketlist" value="{{ $bucketlist->id }}">
                             <div class="flex justify-end mt-4">
                                 <x-primary-button>Crear</x-primary-button>
                             </div>
