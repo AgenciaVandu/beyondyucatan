@@ -21,8 +21,8 @@ class Experience extends Model
         return $this->belongsToMany(Icon::class)->withPivot('icon_id');
     }
 
-    //Slugs
+    /* //Slugs
     public function getRouteKeyName(){
             return 'slug_es';
-    }
+    } */
 }

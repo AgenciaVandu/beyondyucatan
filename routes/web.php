@@ -114,7 +114,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/admin/bucketlists/{bucketlist}/update', [BucketlistController::class, 'update'])->name('admin.bucketlists.update'); //
     Route::delete('/admin/bucketlists/{bucketlist}', [BucketlistController::class, 'destroy'])->name('admin.bucketlists.destroy'); //
     Route::get('/admin/bucketlists/{bucketlist}/addDay/', [BucketlistController::class, 'createDay'])->name('admin.bucketlists.addDay'); //
-    Route::post('/admin/bucketlists/storeDay/', [BucketlistController::class, 'storeDay'])->name('admin.bucketlists.storeDay'); //
+    Route::post('/admin/bucketlists/{bucketlist}/storeDay/', [BucketlistController::class, 'storeDay'])->name('admin.bucketlists.storeDay'); //
     Route::get('/admin/bucketlists/{day}/editDay/', [BucketlistController::class, 'editDay'])->name('admin.bucketlists.editDay'); //
     Route::put('/admin/bucketlists/{day}/updateDay/', [BucketlistController::class, 'updateDay'])->name('admin.bucketlists.updateDay'); //
     Route::any('/admin/bucketlists/{day}/deleteDay/', [BucketlistController::class, 'deleteDay'])->name('admin.bucketlists.deleteDay'); //

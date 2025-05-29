@@ -22,7 +22,7 @@ class Bucketlist extends Model
         return $this->belongsToMany(Icon::class)->withPivot('icon_id');
     }
 
-    public function getRouteKeyName(){
+    /* public function getRouteKeyName(){
             return 'slug_es';
-    }
+    } */
 }
