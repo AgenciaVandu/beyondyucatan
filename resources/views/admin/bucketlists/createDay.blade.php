@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div>
-                        <form action="{{ route('admin.bucketlists.storeDay', $bucket) }}" method="post"
+                        <form action="{{ route('admin.bucketlists.storeDay', $bucket->id) }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
                             @method('POST')
