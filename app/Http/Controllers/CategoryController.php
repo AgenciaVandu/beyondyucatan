@@ -73,7 +73,11 @@ class CategoryController extends Controller
      */
     public function destroy(category $category)
     {
-        $category->delete();
-        return redirect()->route('admin.categories.index')->with('success', 'Categoría eliminada exitosamente.');
+        try {
+            $category->delete();
+            return redirect()->route('admin.categories.index')->with('success', 'Categoría eliminada exitosamente.');
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('admin.categories.index')->withErrors(['msg' => 'No se puede eliminar la categoría porque está relacionada con otros registros.']);
+        }
     }
 }

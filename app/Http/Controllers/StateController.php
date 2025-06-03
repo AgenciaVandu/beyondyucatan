@@ -72,7 +72,11 @@ class StateController extends Controller
      */
     public function destroy(State $state)
     {
-        $state->delete();
-        return redirect()->route('admin.states.index')->with('success', 'Estado eliminado exitosamente.');
+        try {
+            $state->delete();
+            return redirect()->route('admin.states.index')->with('success', 'Estado eliminado exitosamente.');
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('admin.states.index')->withErrors(['msg' => 'No se puede eliminar el estado porque está relacionado con otros registros.']);
+        }
     }
 }

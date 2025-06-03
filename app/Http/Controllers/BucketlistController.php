@@ -113,11 +113,15 @@ class BucketlistController extends Controller
     public function destroy(Bucketlist $bucket)
     {
         try {
-            $bucket->delete();
+            if ($bucket->days->count()>0) {
+                return redirect()->route('admin.bucketlists.index')->withErrors(['msg' => 'No se puede eliminar el bucketlist por que cuenta con 1 o mas dias vinculados']);
+            }else{
+                $bucket->delete();
+                return redirect()->route('admin.bucketlists.index');
+            }
         } catch (\Throwable $th) {
-            return redirect()->route('admin.bucketlists.index')->with('error', 'No se puede eliminar el bucketlist debido a que cuenta con dias vinculados, debes eliminar primero los dias dentro del bucketlist para poder eliminarlo.');
+            
         }
-        return redirect()->route('admin.bucketlists.index');
     }
 
 
@@ -182,16 +186,16 @@ class BucketlistController extends Controller
 
         $bucket = Bucketlist::find($day->bucketlist_id);
         $day->icons()->sync($request->icons);
-        return redirect()->route('admin.bucketlists.edit',compact('bucket'));
+        return redirect()->back();
     }
 
     public function deleteDay(Day $day){
         $bucket = Bucketlist::find($day->bucketlist_id);
         try {
             $day->delete();
+            return redirect()->back();
         } catch (\Throwable $th) {
-            return back()->with('error', 'No se puede eliminar este día, ya que está asociado a un icono, desmarque los iconos en el dia para poder eliminar');
+            return back()->with('error', 'No se puede eliminar ya que tiene 1 o más iconos vinculados');
         }
-        return redirect()->route('admin.bucketlists.edit',compact('bucket'));
     }
 }

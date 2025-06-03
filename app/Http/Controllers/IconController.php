@@ -93,8 +93,12 @@ class IconController extends Controller
      */
     public function destroy(Icon $icon)
     {
-        Storage::delete($icon->img);
-        $icon->delete();
-        return redirect()->route('admin.icons.index')->with('success', 'Icono eliminado exitosamente.');
+        try {
+            Storage::delete($icon->img);
+            $icon->delete();
+            return redirect()->route('admin.icons.index')->with('success', 'Icono eliminado exitosamente.');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.icons.index')->withErrors(['msg'=> 'No se pudo eliminar el icono. Puede estar relacionado con otros registros.']);
+        }
     }
 }

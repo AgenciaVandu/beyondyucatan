@@ -22,6 +22,17 @@
                             </div>
                         </div>
                         <div class="mt-8 flow-root">
+                            {{-- Error de eliminacion --}}
+                            @if ($errors->any())
+                                <div class="mb-4">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li class="text-red-600">{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
                             <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                 <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
                                     <table class="min-w-full divide-y divide-gray-300">

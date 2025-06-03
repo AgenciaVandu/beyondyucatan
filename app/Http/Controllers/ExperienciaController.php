@@ -96,6 +96,7 @@ class ExperienciaController extends Controller
         $icons = Icon::all();
         $arrayicons = $experience->icons;
         $states = State::all();
+        $experience = Experience::find($experience->id);
         //dd($arrayicons);
         return view('admin.experiences.edit', compact('experience', 'categories', 'icons', 'arrayicons','states'));
     }
@@ -136,7 +137,12 @@ class ExperienciaController extends Controller
 
     public function destroy(Experience $experience)
     {
-        $experience->delete();
-        return redirect()->route('admin.experiences.index');
+        //Experiencia tiene relacion con iconos debe mandar un mensaje de que no puede eliminarlo mientas tenga una relaccion activa con iconos con un try catch
+        try {
+            $experience->delete();
+            return redirect()->route('admin.experiences.index')->with('success', 'Experiencia eliminada correctamente');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.experiences.index')->withErrors(['msg' => 'No puedes eliminar experiencias que tienen vinculado iconos']);
+        }
     }
 }
