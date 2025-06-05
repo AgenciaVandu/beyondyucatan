@@ -131,8 +131,7 @@
                                     class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
                                     name="state_id">
                                     @foreach ($states as $state)
-                                        <option value="{{ $state->id }}"
-                                            @if ($state->id == $bucketlist->state_id) selected @endif>{{ $state->name }}
+                                        <option value="{{ $state->id }}" @if ($state->id == $bucketlist->state_id) selected @endif>{{ $state->name }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -157,7 +156,7 @@
                             </div>
 
                             <div class="flex justify-end mt-4">
-                                <x-primary-button>Edit</x-primary-button>
+                                <x-primary-button type="submit">Edit</x-primary-button>
                             </div>
                         </form>
                     </div>

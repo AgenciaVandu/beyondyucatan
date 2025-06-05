@@ -8,6 +8,7 @@ use App\Models\Day;
 use App\Models\Experience;
 use App\Models\Icon;
 use App\Models\State;
+use ErrorException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -81,46 +82,42 @@ class BucketlistController extends Controller
         return view('admin.bucketlists.edit', compact('bucketlist','days','categories','states'));
     }
 
-    public function update(Request $request, Bucketlist $bucket)
+    public function update(Request $request, Bucketlist $bucketlist)
     {
         if ($request->file('image')) {
             $image = $request->file('image')->store('public/experiences');
             $url = Storage::url($image);
-            $bucket->update([
-                'image' => $url
+            $bucketlist->update([
+                'image' => $url,
+
+            ]);
+            //dd($request);
+        }else{
+            $bucketlist->update([
+                'title' => $request->title,
+                'description' => $request->description,
+                'description_en' => $request->description_en,
+                'longdescription' => $request->longdescription,
+                'longdescription_en' => $request->longdescription_en,
+                'days' => $request->days,
+                'typetour' => '',
+                'category_id' => $request->category_id,
+                'price' => $request->price,
+                'days' => $request->days,
+                'state_id' => $request->state_id
             ]);
         }
-
-        $bucket->update([
-            'title' => $request->title,
-            'description' => $request->description,
-            'description_en' => $request->description_en,
-            'longdescription' => $request->longdescription,
-            'longdescription_en' => $request->longdescription_en,
-            'days' => $request->days,
-            'typetour' => '',
-            'category_id' => $request->category_id,
-            'price' => $request->price,
-            'days' => $request->days,
-            'typetour' => '',
-            'category_id' => $request->category_id,
-            'price' => $request->price,
-            'state_id' => $request->state_id
-        ]);
-
         return redirect()->route('admin.bucketlists.index');
     }
-    public function destroy(Bucketlist $bucket)
+    public function destroy(Bucketlist $bucketlist)
     {
-        try {
-            if ($bucket->days->count()>0) {
-                return redirect()->route('admin.bucketlists.index')->withErrors(['msg' => 'No se puede eliminar el bucketlist por que cuenta con 1 o mas dias vinculados']);
-            }else{
-                $bucket->delete();
-                return redirect()->route('admin.bucketlists.index');
-            }
-        } catch (\Throwable $th) {
-            
+        if ($bucketlist->days()->count()) {
+            return redirect()->route('admin.bucketlists.index')->withErrors(['msg' => 'No se puede eliminar el bucketlist por que cuenta con 1 o mas dias vinculados']);
+        }else if($bucketlist->gategory && $bucketlist->gategory){
+            return redirect()->route('admin.bucketlists.index')->withErrors(['msg' => 'Tiene categorias o estado relacionados']);
+        }else{
+            $bucketlist->delete();
+            return redirect()->route('admin.bucketlists.index');
         }
     }
 
@@ -156,7 +153,7 @@ class BucketlistController extends Controller
 
 
         $day->icons()->attach($request->icons);
-        return redirect()->route('admin.bucketlists.edit',compact('bucket'));
+        return redirect()->route('admin.bucketlists.edit',$bucket);
     }
 
     public function editDay(Day $day)
@@ -186,7 +183,7 @@ class BucketlistController extends Controller
 
         $bucket = Bucketlist::find($day->bucketlist_id);
         $day->icons()->sync($request->icons);
-        return redirect()->back();
+        return redirect()->route('admin.bucketlists.edit',$bucket);
     }
 
     public function deleteDay(Day $day){

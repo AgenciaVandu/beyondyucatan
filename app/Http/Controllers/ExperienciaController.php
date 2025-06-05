@@ -128,7 +128,8 @@ class ExperienciaController extends Controller
             'icons' => '',
             'categories' => '',
             'price' => $request->price,
-            'category_id' => $request->category_id
+            'category_id' => $request->category_id,
+            'state_id' => $request->state_id
         ]);
 
         $experience->icons()->sync($request->icons);
