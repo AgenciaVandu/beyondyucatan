@@ -30,7 +30,7 @@
                                     <x-input-label class="w-full mb-1" for="lightdescription" :value="__('Descripcion corta')" />
                                     <textarea id="ckcontent"
                                         class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
-                                        type="text" name="lightdescription" placeholder="Descripcion corta">{{ $experience->longdescription }}</textarea>
+                                        type="text" name="lightdescription" placeholder="Descripcion corta">{{ $experience->lightdescription }}</textarea>
                                     @error('lightdescription')
                                         <span class="text-xs text-red-600">{{ $message }}</span>
                                     @enderror
@@ -62,13 +62,13 @@
                                     <x-input-label class="w-full mb-1" for="lightdescription" :value="__('Descripcion corta')" />
                                     <textarea id="ckcontent3"
                                         class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
-                                        type="text" name="lightdescription_en" placeholder="Descripcion corta">{{ $experience->longdescription_en }}</textarea>
+                                        type="text" name="lightdescription_en" placeholder="Descripcion corta">{{ $experience->lightdescription_en }}</textarea>
                                     @error('lightdescription')
                                         <span class="text-xs text-red-600">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-2">
-                                    <x-input-label class="w-full mb-1" for="longdescription" :value="__('Descripcion larga')" />
+                                    <x-input-label class="w-full mb-1" for="longdescription_en" :value="__('Descripcion larga')" />
                                     <textarea id="ckcontent4"
                                         class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
                                         type="text" name="longdescription_en" placeholder="Descripcion larga">{{ $experience->longdescription_en }}</textarea>

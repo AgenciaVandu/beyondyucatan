@@ -61,6 +61,7 @@ class BucketlistController extends Controller
 
         $bucket = Bucketlist::create([
             'title' => $request->title,
+            'title_en' => $request->title_en,
             'description' => $request->description,
             'description_en' => $request->description_en,
             'longdescription' => $request->longdescription,
@@ -95,6 +96,7 @@ class BucketlistController extends Controller
         }else{
             $bucketlist->update([
                 'title' => $request->title,
+                'title_en' => $request->title_en,
                 'description' => $request->description,
                 'description_en' => $request->description_en,
                 'longdescription' => $request->longdescription,

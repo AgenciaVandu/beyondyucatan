@@ -79,7 +79,7 @@
                             </h1>
                             <div class="bg-red-50 p-3 rounded-lg shadow-md mb-2">
                                 <div class="mb-2">
-                                    <x-input-label class="w-full mb-1" for="title" :value="__('title')" />
+                                    <x-input-label class="w-full mb-1" for="title_en" :value="__('title')" />
                                     <x-text-input class="w-full" type="text" name="title_en" placeholder="title"
                                         value="{{ $bucketlist->title_en }}" />
                                     @error('title_en')
@@ -87,7 +87,7 @@
                                     @enderror
                                 </div>
                                 <div class="mb-2">
-                                    <x-input-label class="w-full mb-1" for="description" :value="__('Descripcion corta')" />
+                                    <x-input-label class="w-full mb-1" for="description_en" :value="__('Descripcion corta')" />
                                     <textarea id="ckcontent3"
                                         class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
                                         type="text" name="description_en" placeholder="Descripcion corta">{{ $bucketlist->description_en }}</textarea>
@@ -96,7 +96,7 @@
                                     @enderror
                                 </div>
                                 <div class="mb-2">
-                                    <x-input-label class="w-full mb-1" for="longdescription" :value="__('Descripcion larga')" />
+                                    <x-input-label class="w-full mb-1" for="longdescription_en" :value="__('Descripcion larga')" />
                                     <textarea id="ckcontent4"
                                         class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
                                         type="text" name="longdescription_en" placeholder="Descripcion larga">{{ $bucketlist->longdescription_en }}</textarea>
