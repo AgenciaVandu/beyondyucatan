@@ -1,48 +1,47 @@
 .intereses {
-    overflow: hidden;
-   margin: 4em 0;
-   position: relative;
+    
+    margin: 4em 0;
+    position: relative;
+    overflow-x: auto;
+    scroll-behavior: smooth;
 }
 
 .opciones {
+    
     padding-top: 2em;
     display: flex;
     flex-direction: row;
     gap: 20px;
-    a {
-        text-decoration: none;
-
-    }
-}
-
-.opcion {
-    box-sizing: border-box;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-right: 1em;
-            .contenido {
+   
+   .opcion {
+        .contenido {
+            .capa-negra {
+                position: absolute;
+                inset: 0; /* equivale a top: 0; right: 0; bottom: 0; left: 0; */
+                background-color: rgba(0, 0, 0, 0.5); /* negro con opacidad del 50% */
+                z-index: 1;
+            }
+            position: relative;
+            .contenido__imagen {
+                height: 450px;
                 width: 300px;
-                height: 500px;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                img {
+                z-index: -10;
+            }
+            .interior {
+                position: absolute;
+                z-index: 100;
 
-                    object-fit: fill;
-                    position: absolute;
-                    z-index: -2;
+                top: 190px;
+                left: 55px;
 
-
-                }
-                .interior {
-                    text-align: center;
-                    color: #fff;
-
-                }
+                text-align: center;
+                color:  #fff;
+            }
+            .boton a {
 
             }
+            
+        }
     }
+
+}

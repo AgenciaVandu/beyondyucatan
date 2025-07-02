@@ -20,6 +20,10 @@
             border: none;
             border-radius: 0;
             display: flex;
+            text-align: center;
+
+            color: gray;
+            border-right: 2px solid #ccc;
 
         }
         @media (max-width: 991px) {

@@ -33,7 +33,7 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 rowimg">
                     <img src="{{ asset($experiencia->imagedestacada) }}" alt="">
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 contenido m-auto">
+                <div class="col-lg-6 col-md-12 col-sm-12 contenido m-auto pt-3">
                     @if (session()->get('locale') == 'es')
                         <h2>{{ $experiencia->titulo }}</h2>
                         <p>

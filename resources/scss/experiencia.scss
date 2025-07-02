@@ -65,17 +65,28 @@ h1, h2, h3, h4, h5 {
     padding-top: 2em;
     padding-bottom: 3em;
 
+   .cta {
     .iconos {
-        display: flex;
-        flex: row;
-        gap: 10px;
-
         ul {
             padding: 0;
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
             li {
                 list-style: none;
 
             }
         }
     }
+   }
+   .costo {
+    span {
+        font-family: map-get($fuentes , "suis-bold" );
+    }
+    p{
+        font-family: map-get($fuentes , "suis-bold" );
+    }
+    
+
+   }
 }

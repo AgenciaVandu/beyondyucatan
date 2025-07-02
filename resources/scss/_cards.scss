@@ -25,7 +25,7 @@ max-width: 400px;
     padding: 1em 0;
     p {
       display: -webkit-box;
-      -webkit-line-clamp: 3; /* Cambia a 2 o 3 según lo que necesites */
+      -webkit-line-clamp: 4; /* Cambia a 2 o 3 según lo que necesites */
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
