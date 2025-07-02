@@ -118,23 +118,7 @@
                                         </x-slot>
                                     </div>
                                 @else
-                                    <div class="container">
-                                        <x-slot name="imagenExperiencia">
-                                            <img src="{{ asset($experiencia->imagedestacada) }}" alt="Imagen de tour">
-                                        </x-slot>
-                                        <x-slot name="titulocuerpo">
-                                            {{ $experiencia->titulo_en }}
-                                        </x-slot>
-                                        <x-slot name="descripcionLarga">
-                                            {!! $experiencia->longdescription_en !!}
-                                        </x-slot>
-                                        <x-slot name="precio">
-                                            {{ $experiencia->price }}
-                                        </x-slot>
-                                        <x-slot name="botoncta">
-                                            Quiero esta experiencia
-                                        </x-slot>
-                                    </div>
+                                   <h1 class="text-center p-6">Próximamente nuevas experiencias</h1>
                                 @endif
                             </x-destacadas.experiencia>
                         @endforeach
@@ -155,14 +139,14 @@
                 <div class="titular">
                     <h1>¿Quieres una experiencia a la medida?</h1>
                     <div class="boton">
-                        <a href="" class="btn btn-primary">Solicitar una experiencia</a>
+                        <a href="{{ route('cotizador') }}" class="btn btn-primary">Solicitar una experiencia</a>
                     </div>
                 </div>
             @else
                 <div class="titular">
                     <h1>Are you looking for a tailor-made experience?</h1>
                     <div class="boton">
-                        <a href="" class="btn btn-primary">Click to find out more</a>
+                        <a href="{{ route('cotizador') }}" class="btn btn-primary">Click to find out more</a>
                     </div>
                 </div>
             @endif

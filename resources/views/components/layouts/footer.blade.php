@@ -117,17 +117,17 @@
         <div class="contact pt-4">
             <ul>
                 <li>
-                    <a href="https://www.facebook.com/profile.php?id=100075617091253">
+                    <a href="https://www.facebook.com/profile.php?id=100075617091253" target="blank">
                         <img src="{{ asset('img/border-facebook.svg') }}" width="30" alt="Beyondyucatan">
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.instagram.com/beyondyucatan/">
+                    <a href="https://www.instagram.com/beyondyucatan/" target="blank">
                         <img src="{{ asset('img/border-instagram.svg') }}" width="30" alt="Instagram">
                     </a>
                 </li>
                 <li>
-                    <a
+                    <a target="blank" 
                         href="https://www.tripadvisor.com.mx/Attraction_Review-g150811-d19068532-Reviews-TURISMAYA-Merida_Yucatan_Peninsula.html">
                         <img src="{{ asset('img/border-turism.svg') }}" width="30" alt="Tripadvisor">
                     </a>

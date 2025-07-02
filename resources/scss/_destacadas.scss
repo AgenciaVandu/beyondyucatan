@@ -7,26 +7,35 @@ $fuentes : (
 );
 @use 'fonts';
 @use 'colores';
-.experiencias {
 
+.experiencias {
     min-height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    .img_contenido {
-       max-width: 550px;
-       height: 720px;
-       object-fit: cover;
+    .carousel__elemento {
+      display: flex;
+      flex-direction: row;
+      gap: 1em;
+      .img_contenido {
+         max-width: 50%;
+         height: 720px;
+         overflow: hidden;
+        img {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           object-position: center;
+           display: block;
+         }
+      }
 
-       img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-       }
     }
+    
     .contenido {
        padding: 4em 3.8em;
+       max-width: 50%;
        h2 {
           margin-bottom: .7em;
        }
