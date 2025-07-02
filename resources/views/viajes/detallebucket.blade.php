@@ -35,7 +35,7 @@
                 <div class="costo">
                     <p>
                         <span>Desde:</span>
-                        $ <span>{{ $bucket->price }}</span> MXN P/P
+                        $ <span>{{ $bucket->price }}</span> USD P/P
                     </p>
                     <hr>
                 </div>

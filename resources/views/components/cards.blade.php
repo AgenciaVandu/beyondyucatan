@@ -1,10 +1,10 @@
 <div class="card">
-    <a href="">
+    <div class="img-card">
         {{ $imagenExperiencia ?? 'no disponible' }}
-    </a>
+    </div>
     <div class="contenido1">
         <h3>{{ $tituloExperiencia ?? 'Título no disponible' }}</h3>
-        <p>{{ $descripcionExperiencia ?? 'Descripción no disponible' }}</p>
+        <p class="texto-corto">{{ $descripcionExperiencia ?? 'Descripción no disponible' }}</p>
     </div>
     <div class="cta">
         <div class="iconos">
@@ -16,10 +16,10 @@
                 @endforeach
             </ul>
         </div>
-        <div class="costo">
-            <p>
+        <div class="costo  mb-2">
+            <p class="pt-2">
                 <span>Desde:</span>
-                $ <span>{{ $precio ?? 'N/A' }}</span> mxn
+                $ <span>{{ $precio ?? 'N/A' }}</span> USD P/P
             </p>
             <hr>
         </div>
