@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="boton">
-            <a href="{{ route('cotizador-grupo') }}" class="btn btn-primary">{{ $botoncta }}</a>
+            <a href="{{ route('cotizador-grupo') }}" class="btn btn-primary">{{ $botoncta  }}</a>
         </div>
     </div>
    {{--  <div class="row"> 

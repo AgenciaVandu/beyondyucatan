@@ -24,7 +24,7 @@
     "src": "public/img/webp/textura.webp"
   },
   "resources/css/app.css": {
-    "file": "assets/app-QsphyPL8.css",
+    "file": "assets/app-BtgJhFdY.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -49,47 +49,47 @@
     "isEntry": true
   },
   "resources/scss/artesanos.scss": {
-    "file": "assets/artesanos-CNxzhNtA.css",
+    "file": "assets/artesanos-BEQcl7b4.css",
     "src": "resources/scss/artesanos.scss",
     "isEntry": true
   },
   "resources/scss/bucketlist.scss": {
-    "file": "assets/bucketlist-C2qnkl4R.css",
+    "file": "assets/bucketlist-DbFuSXB2.css",
     "src": "resources/scss/bucketlist.scss",
     "isEntry": true
   },
   "resources/scss/contacto.scss": {
-    "file": "assets/contacto-DWiwKpsb.css",
+    "file": "assets/contacto-LxksPU_I.css",
     "src": "resources/scss/contacto.scss",
     "isEntry": true
   },
   "resources/scss/cotizador.scss": {
-    "file": "assets/cotizador-NTKUK5L-.css",
+    "file": "assets/cotizador-DrcpQTwL.css",
     "src": "resources/scss/cotizador.scss",
     "isEntry": true
   },
   "resources/scss/detallebucket.scss": {
-    "file": "assets/detallebucket-DmSFrZ78.css",
+    "file": "assets/detallebucket-Dis7HRHw.css",
     "src": "resources/scss/detallebucket.scss",
     "isEntry": true
   },
   "resources/scss/experiencia.scss": {
-    "file": "assets/experiencia-BvyzKHrB.css",
+    "file": "assets/experiencia-Dd-t14vk.css",
     "src": "resources/scss/experiencia.scss",
     "isEntry": true
   },
   "resources/scss/experiencias.scss": {
-    "file": "assets/experiencias-DITtiL92.css",
+    "file": "assets/experiencias-BW383hj5.css",
     "src": "resources/scss/experiencias.scss",
     "isEntry": true
   },
   "resources/scss/index.scss": {
-    "file": "assets/index-BjGOvIdz.css",
+    "file": "assets/index-Dz9ggjJf.css",
     "src": "resources/scss/index.scss",
     "isEntry": true
   },
   "resources/scss/solicitud.scss": {
-    "file": "assets/solicitud-CK0-_fbe.css",
+    "file": "assets/solicitud-CyhXtGL9.css",
     "src": "resources/scss/solicitud.scss",
     "isEntry": true
   }

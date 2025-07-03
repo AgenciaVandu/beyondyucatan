@@ -5,7 +5,7 @@
                 <div class="titular">
                     <h1>¿Quieres una experiencia a la medida?</h1>
                     <div class="boton">
-                        <a href="{{ route('cotizador') }}" class="btn btn-primary">Solicitar una experiencia</a>
+                        <a href="{{ route('cotizador-grupo') }}" class="btn btn-primary">Solicitar una experiencia</a>
                     </div>
                 </div>
             @else
