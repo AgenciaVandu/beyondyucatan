@@ -118,7 +118,24 @@
                                         </x-slot>
                                     </div>
                                 @else
-                                   <h1 class="text-center p-6">Próximamente nuevas experiencias</h1>
+                                   <div class="container">
+                                    <x-slot name="imagenExperiencia">
+                                        <img src="{{ asset($experiencia->imagedestacada) }}" alt="Imagen de tour">
+                                    </x-slot>
+                                    <x-slot name="titulocuerpo">
+                                        {!! $experiencia->titulo_en !!}
+                                    </x-slot>
+                                    <x-slot name="descripcionLarga">
+                                        {!! $experiencia->longdescription_en !!}
+                                    </x-slot>
+                                    <x-slot name="precio">
+                                        {{ $experiencia->price_en }}
+                                    </x-slot>
+                                    <x-slot name="botoncta">
+                                        Quiero esta experiencia
+                                    </x-slot>
+                                </div>
+                                  
                                 @endif
                             </x-destacadas.experiencia>
                         @endforeach

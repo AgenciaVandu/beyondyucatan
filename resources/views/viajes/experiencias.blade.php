@@ -37,9 +37,9 @@
                         </x-slot>
                         <x-slot name="descripcionExperiencia">
                             @if (session()->get('locale') == 'en')
-                                {!! $experiencia->lightdescription !!}
-                            @else
                                 {!! $experiencia->lightdescription_en !!}
+                            @else
+                                {!! $experiencia->lightdescription !!}
                             @endif
 
                         </x-slot>
