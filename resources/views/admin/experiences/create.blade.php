@@ -29,7 +29,7 @@
                                     <x-input-label class="w-full mb-1" for="lightdescription" :value="__('Descripcion corta')" />
                                     <textarea id="ckcontent"
                                         class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
-                                        type="text" name="lightdescription" placeholder="Descripcion corta">{{ old('longdescription') }}</textarea>
+                                        type="text" name="lightdescription" placeholder="Descripcion corta">{{ old('lightdescription') }}</textarea>
                                     @error('lightdescription')
                                         <span class="text-xs text-red-600">{{ $message }}</span>
                                     @enderror
@@ -58,20 +58,20 @@
                                     @enderror
                                 </div>
                                 <div class="mb-2">
-                                    <x-input-label class="w-full mb-1" for="lightdescription" :value="__('Descripcion corta')" />
+                                    <x-input-label class="w-full mb-1" for="lightdescription_en" :value="__('Descripcion corta')" />
                                     <textarea id="ckcontent3"
                                         class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
-                                        type="text" name="lightdescription_en" placeholder="Descripcion corta">{{ old('longdescription') }}</textarea>
-                                    @error('lightdescription')
+                                        type="text" name="lightdescription_en" placeholder="Descripcion corta">{{ old('lightdescription_en') }}</textarea>
+                                    @error('lightdescription_en')
                                         <span class="text-xs text-red-600">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-2">
-                                    <x-input-label class="w-full mb-1" for="longdescription" :value="__('Descripcion larga')" />
+                                    <x-input-label class="w-full mb-1" for="longdescription_en" :value="__('Descripcion larga')" />
                                     <textarea id="ckcontent4"
                                         class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="3"
-                                        type="text" name="longdescription_en" placeholder="Descripcion larga">{{ old('longdescription') }}</textarea>
-                                    @error('longdescription')
+                                        type="text" name="longdescription_en" placeholder="Descripcion larga">{{ old('longdescription_en') }}</textarea>
+                                    @error('longdescription_en')
                                         <span class="text-xs text-red-600">{{ $message }}</span>
                                     @enderror
                                 </div>

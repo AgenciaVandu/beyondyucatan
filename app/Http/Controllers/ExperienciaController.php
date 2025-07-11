@@ -53,6 +53,7 @@ class ExperienciaController extends Controller
     }
     public function store(Request $request)
     {
+        /* dd($request); */
         $request->validate([
             'titulo' => 'required',
             'lightdescription' => 'required',
