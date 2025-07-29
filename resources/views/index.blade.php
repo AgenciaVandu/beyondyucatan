@@ -92,6 +92,8 @@
             </div>
         </div>
     </section>
+
+    
     <section class="experiencias">
         <div class="container-fluid">
             <div class="carousel">
@@ -102,7 +104,7 @@
                                 @if (session()->get('locale') == 'es')
                                     <div class="container">
                                         <x-slot name="imagenExperiencia">
-                                            <img src="{{ asset($experiencia->imagedestacada) }}" alt="Imagen de tour">
+                                            <img src="{{ asset($experiencia->imagedestacada) }}"  alt="Imagen de tour">
                                         </x-slot>
                                         <x-slot name="titulocuerpo">
                                             {!! $experiencia->titulo !!}

@@ -3,7 +3,7 @@
 }
 .carousel__anterior {
     position: absolute;
-    right: 180px;
+    right: 130px;
     bottom: 30px;
 
     background-color: transparent;
@@ -15,7 +15,7 @@
 }
 .carousel__siguiente {
     position: absolute;
-    right: 140px;
+    right: 80px;
     bottom: 30px;
 
     background-color: transparent;
@@ -28,4 +28,13 @@
 }
 .carousel__indicador {
     display: none;
-}
+}@media(max-width:530px){
+    .carousel__anterior {
+        right: 60%;
+        bottom: -50px;
+    }
+    .carousel__siguiente {
+        right: 35%;
+        bottom: -50px;
+    }
+  }
