@@ -1,5 +1,7 @@
 <div class="carousel__elemento">
+   <div class="img_contenido">
     {{ $imagenExperiencia ?? 'No disponible' }}
+   </div>
     <div class="contenido m-auto">
         <h2>{{ $titulocuerpo ?? 'No disponible' }}</h2>
         <p>
