@@ -131,7 +131,7 @@
                                         {!! $experiencia->longdescription_en !!}
                                     </x-slot>
                                     <x-slot name="precio">
-                                        {{ $experiencia->price_en }}
+                                        {{ $experiencia->price }}
                                     </x-slot>
                                     <x-slot name="botoncta">
                                         Quiero esta experiencia
