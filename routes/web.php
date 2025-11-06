@@ -159,6 +159,19 @@ Route::get('storage-link', function () {
     echo (Artisan::output());
 });
 
+
+
+
+Route::get('/app-down', function () {
+    Artisan::call('down');
+    return '🛑 La aplicación ahora está en modo mantenimiento.';
+});
+
+Route::get('/app-up', function () {
+    Artisan::call('up');
+    return '✅ La aplicación ha vuelto a estar en línea.';
+});
+
 Route::get('/slugs', function () {
     $experiences = Experience::all();
     foreach ($experiences as $experience) {
