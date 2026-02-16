@@ -10,15 +10,10 @@
                 <p>{{$descripcionartesano ?? ''}}</p>
                 <ul>
                     <li>
-                        <a href="">
-                            <img src="{{asset('img/facebook.svg')}}" width="30" alt="">
-                        </a>
-                        <a href="">
-                            <img src="{{asset('img/instagram.svg')}}" width="30" alt="">
-                        </a>
-                        <a href="">
-                            <img src="{{asset('img/whatsapp.svg')}}" width="30" alt="">
-                        </a>
+                        {{$facebook ?? ''}}
+                        {{$instagram ?? ''}}
+                        {{$whastapp ?? ''}}
+                        
                     </li>
                 </ul>
             </div>
